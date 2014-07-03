@@ -1,0 +1,4632 @@
+//!Mup-Arkkra-5.0
+//
+// Prokofiev Piano Sonata No. 2 Second Movement
+//
+// Copyright(c) 2005, Abel Cheung
+//
+// Staff:
+// 1.  2 Flauti
+// 2.  (reserved for Flute split)
+// 3.  2 Oboi
+// 4.  2 Clarinetti in Sib
+// 5.  2 Faggotti [Bassoon]
+// 6.  (reserved for Bassoon split)
+// 7.  4 Corni in Fa [Horn]
+// 8.  (reserved for Horn split)
+// 9.  2 Tromba in Do [Trumpet]
+// 10. (reserved for Trumpet split)
+// 11. Timpani
+// 12. Percussione
+// 13. (reserved for Piano - Ossia)
+// 14. (reserved for Piano - Ossia)
+// 15. Solo Pianoforte (Treble)
+// 16. Solo Pianoforte (Bass)
+// 17. Violini I
+// 18. (reserved for Violin I split)
+// 19. Violini II
+// 20. Viole
+// 21. Violoncelli
+// 22. (reserved for Cello split)
+// 23. Contrabassi
+
+// ChangeLog:
+// * 2005-02-12
+// - Finished basic typesetting, bugs to be fixed
+
+define DYN1(STAFF, COUNT, VOLUME)
+boldital (16) below STAFF: COUNT `VOLUME`;
+@
+define DYN2(COUNT, VOLUME)
+boldital (16) between 15&16: COUNT `VOLUME`;
+@
+define DYN3(STAFF, COUNT, VOLUME)
+boldital (16) above STAFF: COUNT `VOLUME`;
+@
+define TEMPO(STAFF, COUNT, TEXT)
+bold (18) above STAFF: COUNT `TEXT`;
+@
+// draw square bracket on the left side of 2 notes,
+// X is x-position of center of either note
+// A is y-position of center of upper note
+// B is y-position of center of lower note
+define BRACK(X,A,B)
+	line (X-2,A+2) to (X-3.5,A+1.5);
+	line (X-3.5,A+1.5) to (X-3.5,B-1.5);
+	line (X-3.5,B-1.5) to (X-2,B-2);
+@
+
+
+header
+	title(24) "II"
+	title(20) "Scherzo"
+
+score
+	topmargin = 1.5
+	bottommargin = 0.8
+	leftmargin = 0.5
+	rightmargin = 0.5
+	staffs = 23
+	key = f major
+	time = 2/4
+	brace = 15-16 ("\s(12)Pfte.", "\s(12)Pfte.")
+	bracket = 1-6, 7-10, 17-21
+	measnum = y
+//	packfact = 0.8
+	scale = 0.39
+	beamstyle = 4,4
+	beamslope = 1.0, 10.0
+	barstyle = 1-6,7-10,13-14,15-16,17-21
+	units = cm
+	pageheight = 29.7 // A4
+	pagewidth = 21.0
+	visible = whereused
+
+staff 1
+	label = "Fl."
+	label2 = "Fl."
+	visible = whereused
+
+staff 2
+	visible = whereused
+
+staff 3
+	label = "Ob."
+	label2 = "Ob."
+	visible = whereused
+
+staff 4
+	label = "Cl.\nin Si\(smflat)"
+	label2 = "Cl.\nin Si\(smflat)"
+	transpose = up major 2
+	vscheme = 2f
+	visible = whereused
+
+staff 5
+	transpose = up major 2
+	visible = whereused
+
+staff 6
+	label = "Fag."
+	label2 = "Fag."
+	clef = bass
+	visible = whereused
+
+staff 7
+	label = "Cor.\nin Fa"
+	label2 = "Cor.\nin Fa"
+	key = f major
+	transpose = up perfect 5
+	visible = whereused
+
+staff 8
+	key = f major
+	transpose = up perfect 5
+	visible = whereused
+
+staff 9
+	label = "Tr.\nin Do"
+	label2 = "Tr.\nin Do"
+	key = c major
+	visible = whereused
+
+staff 10
+	key = c major
+	visible = whereused
+
+staff 11
+	label = "Timp."
+	label2 = "Timp."
+	key = c major
+	clef = bass
+	visible = whereused
+
+staff 12
+	label = "Perc."
+	label2 = "Perc."
+	stafflines = 5 drum
+	visible = whereused
+
+staff 13
+	staffscale = 0.7
+	visible = whereused
+
+staff 14
+	staffscale = 0.7
+	clef = bass
+	visible = whereused
+
+staff 15
+	visible = whereused
+
+staff 16
+	visible = whereused
+
+staff 17
+	label = "Vl. I"
+	label2 = "Vl. I"
+	visible = whereused
+
+staff 18
+	label = "Vl. II"
+	label2 = "Vl. II"
+	visible = whereused
+
+staff 19
+	label = "Vle."
+	label2 = "Vle."
+	clef = alto
+	visible = whereused
+
+staff 20
+	label = "Vc."
+	label2 = "Vc."
+	clef = bass
+	visible = whereused
+
+staff 21
+	label = "Cb."
+	label2 = "Cb."
+	clef = bass
+	visible = whereused
+
+// bar 1
+
+music
+	1: [grace] 16a+; []d6; [with >]8a6; 16d bm; ebm; bm;;; ebm;
+	4 1: [with >]16d+; a+; d+; a+; d+; a+; d+; a+;
+	4 2: 16d+; a; d+; a; d+; a; d+; a;
+	15: [with >]16b+; a+; b+; a+; b+; a+; b+; a+;
+	16: [with >]16b; a; b; a; b; a; b; a;
+	17,18: [with >]8a-daa+; r; daa+;;
+	19: [with >]8d-a-da; r; da;;
+	20: [with >]8da; r; d+;;
+	21: [with >]8d+; r; 4;
+	2-3,5-12: mr;
+
+	TEMPO(all,0,Vivace)
+	TEMPO(17,0,Vivace)
+
+	rom above 1: 0 "a2";
+	rom above 18,19: 0 "senza sord.";
+	rom above 17-21: 1 "pizz.";
+
+	DYN1(1\,4\,17-21 dist 0,0.3,ff)
+	DYN1(4\,17-20 dist 0,1.8,f)
+
+	phrase above 1: 1(-2) til 1;
+	phrase above 4: 1 til 1m+2.5;
+	phrase below 4: 1 til 1m+2.5;
+
+	bar
+
+// bar 2
+
+	1: 16d;;;;;; 8;
+	4 1: 16d+; a+; d+; a+; d+; a+; 8d+;
+	4 2: 16d+; a; d+; a; d+; a; 8d+;
+	15: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	16: 16b; a; b; a; b; a; b; a;
+	17,18: 8daa+;;;;
+	19: 8da;;;;
+	20: 8d+;;;;
+	2-3,5-12,21: mr;
+
+	bar
+
+// bar 3
+
+	3,6,20: 8d+;; c#+;;
+	4 1: 16d+; a; d+; a; d+; a+; d+; a+;
+	4 2: mr;
+	15: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	16: 16b; a; b; a; b; a; b; a;
+	17,18: 8dd+;; aa+;;
+	19: 8dd+;;;;
+	1-2,5,7-12,21: mr;
+
+	rom above 3,6: 0.5 "1.";
+
+	DYN1(3\,6\,17-20 dist 0,1,mp)
+	DYN1(4 dist -4!,1,mp)
+	phrase above 4: 1 til 1m+1;
+
+	bar
+
+// bar 4
+	3,6,20: 8cn+;; bn;;
+	4 1: 8d+; r; 4;
+	4 2: 16d+; a; d+; a; d+; a+; d+; a+;
+	15: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	16: 16b; a; b; a; b; a; b; a;
+	17,18: 8dd+;; aa+;;
+	19: 8dd+;;;;
+	1-2,5,7-12,21: mr;
+
+	phrase below 4: 1 til 1m+1;
+
+	bar
+
+// bar 5
+	3,6,20: 8b&;; a;;
+	4 1: 16d+; a; d+; a; d+; a+; d+; a+;
+	4 2: 8d+; r; 4;
+	15: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	16: 16b; a; b; a; b; a; b; a;
+	17,18: 8dd+;; aa+;;
+	19: 8dd+;;;;
+	1-2,5,7-12,21: mr;
+
+	ital between 15&16: 1 "\s(14)dim.";
+
+	phrase above 4: 1 til 1m+1;
+
+	bar
+
+// bar 6
+	3,6,20: 8a&;; g;;
+	4 1: 8d+; r; 4;
+	4 2: 16d+; a; d+; a; d+; a+; d+; a+;
+	15: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	16: 16b; a; b; a; b; a; b; a;
+	17,18: 8dd+;; aa+;;
+	19: 8dd+;;;;
+	1-2,5,7-12,21: mr;
+
+	ital below 3,4,6,17-20: 2 "\s(14)dim";
+
+	phrase below 4: 1 til 1m+1;
+
+	bar
+
+// bar 7
+	3,6,20: 8g&;; f;;
+	4 1: 16d+; a; d+; a; d+; a+; d+; a+;
+	4 2: 8d+; r; 4;
+	15: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	16: 16b; a; b; a; b; a; b; a;
+	17,18: 8dd+;; aa+;;
+	19: 8dd+;;;;
+	1-2,5,7-12,21: mr;
+
+	ital above 4: 1.5 "\s(14)dim.";
+
+	phrase above 4: 1 til 1m+1;
+
+	bar
+
+// bar 8
+	3,6,20: 8e;; e&;;
+	4 1: 8d+; r; 4;
+	4 2: 16d+; a; d+; a; d+; a; d+; a;
+	15: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	16: 16b; a; b; a; b; a; b; a;
+	17,18: 8dd+;; aa+;;
+	19: 8dd+;;;;
+	1-2,5,7-12,21: mr;
+
+	phrase below 4: 1 til 1m+1;
+
+	bar
+
+// bar 9, section 25
+	3,6: 8d;; 4r;
+	4 1: 4r; 16d; g#; 8a;
+	4 2: 8d; r; 16d-; g#-; 8a-;
+	15: 16g#+; b+; g+; b+; gn+; a+; g+; a+;
+	16: 16g#; b; g; b; gn; a; g; a;
+	17: 8dd+;; r; da;
+	18: 8dd+;; d; da;
+	19: 8dd+;; r; d-a-;
+	20: 8d;;; da;
+	1-2,5,7-12,21: mr;
+
+	DYN1(3\,6,1.5,p)
+	DYN1(18\,20,2,p)
+	DYN1(17\,19,2.5,p)
+	DYN2(1,mf)
+	DYN1(4 dist 4,1.8,p)
+
+	phrase above 4: 2 til 2.5;
+	phrase below 4: 2 til 2.5;
+	
+	bar
+
+// bar 10
+
+staff 4
+	vscheme = 1
+
+staff 17
+	beamstyle = 2 r
+
+staff 19
+	beamstyle = 2 r
+
+music
+	4: 16d-d; a-a; 8b-b; 16d-d; b-b; 8bn-bn;
+	15: 16g&+; a&+; g+; a+; f+; gn+; f+; g+;
+	16: 16g&; a&; g; a; f; gn; f; g;
+	17: 8r; db; r; dbn;
+	18,20: 8d; da; d; da;
+	19: 8r; d-b-; r; d-bn-;
+	1-3,5-12,21: mr;
+
+	bar
+
+// bar 11
+	4: 16f-f; a-a; 8b&-b&; 16f-f; b-b; 8bn-bn;
+	15: 16e+; f#+; e+; f+; e&+; fn+; e+; f+;
+	16: 16e; f#; f; f; e&; fn; e; f;
+	17: 8r; b&; r; bn;
+	18,20: 8f; fa; f; fa;
+	19: 8r; b&-; r; bn-;
+	1-3,5-12,21: mr;
+
+	< below 4,17-20: 2 til 1m+2.8;
+
+	bar
+
+// bar 12
+	4: 16a-a; bn-bn; 8cc+; 16a-a; cc+; 8c#c#+;
+	15: 16d+; en+; d+; e+; c#+; e&+; c+; e+;
+	16: 16d; en; d; e; c#; e&; c; e;
+	17: 8r; c+; r; c#+;
+	18: 8a; ac+; a; ac#+;
+	19: 8r; ca; r; c#a;
+	20: 8a;;;;
+	1-3,5-12,21: mr;
+
+	bar
+
+// bar 13, section 26
+
+staff 6
+	vscheme = 2f
+
+staff 17
+	beamstyle = 4,4
+
+staff 19
+	beamstyle = 4,4
+
+music
+	3: 4r; 16c; d; e; f;
+	4: [with >]8dd+; r; 4;
+	6 1: 4r; 16g; a; b; c+;
+	6 2: 4s; 16e; f; g; a;
+	15: 16d+; f+; e+; d+; c+; f+; e+; d+;
+	16: 16d; f; e; d; c; f; e; d;
+	17: [with >]8dd+;; 4r;
+	18: [with >]8d+; d; r; e;
+	19: [with >]8da;; r; b-;
+	20: [with >]4d+; 8e; g;
+	1-2,5,7-12,21: mr;
+
+	DYN1(4\,17-20,1,mf)
+	DYN1(3\,6,2,f)
+	rom above 3: 2 "1.";
+
+	phrase below 3,6: 2 til 1m+1;
+	phrase above 6: 2 til 1m+1;
+
+	bar
+
+// bar 14
+
+staff 18
+	beamstyle = 2 r
+
+staff 19
+	beamstyle = 2 r
+
+music
+	3: [with .]8g; []; 4r;
+	4: 4r; 16e-a-; f-b-; g-c; a-d;
+	6 1: [with .]8d+; []; 16c; d; e; f;
+	6 2: [with .]8b; []; 4r;
+	15: 16b; f+; e+; d+; a; f+; e+; d+;
+	16: 16b-; f; e; d; a-; f; e; d;
+	18: 8r; g; r; c;
+	19: 8r; d; r; g-;
+	20: 4b; 8c; e;
+	1-2,5,7-12,17,21: mr;
+
+	DYN1(4,1.75,mf)
+	DYN3(6,1.75,mf)
+
+	ital between 15&16: 1 "\s(14)dim.";
+	ital below 18-20: 1.5 "\s(14)dim.";
+
+	phrase below 4: 2 til 1m+1;
+	phrase above 6: 2 til 1m+1;
+
+	bar
+
+// bar 15
+	4: [with .]8b-e; []; 4r;
+	6 1: [with .]8g&; []; 4r;
+	6 2: mr;
+	15: 16a&; f+; e+; d+; g&; f+; e+; d+;
+	16: 16a&-; f; e; d; g&-; f; e; d;
+	18: 8r; e; r; a-;
+	19: 8r; b-; r; d#-;
+	20: 4g&; bn-;
+	1-3,5,7-12,17,21: mr;
+
+	bar
+
+// bar 16
+	15: 16f; f+; e+; d+; e&; f+; e(n)+; d+;
+	16: 16f-; f; e; d; e&-; f; e(n); d;
+	18: 8r; a-; r; a-;
+	19: 8r; c-a-; r; c#-g-;
+	20: 8c; f; 4c#;
+	1-12,17,21: mr;
+
+	DYN1(19,2.5,p)
+
+	bar
+
+// bar 17, section 27
+
+staff 1
+	beamstyle = 2
+
+staff 4
+	beamstyle = 2
+
+staff 6
+	beamstyle = 2
+
+staff 16
+	clef = bass
+
+staff 20
+	beamstyle = 2
+
+music
+	1: 8fa;; f+a+; fa;
+	4: 8f-a-;; fa; f-a-;
+	6 1: [with .]...8f; e-; f-; g-;
+	6 2: mr;
+	15,16: 16d; c#; cn; bn-; b&-; d; b-; a-;
+	17: [with >]8a-fa; r; 4;
+	20: 8d; e-; f-; g-;
+	2-3,5,7-12,18-19,21: mr;
+
+	DYN1(1\,4\,17\,21,1,p)
+	DYN3(6,1,p)
+	DYN2(1,p)
+	< below 1,4,20: 1.3 til 2.8;
+	< above 6: 1.3 til 2.8;
+	< between 15&16: 1.3 til 2.8;
+
+	bar
+
+// bar 18
+
+staff 18
+	beamstyle = 4,4
+
+staff 19
+	beamstyle = 4,4
+
+music
+	1: 8e&a&; ea; 4r;
+	4: 8e&-a&-; e-a-; 4r;
+	6 1: [with >]8a&-; r; 4;
+	6 2: [with >]8a&-; s; 4;
+	15,16: 16a&-; c; e&; c+; b; a&; f; e;
+	18: 4r; 16f; e&; c; b-;
+	19: [with >]8e&-a&-a&; r; 16d; c; a-; g-;
+	20: [with >]8a&-; r; 4;
+	21: [with >]8a&; r; 4;
+	2-3,5,7-12,17: mr;
+
+	rom above 18,19: 1.5 "arco";
+	mussym above 18,19: 2 "upbow";
+
+	DYN1(6\,19-21,1,mp)
+	DYN3(6,1,mp)
+	DYN1(18 dist 0,1.5,mp)
+
+	> below 1,4: 1 til 1.8;
+	> between 15&16: 1 til 2;
+	> below 18,19: 2 til 2.8;
+	phrase below 18,19: 2 til 2.75;
+
+	bar
+
+// bar 19
+	1: 8fa;; f+a+; fa;
+	4: 8f-a-;; fa; f-a-;
+	6 1: [with .]...8d; e-; f-; g-;
+	6 2: mr;
+	15,16: 16d; e; c#; d; a; f; d; a-;
+	17: [with >]8a-fa; r; 4;
+	18: 8a-; r; 4;
+	19: 8f-; r; 4;
+	20: 8d; e-; f-; g-;
+	2-3,5,7-12,21: mr;
+
+	DYN1(1\,4\,17-20,1,p)
+	DYN3(6,1,p)
+
+	< above 6: 1.3 til 2.8;
+	< below 1,4,20: 1.3 til 2.8;
+	< between 15&16: 1.9 til 2.8;
+
+	bar
+
+// bar 20
+	1: 8e&a&; ea; eg;;
+	4: 8e&-a&-; e-a-; e-g-;;
+	6 1: [with >]8a&-; r; 4;
+	6 2: [with >]8a&-; r; [with .]an-; []a#-;
+	15,16: 16a&-; c; c+; d&+; c+; d; f; e&;
+	19: [with >]8e&-a&-a&; r; 4;
+	20: [with >]8a&-; r; 4;
+	21: [with >]8a&; r; 4;
+	2-3,5,7-12,17-18: mr;
+
+	rom above 19: 1 "pizz.";
+	DYN1(6\,19-21,1,mp)
+	DYN3(6,1,mp)
+
+	> below 1,4: 1.5 til 2.8;
+	> below 6: 2 til 2.8;
+	> between 15&16: 1 til 1.8;
+
+	bar
+
+// bar 21
+
+staff 3
+	beamstyle = 2
+
+music
+	1: 8df#; r; 4;
+	3: 8df#; df; d+f#+; df;
+	4: 8d-f#-; d-f-; df#; d-f-;
+	6 1: [with .]...8bn-; c#-; d-; e-;
+	6 2: [with .]8bn-; r; 4;
+	15,16: 16d; c#; cn; bn-; b&-; d; b-; a-;
+	17: [with >]8df#; r; 4;
+	20: 8bn-; c#-; d-; e-;
+	2,5,7-12,18-19,21: mr;
+
+	DYN1(1\,4\,6\,17\,20,1,p)
+	DYN3(6,1,p)
+	DYN1(3,1,pp)
+
+	< below 3,4,20: 1.5 til 2.8;
+	< above 6: 1.5 til 2.8;
+	< between 15&16: 1.5 til 2.8;
+
+	bar
+
+// bar 22
+
+staff 3
+	vscheme = 2f
+
+staff 4
+	beamstyle = 4,4
+
+staff 19
+	vscheme = 2f
+
+music
+	3 1: 8fn; f; 4r;
+	3 2: 8c; r; 4;
+	4: 8fn-c; f-c; 16b-d; a&-c; f-a-; e&-g-;
+	6 1: [with >]8f-; r; 4;
+	6 2: [with >]8f-; s; 4;
+	15,16: 16a&-; c; f; c+; b; a&; f; e&;
+	19 1: [with >]8c-cf; r; 16d; c; a-; g-;
+	19 2: 4s; 16b-; a&-; f-; e&-;
+	20: [with >]8f-; r; 4;
+	21: [with >]8f; r; 4;
+	1-2,5,7-12,17-18: mr;
+
+	DYN1(6\,19-21,1,mp)
+	DYN3(6,1,mp)
+	rom above 19: 1.5 "div.\narco";
+	mussym above 19: 2 "upbow";
+
+	> below 3: 1 til 1.8;
+	> below 4: 2 til 2.8;
+	> between 15&16: 1 til 1.8;
+	> below 19: 2 til 2.8;
+	phrase below 4: 2 til 1m+1;
+	phrase above 19: 2 til 2.75;
+	phrase below 19: 2 til 2.75;
+
+	bar
+
+// bar 23
+	4: 8d-f#-; r; 4;
+	6 1: [with .]8bn-; []c#-; [with >]4f-;
+	6 2: 4r; [with >]4f-;
+	15,16: 16d; e; c#; d; a-; d; f; a;
+	18: 8r; [with .]d; [with >]a-; [with .]f;
+	19 1: [with >]8f#-; [with .]bn-; [with >]fn-; [with .]d;
+	19 2: [with >]8d-; [with .]bn-; 4s;
+	20: 8bn-; c#-; [with >]4f-;
+	21: 4r; f;
+	1-3,5,7-12,17: mr;
+
+	rom above 19: 1.6 "unis.";
+	DYN1(4\,19,1,p)
+	DYN3(6,1,p)
+	DYN1(18,1.5,p)
+
+	< below 6: 2.2 til 1m+2.8;
+	< between 15&16: 2 til 1m+2.8;
+	< below 18: 1.7 til 1m+2.8;
+	< below 19: 1.5 til 1m+1;
+
+	bar
+
+// bar 24
+	6 1&6 2: [with .]8bn-; []c#-; 4f-;
+	15,16: 16c#; a; f#; c#+; e; a; cn+; e+;
+	17: [with >]8c#; [with .]a; [with >]e; [with .]cn+;
+	18: [with >]8a-; [with .]f#; [with >]c; [with .]a;
+	19: [with >]8a-; r; 4;
+	20: 8bn-; c#-; [with >]4f-;
+	21: 4r; f;
+	1-5,7-12: mr;
+
+	rom above 17: 1 "arco";
+	DYN1(17,1,mp)
+	DYN1(17,2.5,f)
+	mussym above 6: 2 "acc_gt";
+	mussym below 6: 2 "acc_gt";
+
+	< below 17: 1.3 til 2.2;
+	phrase above 6: 2 til 1m+1;
+	phrase below 6: 2 til 1m+1;
+
+	bar
+
+// bar 25, section 28
+
+staff 1
+	beamstyle = 4,4
+
+staff 3
+	beamstyle = 4,4
+	vscheme = 1
+
+staff 6
+	beamstyle = 4,4
+
+staff 16
+	clef = treble
+
+staff 18
+	beamstyle = 2 r
+
+staff 19
+	beamstyle = 2 r
+	vscheme = 1
+
+staff 20
+	beamstyle = 4,4
+
+staff 21
+	beamstyle = 2 r
+
+music
+	1: [with >]8ae+;; bd+;;
+	4: [with >]8a-e;; b-d;;
+	6 1: [with >]8f;; c;;
+	6 2: [with >]8f; r; 4;
+	15: [with >]16e+; a+; e+; a; [with >]b; g+; d+; g;
+	16: [with >]16e; a; e; a-; [with >]b-; g; d; g-;
+	18: 8r; a-eae+; r; b-dd+;
+	19: 8r; f-a-ea; r; c-b-db;
+	21: [with .]8f+; r; [with .]c+; r;
+	2-3,5,7-12,17,20: mr;
+
+	rom above 18,19: 1 "pizz.";
+	rom above 21: 1 "arco";
+	DYN1(1\,4\,6,1,f)
+	DYN1(18\,19,1.3,f)
+	DYN1(21 dist -3!,1,f)
+	DYN2(1,f)
+	
+	> below 1,4,18,19,21: 1.5 til 2.8;
+	> above 6: 1.5 til 2.8;
+	> between 15&16: 1.5 til 2.8;
+
+	bar =_bar0
+
+// bar 26
+
+staff 13
+	vscheme = 2f
+
+music
+	1: 8ae+;; bd+;;
+	4: 8a-e;; b-d;;
+	6 1: 8f;; c;;
+	6 2: mr;
+	13 1: [with >; =_ossia1]16e+; a+; e+; a; [with >]b; g+; d+; r;
+	13 2: [with >]16e; a; e; a-; [with >]b-; g; d; g-g;
+	15: [with >; =_pfte1]16e+; a+; e+; a; [with >]b; g+; d+; g;
+	16: [with >]16e; a; e; a-; [with >]b-; g; d; g-;
+	18: 8r; a-eae+; r; b-dd+;
+	19: 8r; f-a-ea; r; c-b-db;
+	21: [with .]8f+; r; [with .]c+; r;
+	2-3,5,7-12,17,20: mr;
+
+	rom above 13 dist 0: 0 "Ossia";
+
+	DYN1(1\,4\,21,1,p)
+	DYN3(6,1,p)
+	DYN2(1,mp)
+	DYN1(18-19,1.3,p)
+
+//	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 27
+	1: 8ae+; af+; be+; bd+;
+	4: 8a-e;; b-d;;
+	6 1: 8f;; c;;
+	6 2: mr;
+	13 1: [with >; =_ossia1]16e+e6; a+; f+; c+; [with >]b; g+; d+; r;
+	13 2: 16r; a; f; c; [with >]b-; g; d; g-g;
+	15: [with >; =_pfte1]16e6; a+; f+; c+; [with >]b; g+; d+; g;
+	16: [with >]16e+; a; f; c; [with >]b-; g; d; g-;
+	18: 8r; af+; r; b-dd+;
+	19: 8r; f-a-ea; r; c-b-db;
+	21: [with .]8f+; r; [with .]c+; r;
+	2-3,5,7-12,17,20: mr;
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 28
+	1: 8ae+; af+; be+; bd+;
+	4: 8a-e; a-e&; b-d;;
+	6 1: 8f;; c;;
+	6 2: mr;
+	13 1: [with >; =_ossia1]16e+e6; a+; f+; c+; [with >]b; g+; d+; r;
+	13 2: 16r; a; f; c; [with >]b-; g; d; g-g;
+	15: [with >; =_pfte1]16e6; a+; f+; c+; [with >]b; g+; d+; g;
+	16: [with >]16e+; a; f; c; [with >]b-; g; d; g-;
+	18: 8r; af+; r; b-dd+;
+	19: 8r; f-a-e&a; r; c-b-db;
+	21: [with .]8f+; r; [with .]c+; r;
+	2-3,5,7-12,17,20: mr;
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 29
+	3: 8bf+;; c+e+;;
+	4: 8b-f;; ce; ce;
+	6 1: 8g;; d;;
+	6 2: mr;
+	13 1: [with >; =_ossia1]16f+; b+; f+; b; [with >]c+; a+; e+; a;
+	13 2: [with >]16f; b; f; b-; [with >]c; a; e; a-;
+	15: [with >; =_pfte1]16f+; b+; f+; b; [with >]c+; a+; e+; a;
+	16: [with >]16f; b; f; b-; [with >]c; a; e; a-;
+	18: 8r; b-fbf+; r; ec+e+;
+	19: 8r; g-fb; r; d-c;
+	21: [with .]8g+; r; [with .]d+; r;
+	1-2,5,7-12,17,20: mr;
+
+	DYN1(3,1,pp)
+	DYN1(4 dist 0,1,p)
+	DYN1(21 dist -2!,1,p)
+	DYN1(18\,19,1.5,p)
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 30
+	3: 8bf+;; c+e+;;
+	4: 8b-f;; ce; ce;
+	6 1: 8g;; d;;
+	6 2: mr;
+	13 1: [with >; =_ossia1]16f+; b+; f+; b; [with >]c+; a+; e+; r;
+	13 2: [with >]16f; b; f; b-; [with >]c; a; e; a-a;
+	15: [with >; =_pfte1]16f+; b+; f+; b; [with >]c+; a+; e+; a;
+	16: [with >]16f; b; f; b-; [with >]c; a; e; a-;
+	18: 8r; b-fbf+; r; ec+e+;
+	19: 8r; g-fb; r; d-c;
+	21: [with .]8g+; r; [with .]d+; r;
+	1-2,5,7-12,17,20: mr;
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 31
+	3: 8bf+; bg+; c+f+; c+e+;
+	4: 8b-f;; ce; ce;
+	6 1: 8g;; d;;
+	6 2: mr;
+	13 1: [with >; =_ossia1]16f+f6; b+; g+; d+; [with >]c+; a+; e+; r;
+	13 2: 16r; b; g; d; [with >]c; a; e; a-a;
+	15: [with >; =_pfte1]16f6; b+; g+; d+; [with >]c+; a+; e+; a;
+	16: [with >]16f+; b; g; d; [with >]c; a; e; a-;
+	18: 8r; bg+; r; ec+e+;
+	19: 8r; g-fb; r; d-c;
+	21: [with .]8g+; r; [with .]d+; r;
+	1-2,5,7-12,17,20: mr;
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 32
+	3: 8bf+; bg+; c+e+; c+g+;
+	4: 8b-f;; ce; ce;
+	6 1: 8g;; d;;
+	6 2: mr;
+	13 1: [with >; =_ossia1]16f+f6; b+; g+; d+; [with >]c+; a+; e+; r;
+	13 2: 16r; b; g; d; [with >]c; a; e; a-a;
+	15: [with >; =_pfte1]16f6; b+; g+; d+; [with >]c+; a+; e+; a;
+	16: [with >]16f+; b; g; d; [with >]c; a; e; a-;
+	18: 8r; bg+; 4r;
+	19: 8r; g-fb; 4r;
+	21: [with .]8g+; r; [with .]d+; r;
+	1-2,5,7-12,17,20: mr;
+
+	rom above 17,20: 2.8 "div.";
+	rom above 9,17,20: 2.8 "con sord.";
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 33
+
+score
+	key = e major
+
+staff 1
+	vscheme = 2f
+
+staff 17
+	vscheme = 2f
+
+staff 18
+	beamstyle = 4,4
+
+staff 19
+	beamstyle = 4,4
+
+staff 20
+	vscheme = 2f
+
+staff 21
+	beamstyle = 4,4
+
+music
+	1 1: [grace]16g+; []c6; 8g6; r; g6;;
+	1 2: [grace]16g+; []c6; 8g6; r; c6;;
+	3: [with >]8c+c6; r; c+c6;;
+	4: [with >]8gg+; r; gg+;;
+	6 1: [with >]8c+; r; c+;;
+	6 2: [with >]8c; 4.s;
+	9: [with .]8c#+; [with >]4.g#+~;
+	15-16: [with >]16a+; g+; a+; g+; a+; g+; a+; g+;
+	17 1&20 1: [with >]2g+~;
+	17 2&20 2: [with >]16c+;; 8; 16;; 8;
+	18: [with >]8cgc+g+; r; 4;
+	19: [with >]8c-g-g; r; 4;
+	21: [with >]8c+; r; 4;
+	2,5,7-8,10-12: mr;
+
+	mussym above 1: 1 "acc_gt";
+	mussym below 1: 1 "acc_gt";
+	mussym above 17: 1 "tr" til 1m+2.8;
+	mussym above 20: 1 "tr" til 1m+2.8;
+
+	rom above 6: 1.7 "a2";
+	ital below 3,4,6 dist 0: 1.3 "subito";
+	ital between 15&16: 1.3 "subito";
+	ital below 18,19: 1.3 "subito";
+	ital below 21: 1 "subito";
+
+	DYN1(1 dist 0,0.7,ff)
+	DYN1(1 dist 0,2,f)
+	DYN1(3\,4\,6\,9 dist 0,0.7,f)
+	DYN2(1,ff)
+	DYN1(17\,20\,21 dist 0,0.7,f)
+	DYN3(17\,20 dist 0,0.7,f)
+	DYN1(18\,19 dist 0,0.7,ff)
+
+	octave above 15: 0.8 "8" til 7m+2.8;
+	phrase above 1: 1(-2) til 1;
+	phrase below 1: 1(-2) til 1;
+
+	bar
+
+// bar 34
+
+staff 6
+	vscheme = 1
+
+music
+	1 1: 8g6;;;;
+	1 2: 8c6;;;;
+	3: 8c+c6;;;;
+	4: 8gg+;;;;
+	6: 8c+;;;;
+	9: 2g+;
+	15-16: 16a+; g+; a+; g+; a+; g+; a+; g+;
+	17 1&20 1: 2g+;
+	17 2&20 2: 16c+;; 8; 16;; 8;
+	2,5,7-8,10-12,18-19,21: mr;
+
+	DYN1(9 dist 0,2.8,pp)
+
+	> below 9: 1 til 2.5;
+	bar
+
+// bar 35
+
+staff 4
+	vscheme = 2f
+
+staff 20
+	clef = bass
+
+music
+	1 1: 8c6;; g6;;
+	1 2: mr;
+	4 1: 8c+;; g+;;
+	4 2: 8c+;; g;;
+	6: 8c+;;;;
+	15-16: 16a+; g+; a+; g+; a+; g+; a+; g+;
+	17: 2c+~;
+	18: 8c+;; b#;;
+	19: 8c;; b#-;;
+	20: 2c+~;
+	2-3,5,7-12,21: mr;
+
+	DYN3(1,1,p)
+	DYN1(4\,6,1,mp)
+	DYN1(17\,20,1,p)
+	DYN1(18-19,1,mp)
+
+	ital between 15&16: 1 "\s(14)dim.";
+	rom above 17,20: 1 "unis.";
+
+	mussym above 17,20: 1 "tr" til 1m+2.8;
+
+	bar
+
+// bar 36
+	1 1: 8c6;; g6;;
+	1 2: mr;
+	4 1: 8c+;; g+;;
+	4 2: 8c+;; g;;
+	6: 8c+;;;;
+	15-16: 16a+; g+; a+; g+; a+; g+; a+; g+;
+	17,20: 2c+;
+	18: 8bn;; a#;;
+	19: 8bn-;; a#-;;
+	2-3,5,7-12,21: mr;
+
+	bar
+
+// bar 37
+
+staff 18
+	beamstyle = 2
+
+staff 19
+	beamstyle = 2
+
+music
+	1 1: 8c6;; g6;;
+	1 2: mr;
+	4 1: 8c+;; g+;;
+	4 2: 8c+;; g;;
+	6: 8c+;;;;
+	15-16: 16a+; g+; a+; g+; a+; g+; a+; g+;
+	17,20: 8c+; r; 4;
+	18: 8anc+; gb#; gnbn; fa#;
+	19: 8an-c; g-b#-; gn-bn-; f-a#-;
+	2-3,5,7-12,21: mr;
+
+	DYN1(17\,20,1,p)
+	rom above 18-19: 1 "div.";
+
+	bar
+
+// bar 38
+	1 1: 8c6;; g6;;
+	1 2: mr;
+	4 1: 8c+;; g+;;
+	4 2: 8c+;; g;;
+	6: 8c+;;;;
+	15-16: 16a+; g+; a+; g+; a+; g+; a+; g+;
+	18: 8fnan; eg; dgn; dnf#;
+	19: 8fn-an-; e-g-; d-gn-; dn-f#-;
+	2-3,5,7-12,17,20-21: mr;
+
+	bar
+
+// bar 39, section 30
+	1 1: 8c6; c+; 4r;
+	1 2: mr;
+	4 1: 8c+; r; 16c; fx; 8g;
+	4 2: 8g;; 4r;
+	6: 8c+;; 4r;
+	15-16: 16gn+; a+; g+; a+; f+; g#+; f+; g+;
+	17 1&20 1: 4r; [with "\(wedge)"]8c; []g;
+	17 2&20 2: 4s; [with "\(wedge)"]8c; [];
+	18: 8c;; 4r;
+	19: 8c-;; 4r;
+	2-3,5,7-12,21: mr;
+
+	rom above 17,20: 1.7 "div.";
+	rom above 18-19: 1 "unis.";
+	DYN1(1\,6 dist 0,1.5,p)
+	DYN3(4 dist 0,2,p)
+	DYN1(17\,20 dist 0,1.7,p)
+
+	phrase above 4: 2 til 2.5;
+
+	bar
+
+// bar 40
+	4 1: 16c; g; 8a; 16c; a; 8a#;
+	4 2: mr;
+	15-16: 16fn+; gn+; f+; g+; e+; f#+; e+; f+;
+	// FIXME: At this measure, Violin I and Cello has difference in split?
+	17 1&20 1: [with "\(wedge)"]...8c; ga; c; ga#;
+	17 2&20 2: [with "\(wedge)"]...8c;;;;
+	1-3,5-12,18-19,21: mr;
+
+	phrase above 4: 1 til 1.5; 2 til 2.5;
+
+	bar
+
+// bar 41
+	4 1: 16e; g; 8an; 16e; a; 8a#;
+	4 2: mr;
+	15: 16d6; e#6; d6; e6; dn6; en6; d6; e6;
+	16: 16d+; e#+; d+; e+; dn+; en+; d+; e+;
+	17 1&20 1: [with "\(wedge)"]8e; [ho -5; with "\(wedge)"]gan; [with "\(wedge)"]e; []a#;
+	17 2&20 2: [with "\(wedge)"]...8e; eg; e; eg;
+	1-3,5-12,18-19,21: mr;
+
+	phrase above 4: 1 til 1.5; 2 til 2.5;
+	< above 4: 1 til 1m+2.8;
+	< below 17,20: 1 til 1m+2.8;
+
+	bar
+
+// bar 42
+	4 1: 16g; a#; 8b; 16g; b; 8b#;
+	4 2: mr;
+	15: 16c6; d#6; c6; d6; b#+; dn6; b+; d6;
+	16: 16c+; d#+; c+; d+; b#; dn+; b; d+;
+	17 1&20 1: [with "\(wedge)"]...8g; b; g; b#;
+	17 2&20 2: [with "\(wedge)"]...8g;;;;
+	1-3,5-12,18-19,21: mr;
+
+	phrase above 4: 1 til 1.5; 2 til 2.5;
+
+	bar
+
+// bar 43
+
+staff 20
+	vscheme = 1
+
+music
+	4 1: [with >]8c+; r; 4;
+	4 2: mr;
+	6: 4r; 8g-;;
+	15: 16c6; e6; d#6; c6; b+; a+; g+; gn+;
+	16: 16c+; e+; d#+; c+; b; a; g; gn;
+	17 1&20: [with >]8c+;; 4r;
+	17 2: [with >]8g;; 4r;
+	18: 4r; 16g;; 8;
+	19: 4r; 16e;; 8;
+	21: 4r; [with .]8g; r;
+	1-3,5,7-12: mr;
+
+	ital between 15&16: 1.8 "\s(14)dim.";
+	rom above 18-19 dist 0: 1.8 "arco";
+	rom above 20: 1 "unis.";
+
+	DYN1(17\,20 dist 0,1,mf)
+	DYN1(6\,18-19\,21 dist 0,2,mf)
+
+	bar
+
+// bar 44
+
+score
+	time = 3/4
+	beamstyle = 4,4,4
+
+staff 4
+	vscheme = 1
+
+staff 20
+	vscheme = 2f
+
+staff 21
+	beamstyle = 2,4 r
+
+music
+	6: 8a#-; a-; b#-; b-; cg; eg;
+	12: 4r;; 8b;;
+	15: 16f+; e6; d6; c6; fn+; e+; d+; dn+; c+; g; e; c;
+	16: 16f; e+; d+; c+; fn; e; d; dn; <<staff clef=bass>>c+; g; e; c;
+	17 1: 4r;; 8g-;;
+	17 2: 4s;; 8g-;;
+	18: 16g-;; 8; 16;; 8; 4r;
+	19: 16e-;; 8; 16;; 8; 4r;
+	20 1: 4r;; 8e;;
+	20 2: 4s;; 8c;;
+	21: [with .]8a#; r; [with .]b#; r; 4;
+	1-5,7-11: mr;
+
+	rom above 12 dist 0: 2.7 "T.Mil.";
+	rom above 17,20 dist 0: 2.8 "pizz.";
+	rom above 20 dist 0: 2.8 "div.";
+
+	DYN1(6\,12\,17\,20 dist 0,2.85,p)
+	DYN2(2.85,p)
+	> below 6,18-19: 1 til 2.5;
+	> below 21: 1 til 2;
+	< below 6,12,17,20: 3 til 3.8;
+	< between 15&16: 3 til 3.8;
+
+	bar
+
+// bar 45, section 31
+
+staff 6
+	beamstyle = 4,2 r
+
+music
+	3: 4r; 8cfn; fa; ac+; fa;
+	6: [with >]8fna; ac+; c+fn+; r; f+; r;
+	12: [with >]4b; r;;
+	15-16: [with >]16b-; c; b-; c; b-; e; fn; b; b; a; g; gn;
+	17 1: [with >]8a-; c; fn; a; c+; a;
+	17 2: [with >]8a-;; c; f; a; f;
+	20 1: [with >]8fn;; a; c+; fn+; c+;
+	20 2: [with >]8c; f; a; c+; fn+; c+;
+	21: [with >]8c; r; 4;;
+	1-2,4-5,7-11,18-19: mr;
+
+	DYN1(3 dist 0,2,mp)
+	DYN1(6\,12\,17\,20-21 dist 0,1,mp)
+	DYN2(1,mf)
+
+	< below 3: 2.5 til 3.8;
+	< below 6: 2 til 3.5;
+	< below 17,20: 2 til 3.8;
+
+	bar
+
+// bar 46
+
+score
+	time = 2/4
+	beamstyle = 4,4
+
+staff 1
+	vscheme = 1
+
+music
+	3: [with >]8gfn+; []ge+; 4r;
+	4: 4r; 16g-; fx-; 8g-;
+	6: [with >]8c+fn+; []c+e+; 4r;
+	12: 4r; 16b;; 8;
+	15-16: 16c+; b; a; g#; g+; e+; c+; a;
+	17 1&20 1: [with >]8fn+; []e+; 4r;
+	17 2: [with >]8g; []; 4s;
+	18: 4r; 8g-;;
+	19: 4r; 8c-e-;;
+	20 2: [with >]8c+; []; 4r;
+	1-2,5,7-11,21: mr;
+
+	rom above 4 dist 0: 1.8 "a2";
+	rom above 18-19 dist 0: 1.8 "pizz.";
+	rom above 19 dist 0: 1.3 "div.";
+
+	DYN1(3\,6\,17\,20 dist 0,1,f)
+	DYN1(4\,12\,18-19 dist 0,1.7,p)
+
+	phrase below 4: 2 til 2.5;
+	> between 15&16: 1 til 1.8;
+	< between 15&16: 2 til 2.8;
+	< below 4,12,18-19: 2 til 2.8;
+
+	bar
+
+// bar 47
+
+score
+	time = 3/4
+	beamstyle = 4,4,4
+
+music
+	4: 16e-; b&-; e; b&; e; b; e+; b; [with .]8gn+; []gne+;
+	12: [with >]4b; r;;
+	15: [with >]16g; b&; g; b; g; cn+; e+; b&+; b+; a+; a&+; gn+;
+	16: [with >]16g; b&; g; b; g; cn+; \
+	    <<staff clef=treble>>e; b&; b; a; a&; gn;
+	18: [with >]8b&-; e; b&; e+; gn+; e+;
+	19: [with >]8cn-e-; e-b&-; b-e; eb&; d&b; cngn;
+	21: [with >]8cn; r; 4;;
+	1-3,5-11,17,20: mr;
+
+	DYN1(4\,12\,18\,21,1,mp)
+	DYN2(1,mf)
+	< below 4,18-19: 2 til 3.8;
+	phrase above 4: 1 til 3;
+
+	bar
+
+// bar 48
+
+score
+	time = 2/4
+	beamstyle = 4,4
+
+music
+	4: [with >]8cn+a+; c+a&+; 4r;
+	6: 4r; 8dna; fna;
+	12: 4r; 8b;;
+	15: 16cn6; b&+; a+; a&+; dn+; a; fn; dn;
+	16: 16cn+; b&; a; a&; <<staff clef=bass>>dn+; a; fn; dn;
+	17: 4r; 8a-;;
+	18: [with >]8cn+a+; []c+a&+; 4r;
+	19: [with >]8fna; []a&; 4r;
+	20: 4r; 8dnfn; df;
+
+	rom above 17: 1.8 "unis.";
+	rom above 19: 0.5 "non div.";
+	DYN1(4\,18\,19,1,f)
+	DYN1(6\,12\,17\,20,2,p)
+
+	< below 6,12,17,20: 2.2 til 2.8;
+	> between 15&16: 1 til 1.8;
+	< between 15&16: 2 til 2.8;
+	bar
+
+// bar 49, section 32
+	3: 4r; 8dnf; fb&;
+	6: [with >]8f#b&; bdn+; d+f+; r;
+	12: [with >]4b; r;
+	15-16: [with >]16cn; dn; c; b; cn+; b&; a; g;
+	17 1: [with >]8b&-; dn; f; b&;
+	17 2: [with >]8b&-; b-; d; f;
+	20 1: [with >]8f#; f; b&; dn+;
+	20 2: [with >]8dn; f; 4s;
+	21: [with >]8dndn+; r; 4;
+	1-2,4-5,7-11,18-19: mr;
+
+	rom above 17: 0.5 "div.";
+	rom above 20: 1.8 "unis.";
+
+	DYN1(6\,12\,17\,20-21,1,mp)
+	DYN1(3,2,mf)
+	DYN2(1,mf)
+
+	< below 3 dist 5: 2.3 til 2.8;
+	< below 6: 1.3 til 2.5;
+	< below 17,20: 1.3 til 2.8;
+
+	bar
+
+// bar 50
+
+staff 17
+	vscheme = 1
+
+staff 20
+	vscheme = 1
+
+music
+	3,17: [with >]8af+; []afn+; 4r;
+	4: 4r; 16a-; g-; 8a-;
+	6,20: [with >]8dn+f+; []d+fn+; 4r;
+	12: 4r; 16b;; 8;
+	15-16: 16dn+; cn+; b&; a; a+; fn+; d+; b;
+	18: 4r; 8a-;;
+	19: 4r; 8dn-fn-; d-f-;
+	1-2,5,7-11,21: mr;
+
+	rom above 17: 0.5 "non div.";
+	rom above 4: 2 "a2";
+	rom above 19: 1.8 "div.";
+	rom above 20: 0.5 "div.";
+
+	DYN1(3\,6\,17\,20,1,f)
+	DYN1(4\,12\,18-19,2,p)
+
+	phrase below 4: 2 til 2.5;
+	< below 4,12,18-19: 2.2 til 2.9;
+
+	bar
+
+// bar 51
+
+score
+	time = 1/4
+	beamstyle = 4
+
+music
+	4: [with >]16b-; e#; b; e#+;
+	12: [with >]8b; r;
+	15: [with >]16a; bn; a; b+;
+	16: [with >]16a; bn; a; <<staff clef=treble>>b;
+	18: [with >]8b-e#; be#+;
+	19: [with >]8c-e#-; b-e#;
+	21: [with >]8c; r;
+	1-3,5-11,17,20: mr;
+
+	ital between 15&16: 1.5 "\s(14)cresc.";
+	rom above 18: 0.5 "div.";
+
+	DYN1(4\,12\,18-19\,21,1,mp)
+
+	phrase above 4: 1 til 1m+1;
+	< below 4,18-19: 1.2 til 1.9;
+
+	bar
+
+// bar 52
+
+score
+	time = 2/4
+	beamstyle = 4,4
+
+staff 19
+	vscheme = 2f
+
+music
+	1: [with >]8a#6; []an6; 4r;
+	3: 4r; [with >]8a#; [with .]an;
+	4: [with >]8c+a#+; c+an+; 4r;
+	6: 4r; [with >]8f#+; [with .]f+;
+	15: 16b+; a#+; an+; f#+; b6; a#6; b#+; c6;
+	16: 16b; a#; an; f#; b+; a#+; b#; c+;
+	17: 4r; [with >]16a#; a; [with .]8an;
+	18: [with >]8c+a#+; []c+an+; 4r;
+	19 1: [with >]8a#; []an; 4r;
+	19 2: [with >]8f; []an; 4s;
+	20: 4r; [with >]16f#+; f+; [with .]8;
+	2,5,7-12,21: mr;
+
+	rom above 1: 0.5 "1.";
+	rom above 3,6: 1.8 "a2";
+	rom above 17: 1.8 "arco";
+	rom above 18: 0.5 "non div.";
+	rom above 20: 1.3 "unis.";
+	rom above 20: 1.3 "arco";
+
+	DYN1(1\,4\,18-19,1,f)
+	DYN1(3\,6\,17\,20,2,f)
+
+	bar
+
+// bar 53
+
+staff 19
+	vscheme = 1
+
+music
+	7: [with >]8f#; e#; f; e;
+	15: [with >]16dn+; c+; d+; c+; d+; c+; d+; c+;
+	16: [with >]16dn; c; d; c; d; c; d; c;
+	18-19: [with >]8f; e#; f; e;
+	1-6,8-12,17,20-21: mr;
+
+	rom above 7: 0.5 "1.";
+	rom above 19: 0.5 "unis.";
+	ital below 7,18-19: 1.9 "\s(14)dim.";
+	ital between 15&16: 1.9 "\s(14)dim.";
+
+	DYN1(7\,18-19,1,f)
+	DYN2(1,f)
+
+	bar
+
+// bar 54
+	7: 8f#; e#; f; e;
+	15: 16dn+; c+; fx; g; a; b; c+; d+;
+	16: 16dn; c; fx-; g-; a-; b-; c; d;
+	18: 8f; e#; f; e;
+	19: 8f; e#; 4r;
+	1-6,8-12,17,20-21: mr;
+
+	DYN1(7,2.5,pp)
+
+	bar
+
+// bar 55, section 33
+newscore
+
+score
+	bracket = 1-6, 7-10, 17-21, \
+		  1-2 ("\s(12)Fl.", "\s(12)Fl.")
+
+staff 1
+	label = "\s(-1)1."
+	label2 = "\s(-1)1.";
+
+staff 2
+	label = "\s(-1)2."
+	label2 = "\s(-1)2.";
+
+staff 18
+	beamstyle = 2r
+
+staff 19
+	beamstyle = 2r
+
+staff 21
+	beamstyle = 2r
+
+music
+	1: [with .,>]16d+; [with .]...d+;; g+; c+;;; a+;
+	2: 16d+; g; d+; g+; c+; a; c+; a+;
+	4: [with >]8dg;; ca;;
+	6: [with >]8eg;; b-a;;
+	15: [with >]16d#+; g+; d+; g; [with >]a; f+; c+; f;
+	16: [with >]16d#; g; d; g-; [with >]a-; f; c; f-;
+	18: 8r; dgd+; r; cac+;
+	19: 8r; e-g-d; r; a-ca;
+	21: [with .,>]8e+; r; [with .]b; r;
+	3,5,7-12,17,20: mr;
+
+	mussym above 2: 1 "acc_gt";
+	rom above 21: 0.5 "arco";
+
+	DYN1(1-2,1,mp)
+	DYN1(4\,6\,21,1,p)
+	DYN2(1,p)
+	DYN1(18-19,1.5,p)
+
+	phrase above 2: 1 til 2.75;
+
+	bar = _bar0
+
+// bar 56
+	1: [with .,>]16d+; [with .]...d+;; g+; c+;;; a+;
+	2: 16d+; g; d+; g+; c+; a; c+; a+;
+	4: 8dg;; ca;;
+	6: 8eg;; b-a;;
+	13 1: [with >; =_ossia1]16d+; g+; d+; g; [with >]a; f+; c+; r;
+	13 2: [with >]16d; g; d; g-; [with >]a-; f; c; f-f;
+	15: [with >; =_pfte1]16d+; g+; d+; g; [with >]a; f+; c+; f;
+	16: [with >]16d; g; d; g-; [with >]a-; f; c; f-;
+	18: 8r; dgd+; r; cac+;
+	19: 8r; e-g-d; r; a-ca;
+	21: [with .]8e+; r; [with .]b; r;
+	3,5,7-12,17,20: mr;
+
+	rom above 13: 0 "Ossia";
+	mussym above 2: 1 "acc_gt";
+
+	phrase above 2: 1 til 2.75;
+
+	bar =_bar1
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+
+// bar 57
+	1: [with .]...16d+;; e+; g+; d+;; c+; a+;
+	2: 16d+; g; e+; g+; d+; a; c+; a+;
+	4: 8dg;; ca;;
+	6: 8eg;; b-a;;
+	13 1: [with > ; =_ossia1]16d+d6; g+; e+; b; [with >]a; f+; c+; r;
+	13 2: 16r; g; e; b-; [with >]a-; f; c; f-f;
+	15: [with >; =_pfte1]16d6; g+; e+; b; [with >]a; f+; c+; f;
+	16: [with >]16d+; g; e; b-; [with >]a-; f; c; f-;
+	18: 8r; ge+; r; cac+;
+	19: 8r; e-g-d; r; a-ca;
+	21: [with .]8e+; r; [with .]b; r;
+	3,5,7-12,17,20: mr;
+
+	phrase above 2: 1 til 2.75;
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 58
+	1: [with .]...16d+;; e+; g+; d+; c+; 8a+;
+	2: 16d+; g; e+; g+; d+; a; c+; a+;
+	4: 8dg; dng; ca;;
+	6: 8eg;; b-a;;
+	13 1: [with >; =_ossia1]16d+d6; g+; e+; b; [with >]a; f+; c+; r;
+	13 2: 16r; g; e; b-; [with >]a-; f; c; f-f;
+	15: [with >; =_pfte1]16d6; g+; e+; b; [with >]a; f+; c+; f;
+	16: [with >]16d+; g; e; b-; [with >]a-; f; c; f-;
+	18: 8r; ge+; r; cac+;
+	19: 8r; e-g-dn; r; a-ca;
+	21: [with .]8e+; r; [with .]b; r;
+	3,5,7-12,17,20: mr;
+
+	phrase above 2: 1 til 2.75;
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 59
+	1: [with .]...16e+;;; a+; d+;;; b+;
+	2: 16e+; a; e+; a+; d+; b; d+; b+;
+	3: 16a; e+; 8a+; 16b; d+; 8b+;
+	4: 8ea;; db;;
+	6: 8fa;; cb;;
+	13 1: [with >; =_ossia1]16e+; a+; e+; a; [with >]b; g+; d+; g;
+	15: [with >; =_pfte1]16e+; a+; e+; a; [with >]b; g+; d+; g;
+	13 2&16: [with >]16e; a; e; a-; [with >]b-; g; d; g-;
+	18: 8r; a-eae+; r; dbd+;
+	19: 8r; f-a-ea; r; c-b-;
+	21: [with .]8f+; r; [with .]c+; r;
+	5,7-12,17,20: mr;
+
+	rom above 3 dist 0: 0.5 "1.";
+
+	DYN1(1-2,1,mp)
+	DYN1(3,1,pp)
+	DYN1(4\,6\,21,1,p)
+	DYN2(1,p)
+	DYN1(18-19,1.2,p)
+	phrase above 2: 1 til 2.75;
+	phrase above 3: 1 til 1.5; 2 til 2.5;
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 60
+	1: [with .]...16e+;;; a+; d+;;; b+;
+	2: 16e+; a; e+; a+; d+; b; d+; b+;
+	3: 16a; e+; 8a+; 16b; d+; 8b+;
+	4: 8ea;; db;;
+	6: 8fa;; cb;;
+	13 1: [with >; =_ossia1]16e+; a+; e+; a; [with >]b; g+; d+; r;
+	13 2: [with >]16e; a; e; a-; [with >]b-; g; d; g-g;
+	15: [with >; =_pfte1]16e+; a+; e+; a; [with >]b; g+; d+; g;
+	16: [with >]16e; a; e; a-; [with >]b-; g; d; g-;
+	18: 8r; a-eae+; r; dbd+;
+	19: 8r; f-a-ea; r; c-b-;
+	21: [with .]8f+; r; [with .]c+; r;
+	5,7-12,17,20: mr;
+
+	phrase above 2: 1 til 2.75;
+	phrase above 3: 1 til 1.5; 2 til 2.5;
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 61, section 34
+	1: [with .]...16e+;; f+; a+; e+;; d+; b+;
+	2: 16e+; a; f+; a+; e+; b; d+; b+;
+	3: [with .]8e+; []f+; e+<>; d+;
+	4: 8ea;; db;;
+	6: 8fa;; cb;;
+	13 1: [with >; =_ossia1]16e+e6; a+; f+; c+; [with >]b; g+; d+; r;
+	13 2: 16r; a; f; c; [with >]b-; g; d; g-g;
+	15: [with >; =_pfte1]16e6; a+; f+; c+; [with >]b; g+; d+; g;
+	16: [with >]16e+; a; f; c; [with >]b-; g; d; g-;
+	18: 8r; af+; r; dbd+;
+	19: 8r; f-a-ea; r; c-b-;
+	21: [with .]8f+; r; [with .]c+; r;
+	5,7-12,17,20: mr;
+
+	phrase above 2: 1 til 2.75;
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 62
+	1: [with .]...16e+;; f+; a+; d+;; 8b+;
+	2: 16e+; a; f+; a+; d+; b; 8b+;
+	3: 8e+<>; f+; [with .]d+; []b+;
+	4: 8ea;; db;;
+	6: 8fa;; cb;;
+	13 1: [with >; =_ossia1]16e+e6; a+; f+; c+; [with >]b; g+; d+; r;
+	13 2: 16r; a; f; c; [with >]b-; g; d; g-g;
+	15: [with >; =_pfte1]16e6; a+; f+; c+; [with >]b; g+; d+; g;
+	16: [with >]16e+; a; f; c; [with >]b-; g; d; g-;
+	18: 8r; af+; r; dbd+;
+	19: 8r; f-a-ea; r; c-b-;
+	21: [with .]8f+; r; [with .]c+; r;
+	5,7-12,17,20: mr;
+
+	phrase above 2: 1 til 2.75;
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 63, section 34
+
+newscore
+
+score
+	key = f major
+	bracket = 1-6, 7-10, 17-21, \
+		  4-5 ("\s(12)Cl.\nin Si\(smflat)", "\s(12)Cl.\nin Si\(smflat)"), \
+		  9-10 ("\s(12)Tr.\nin Do", "\s(12)Tr.\nin Do")
+	brace =	15-16 ("\s(12)Pfte.", "\s(12)Pfte."), \
+		13-14 ("\s(10)Ossia", "\s(10)Ossia")
+
+staff 1
+	label = "Fl."
+	label2 = "Fl."
+
+staff 2
+	label = ""
+	label2 = ""
+
+staff 4
+	label = "\s(-1)1."
+	label2 = "\s(-1)1."
+
+staff 5
+	label = "\s(-1)2."
+	label2 = "\s(-1)2."
+
+staff 9
+	label = "\s(-1)1."
+	label2 = "\s(-1)1."
+
+staff 10
+	label = "\s(-1)2."
+	label2 = "\s(-1)2."
+
+staff 17
+	beamstyle = 2
+
+staff 18
+	beamstyle = 2
+
+staff 19
+	beamstyle = 2
+
+staff 20
+	beamstyle = 2
+
+staff 21
+	beamstyle = 2
+
+music
+// use pad because dynamic for clarinet sticks too close with stave below
+	1: [pad 6]16a+; d6; 4.a6~;
+	4: [with >]16d+; a+; d+; a+; d+; a+; d+; a+;
+	5: 16d+; a; d+; a; d+; a; d+; a;
+	6: [with >]2dd+;
+	9: [with .]8d+; [with >]4.a+;
+	12: 2b~;
+	15-16: [with >]16b+; a+; b+; a+; b+; a+; b+; a+;
+	17: [with >]8a-daa+; r; daa+;;
+	18: [with >]8a-dd+a+; r; dd+a+;;
+	19: [with >]8d-a-da; r; da;;
+	20: [with >]8da; r; d+;;
+	21: [with >]8d+; r; 4;
+	2-3,7-8,10-11: mr;
+
+	rom above 9,17,20 dist 0: 0 "senza\nsord.";
+	rom above 9: 1 "solo"; 1.5 "ten.";
+	rom above 10 dist 0: 2.8 "con\nsord.";
+	rom above 12: 0 "Piatti";
+	ital below 1,4-6,18,19,21 dist 0: 1.1 "subito";
+	ital between 15&16: 1 "subito";
+	rom above 17,20,21 dist 0: 1 "pizz.";
+	rom above 1: 1 "a2";
+
+	DYN1(4-6\,17-21 dist 0,0,ff)
+	DYN1(1 dist -2!,0,ff)
+	DYN1(9,1,f)
+	DYN1(12,1,mf)
+	DYN2(0,ff)
+
+	mussym above 5: 1 "acc_gt";
+
+	phrase above 1,4: 1 til 1m+1;
+	phrase above 5: 1 til 2m+1;
+	octave above 15: 1 "8" til 2m+1.85;
+
+	bar
+
+// bar 64
+	1: 4.a6; 8r;
+	4: [with " "]8d+; r; 4;
+	5: 16d+; a; d+; a; d+; a; d+; a;
+	10: [with .]8d+; [with >]4.a+;
+	12: 4b; r;
+	15-16: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	17: 8daa+;;;;
+	18: 8dd+a+;;;;
+	19: 8da;;;;
+	20: 8d+;;;;
+	2-3,6-9,11,21: mr;
+
+	rom above 10: 1 "solo"; 1.5 "ten.";
+
+	DYN1(10 dist 0,1,f)
+	> below 1: 1 til 2.25;
+	> below 4-5,17-20: 1 til 2.75;
+	> between 15&16: 1 til 2.75;
+
+	bar
+
+// bar 65
+	3: [with .]8d+; [with >]4.a+;
+	4: 16d; a-; d; a-; 8d; r;
+	5: 8d; r; 4;
+	15: 16b+; a+; g+; f+; e6; d6; c6; b+;
+	16: 16b+; a+; g+; f+; e+; d+; c+; b;
+	17: 8aa+;; d+; aa+;
+	18: 8dd+;;;;
+	19: 8da;;;;
+	20: 8d+;;;;
+	1-2,6-12,21: mr;
+
+	rom above 3: 0.3 "a2"; 1.5 "ten.";
+
+	DYN1(3 dist 0,1,f)
+	DYN1(4-5 dist 0,1,p)
+	DYN2(1,p)
+	DYN1(17-20 dist 0,1,p)
+
+	phrase below 4: 1 til 2;
+
+	bar
+
+// bar 66
+	1: [with .]8g+; 16b; e&+; 8g; e&;
+	4: [with .]8e&+; 16g; b; 8e&; b-;
+	5: [with .]8b; 16e&; g; 8b-; g-;
+	6: [with .]8g+; 16b; e&+; 8g; e&;
+	15: 16c6; e&6; b+; f6; e6; c6; b+; g+;
+	16: 16c+; e&+; b; f+; e+; c+; b; g;
+	17: [with >]8g+; e&+; b; g;
+	18: [with >]8e&+; b; g; e&;
+	19: [with >]8b; g; e&; b-;
+	20: [with >]8g+; e&+; b; g;
+	2-3,7-12,21: mr;
+
+	// "a2" mark for flute moved to 3 measures earlier
+	rom above 6 dist 0: 0.3 "a2";
+
+	DYN1(1 dist 0,1,f)
+	DYN1(4-6\,17-20 dist 0,1,mf)
+	DYN2(1,f)
+
+	phrase above 1,4,6: 1.5 til 2.5;
+	phrase below 5: 1.5 til 2.5;
+
+	bar
+
+// bar 67
+	15: 16bn+; g#+; c#+; b+; g+; e+; g#; c+;
+	16: 16bn; g#; c#; b; g; e; g#-; c;
+	18: 8g#; en; c#; g#-;
+	19: 8en; c#; g#-; e-;
+	20: 8g#; e; c#; g#-;
+	21: 8c#+; 4g#; 8c#;
+	1-12,17: mr;
+
+	DYN2(1,p)
+	DYN1(18-21 dist 0,1,p)
+
+	bar
+
+// bar 68, section 35
+
+staff 6
+	vscheme = 2f
+
+voice 6 2
+	beamstyle = 2
+
+staff 7
+	vscheme = 2f
+
+staff 16
+	clef = bass
+
+music
+	6 1: 16d+; a; d+; a; d+; a; d+; a;
+	6 2: 8d; a; d; a;
+	7 1: [with .]8d; [with >]4.a;
+	7 2: mr;
+	12: 2b;
+	15-16: [with >]16b&; a; b; a; b; a; b; a;
+	17-18: [with >]8a-da; r; a-da;;
+	19: [with >]8d-a-da; r; a-d;;
+	20: [with >]8a-da; r; da;;
+	21: [with >]8dd+; r; 4;
+	1-5,8-11: mr;
+
+	ital between 15&16: 2.2 "\s(14)dim.";
+	rom above 7: 0.3 "1. Solo"; 1.45 "ten.";
+	rom below 7 dist 0: 2.5 "con\nsord.";
+	rom above 12: 1 "Piatti";
+	DYN1(6-7\,17-21,1,f)
+	DYN1(12 dist 0,1,p)
+	DYN2(1,f)
+	mussym above 6: 1 "acc_gt";
+	mussym below 6: 1 "acc_gt";
+
+	> below 6: 1.2 til 2.8;
+	> below 17-20: 2 til 2.8;
+	phrase above 6: 1 til 1m+1;
+	phrase below 6: 1 til 1m+2;
+	bar
+
+// bar 69
+
+voice 6 2
+	beamstyle = 4,4
+
+music
+	6 1: 8d+; r; 4;
+	6 2: 8d; a; d; r;
+	7 1: mr;
+	7 2: [with .]8d; [with >]4.a;
+	15-16: 16b; a; b; a; b; a; b; a;
+	17-18: 8a-da;;;;
+	19: 8a-d;;;;
+	20: 8da;;;;
+	1-5,8-12,21: mr;
+
+	rom below 7: 0.3 "2. Solo"; 1.45 "ten.";
+	// "con sord" below Horn moved to previous measure
+
+	DYN3(7 dist 0!,1,f)
+	DYN1(6\,17-20,1,mp)
+
+	> below 6: 1.5 til 2.1;
+	> below 17-20: 1.5 til 2.7;
+
+	bar
+
+// bar 70
+	6 1&6 2: [with .]8d+; [with >]4.a+;
+	15-16: 16b; a; g; f; e; d; c; b-;
+	17-18: 8da;; d; da;
+	19: 8a-d;;;;
+	20: 8da;;;;
+	1-5,7-12,21: mr;
+
+	rom above 6: 1.45 "ten.";
+	rom below 6: 1.45 "ten.";
+
+	DYN1(6,1,f)
+	DYN2(1,p)
+	DYN1(17-20,1,pp)
+
+	bar
+
+// bar 71
+
+staff 18
+	beamstyle = 4,4
+
+music
+	4: [with .]8g; 16b-; e&; 8g-; e&-;
+	5: [with .]...8e&; g-; b-; g-;
+	15: 16c; e&; b-; f; e; c; <<staff clef=bass>>g; c;
+	16: 16c; e&; b-; f; e; c; g-; c-;
+	17: [with >]8g; e&; b-; g-;
+	18: [with >]8e&; b-; g-; r;
+	19: [with >]8b-; g-; e&-; e-;
+	20: [with >]8g; e&; c; b-;
+	1-3,6-12,21: mr;
+
+	DYN1(4-5\,17-20,1,mf)
+	DYN2(1,mf)
+
+	phrase below 4: 1.5 til 2.5;
+
+	bar
+
+// bar 72, section 36
+
+newscore
+
+staff 19
+	beamstyle = 4,4
+
+music
+	11: 8r; a-; [with >]4d;
+	15: 16a-; b-; bn-; c; [with >]d; a; f; d;
+	16: 16a1; b1; bn1; c-; [with >]d-; a-; f-; d-;
+	19: 8g-; c-; [with >]a-; r;
+	20: 8r; a-; [with >]d; a-;
+	21: 8r; a-; [with >]d; r;
+	1-10,12,17-18: mr;
+
+	DYN1(11\,20-21,1.5,p)
+	DYN2(1,p)
+	DYN1(19,1,p)
+
+	bar
+
+// bar 73
+	11: 4r; 8; a-;
+	15: 16c; b&-; a-; g-; a-; b-; bn-; c;
+	16: 16c-; b&1; a1; g1; a1; b1; bn1; c-;
+	19: 4r; 8g-; c-;
+	20-21: 4r; 8; a-;
+	1-10,12,17-18: mr;
+
+	DYN1(19,2,p)
+	DYN1(11\,20-21,2.5,p)
+
+	bar
+
+// bar 74
+	11: [with >]4d; r;
+	15: [with >]16d; a; f; d; a-; b&-; bn-; c;
+	16: [with >]16d-; a-; f-; d-; a1; b&1; bn1; c-;
+	19: [with >]8a-; r; 4;
+	20: [with >]8d; a-; 4r;
+	21: [with >]8d; r; 4;
+	1-10,12,17-18: mr;
+
+	bar
+
+// bar 75
+	11: 4d; r;
+	15: [with >]16d; a; f; d; a-; b&-; bn-; c;
+	16: [with >]16d-; a-; f-; d-; a1; b&1; bn1; c-;
+	19: 8a-; r; 4;
+	20: 8d; a-; 4r;
+	21: 8d; r; 4;
+	1-10,12,17-18: mr;
+
+	DYN1(11\,19-21 dist 0,1,pp)
+
+	bar
+
+// bar 76
+	15: [with >]16d; a; f; a; d; g; f; e;
+	16: [with >]16d-; a-; f-; a-; d-; g-; f-; e-;
+	1-12,17-21: mr;
+
+	bar
+
+// bar 77
+	15: [with >]16d; a; f; a; d; g; f; e;
+	16: [with >]16d-; a-; f-; a-; d-; g-; f-; e-;
+	1-12,17-21: mr;
+
+	bar
+
+// bar 78
+	15: [with >]16d; a; f; a; [with >]g&; d&+; b; d+;
+	16: [with >]16d-; a-; f-; a-; [with >]g&-; d&; b-; d;
+	1-12,17-21: mr;
+
+	bar
+
+// bar 79
+	15: [with >]16c; gn; e; g; [with >]f; c+; a; c+;
+	16: [with >]16c-; gn-; e-; g-; [with >]f-; c; a-; c;
+	1-12,17-21: mr;
+
+	< between 15&16: 1.5 til 2.8;
+
+	dblbar
+
+// bar 80, section 37
+newscore
+
+score
+	bracket = 1-6, 7-10, 17-21, \
+		  7-8 ("\s(12)Cor.\nin Fa", "\s(12)Cor.\nin Fa")
+	visible = whereused
+
+staff 1
+	beamstyle = 2
+
+staff 3
+	beamstyle = 2
+
+staff 4
+	beamstyle = 2
+	label = "Cl.\nin Si\(smflat)"
+	label2 = "Cl.\nin Si\(smflat)"
+
+staff 5
+	label = ""
+	label2 = ""
+
+staff 6
+	vscheme = 1
+	beamstyle = 2
+
+staff 7
+	vscheme = 1
+	label = "\s(-1)1,2"
+	label2 = "\s(-1)1,2"
+
+staff 8
+	label = "\s(-1)3,4"
+	label2 = "\s(-1)3,4"
+
+staff 9
+	label = "\s(12)Tr.\nin Do"
+	label2 = "\s(12)Tr.\nin Do"
+
+staff 10
+	label = ""
+	label2 = ""
+
+staff 17
+	beamstyle = 4,4r
+
+staff 18
+	vscheme = 2f
+	beamstyle = 4,4r
+
+staff 19
+	vscheme = 2f
+	beamstyle = 4,4r
+
+staff 20
+	beamstyle = 4,4r
+
+staff 21
+	beamstyle = 4,4
+
+music
+	1: 4r; [slash 1; grace]8b6<>; 8b+; r;
+	9,11: [with >]8b&-; r; 4;
+	15: [with >]16b-; d; f; b; f; b; c&+; e&+;
+	16: [with >]16b1; d-; f-; b-; f-; b-; c&; e&;
+	17: 4r; [slash 1; grace; with >]8be&+b6<>; 8b+; r;
+	18 1: [with >]8b-; r;; {[=a]16c&+; d&+; [=b]c+;}3;
+	18 2: 4.s; [with .]8c&+;
+	// C note for viola should be C& instead. This is the case after
+	// several measures.
+	19 1: [with >]8b-; r;; {[=c]16c&; d&; [=d]c;}3;
+	19 2: 4.s; [with .]8c&;
+	20-21: [with >]8b-; r; 4;
+	2-8,10,12: mr;
+
+	DYN1(1,2(-1\),f)
+	DYN1(9\,11,1,mf)
+	DYN2(1,f)
+	DYN1(17 dist 0,2(-1\),f)
+	DYN1(18-21 dist 0,1,f)
+	DYN1(18-19 dist 0,2.5,p)
+
+	rom above 1 dist 0: 1.5 "1.";
+	rom above 9 dist 0: 0.5 "1.";
+	rom above 17 dist 0: 1.5 "arco";
+	rom above 18-21 dist 0: 0.5 "arco";
+	rom above 18-19 dist 0: 2 "div.";
+
+	// mup places accent mark below grace note, which overlaps with
+	// ledger line
+	mussym above 1: 2(-1) "smacc_gt";
+
+	> between 15&16: 2 til 2.8;
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	bar
+
+// bar 81
+
+staff 15
+	clef = treble
+
+music
+	3: 4r; [with >]c#+e+<g>;
+	4: 4r; [with >]g#<e>a#;
+	7: 4r; [with >]c#<g->e;
+	8: 4r; [with >]g#-<g->a#-;
+	15-16: 16d; f; b; d+; b; c&+; b; a&;
+	18 1: 8b; r; 4;
+	18 2: 8b; s; 4;
+	19 1: 8b-; r; 4;
+	19 2: 8b-; s; 4;
+	1-2,5-6,9-12,17,20-21: mr;
+
+	DYN1(3-4\,7-8,2,mp)
+	DYN2(1,p)
+
+	> below 3-4,7-8: 2.4 til 2.9;
+
+	bar
+
+// bar 82
+	3: 8eg; r; 4;
+	4: 8egn; r; 4;
+	7: 8g-bn-; r; 4;
+	8: 8gn-bn-; r; 4;
+	15-16: 16g; f#; e; f; g; a#; bn; a;
+	17: [with .]8g; 16r; [with .]a#; []8bn; []g;
+	18: [with .]8e; 16r; [with .]f#; []8g; []e;
+	19: [with .]8bn-; 16r; [with .]a#-; []8g-; []b-;
+	20: [with .]8g; 16r; [with .]f#; []8e; []g;
+	21: 8e; r; 4;
+	1-2,5-6,9-12: mr;
+
+	rom above 18-19 dist 0: 0.5 "unis.";
+	rom above 21 dist 0: 0.5 "pizz.";
+
+	DYN1(3-4\,7-8\,17-21 dist 0,1,p)
+
+	bar
+
+// bar 83
+
+staff 16
+	clef = treble
+
+music
+	3: [with .]...8bn+; c+; c6; bn;
+	6: [with .]...8bn; c; c+; bn-;
+	15: 16bn; d#+; e+; d+; e+; g+; a&+; g+;
+	16: 16bn-; d#; e; d; e; g; a&; g;
+	1-2,4-5,7-12,17-21: mr;
+
+	rom above 3,6: 0.5 "a2";
+
+	DYN1(3,1,p)
+	DYN1(6,1,mp)
+
+	bar
+
+// bar 84
+	1: 4r; [slash 1; grace]8b6<>; b+; r;
+	9,11: [with >]8b&-; r; 4;
+	15: 16b+; d6; f6; d6; b+; f+; c&+; e&+;
+	16: 16b; d+; f+; d+; b; f; c&; e&;
+	17: 4r; [slash 1; grace; with >]8be&+b6<>; b; r;
+	18 1: [with >]8b-; r;; {[=a]16c&+; d&+; [=b]c+;}3;
+	18 2: 4.s; [with .]8c&+;
+	19 1: [with >]8b-; r;; {[=c]16c&; d&; [=d]c;}3;
+	19 2: 4.s; [with .]8c&;
+	20-21: [with >]8b-; r; 4;
+	2-8,10,12: mr;
+
+	DYN1(1,2(-1\),f)
+	DYN1(9\,11,1,mf)
+	DYN2(1,f)
+	DYN1(17 dist 0,2(-1\),f)
+	DYN1(18-21 dist 0,1,f)
+	DYN1(18-19 dist 0,2.5,p)
+
+	rom above 1 dist 0: 1.5 "1.";
+	rom above 9 dist 0: 0.5 "1.";
+	rom between 15&16: 1.2 "subito";
+	rom above 21 dist 0: 0.5 "arco";
+	rom above 18-19 dist 0: 2 "div.";
+
+	// mup places accent mark below grace note, which overlaps with
+	// ledger line
+	mussym above 1: 2(-1) "smacc_gt";
+
+	> between 15&16: 2 til 2.8;
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	bar
+
+// bar 85
+
+staff 16
+	clef = bass
+
+music
+	3: 4r; [with >]c#+e+<g>;
+	4: 4r; [with >]g#<e>a#;
+	7: 4r; [with >]c#<g->e;
+	8: 4r; [with >]g#-<g->a#-;
+	15: 16d+; b; f; d; <<staff clef=bass>>b; c&+; b; a&;
+	16: 16d+; b; f; d; b-; c&; b-; a&-;
+	18 1: 8b; r; 4;
+	18 2: 8b; s; 4;
+	19 1: 8b-; r; 4;
+	19 2: 8b-; s; 4;
+	1-2,5-6,9-12,17,20-21: mr;
+
+	DYN1(3-4\,7-8,2,mp)
+	DYN2(1,p)
+
+	> below 3-4,7-8: 2.4 til 2.9;
+
+	bar
+
+// bar 86
+	3: 8eg; r; 4;
+	4: 8egn; r; 4;
+	7: 8g-bn-; r; 4;
+	8: 8gn-bn-; r; 4;
+	15: 16g; f#; e; f; g; a#; bn; d#+;
+	16: 16g-; f#-; e-; f-; g-; a#-; bn-; d#;
+	17: [with .]8g; 16r; [with .]a#; []8bn; []g;
+	18: [with .]8e; 16r; [with .]f#; []8g; []e;
+	19: [with .]8bn-; 16r; [with .]a#-; []8g-; []b-;
+	20: [with .]8g; 16r; [with .]f#; []8e; []g;
+	21: 8e; r; 4;
+	1-2,5-6,9-12: mr;
+
+	rom above 18-19 dist 0: 0.5 "unis.";
+	rom above 21 dist 0: 0.5 "pizz.";
+
+	DYN1(3-4\,7-8\,17-21 dist 0,1,p)
+
+	bar
+
+// bar 87
+staff 15
+	clef = treble
+
+music
+	1: [with .]...8e6; f+; f6; e+;
+	6: [with .]...8e+; f; f+; e;
+	15: 16e; g#; a; f+; d+; d#+; e+; e6;
+	16: 16e; g#; a; f+; <<staff clef=treble>>d; d#; e; e+;
+	2-5,7-12,17-21: mr;
+
+	rom above 1,6: 0.5 "a2";
+	DYN1(1,1,p)
+	DYN1(6,1,mp)
+
+	< between 15&16: 2 til 2.8;
+
+	bar
+
+// bar 88, section 38
+	1: 4r; [slash 1; grace]8e&6<>; e&+; r;
+	9,11: [with >]8e&; r; 4;
+	15: 16e&6; b+; g+; e&+; b; g; f&; a&;
+	16: 16e&+; b; g; e&; <<staff clef=bass>>b; g; f&; a&;
+	17: 4r; [slash 1; grace; with >]8e&+a&+e&7<>; e+; r;
+	18 1: [with >]8e&; r;; {[=a]16f&+; g&+; [=b]f+;}3;
+	18 2: 4.s; [with .]8f&+;
+	19 1: [with >]8e&; r;; {[=c]16f&; g&; [=d]f;}3;
+	19 2: 4.s; [with .]8f&;
+	20-21: [with >]8e&; r; 4;
+	2-8,10,12: mr;
+
+	DYN1(1,2(-1\),f)
+	DYN1(9\,11,1,mf)
+	DYN2(1,f)
+	DYN1(17 dist 0,2(-1\),f)
+	DYN1(18-21 dist 0,1,f)
+	DYN1(18-19 dist 0,2.5,p)
+
+	rom above 1 dist 0: 1.5 "1.";
+	rom above 9 dist 0: 0.5 "1.";
+	rom above 21 dist 0: 0.5 "arco";
+	rom above 18-19 dist 0: 2 "div.";
+
+	// mup places accent mark below grace note, which overlaps with
+	// ledger line
+	mussym above 1: 2(-1) "smacc_gt";
+
+	> between 15&16: 2 til 2.8;
+
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	bar
+
+// bar 89
+	3: 4r; [with >]f#+a+<a>;
+	4: 4r; [with >]c#+d#+<a>;
+	7: 4r; [with >]f#a<e>;
+	8: 4r; [with >]c#<c>d#;
+	15-16: 16g; e&; b-; g-; e&-; en-; f-; f#-;
+	18 1: 8e&+; r; 4;
+	18 2: 8e&+; s; 4;
+	19 1: 8e&; r; 4;
+	19 2: 8e&; s; 4;
+	1-2,5-6,9-12,17,20-21: mr;
+
+	DYN1(3-4\,7-8,2,mp)
+	DYN2(1,p)
+	bar
+
+// bar 90
+	3-4: 8fa; r; 4;
+	7: 8ce; r; 4;
+	8: 8cne; r; 4;
+	15-16: 16g-; e; c; f#; bn; a; g; fn;
+	17: [with .]8a; 16r; [with .]b; []8bn; []g;
+	18: [with .]8f; 16r; [with .]g&; []8gn; []e;
+	19: [with .]8en; 16r; [with .]e&; []8c; []en;
+	20: [with .]8c+; 16r; [with .]b; []8a; []c+;
+	21: 8g; r; 4;
+	1-2,5-6,9-12: mr;
+
+	DYN1(3-4\,7-8\,17-21 dist 0,1,p)
+
+	rom above 21 dist 0: 0.5 "pizz.";
+
+	bar
+
+// bar 91
+	1: [with .]...8e6; f+; f6; e+;
+	6: [with .]...8e+; f; f+; e;
+	15: 16e; d; c; bn-; <<staff clef=bass>>a; bn-; c; d;
+	16: 16e; d; c; bn-; a-; bn1; c-; d-;
+	2-5,7-12,17-21: mr;
+
+	rom above 1,6: 0.5 "a2";
+	DYN1(1,1,p)
+	DYN1(6,1,mp)
+
+	bar
+
+// bar 92, section 39
+
+staff 17
+	beamstyle = 2
+
+music
+	3: 4r; {8d; e&; d;}3;
+	9,11: [with >]8e&; r; 4;
+	15: 16e&; g; b&; e&+; <<staff clef=treble>>a; a&; g; e&;
+	16: 16e&-; g-; b&-; e&; a; a&; g; e;
+	17: [with .]...8e&+e&6; f&f&+; f+f&6; e&e+;
+	18-19,21: [with >]8e&; r; 4;
+	20: [with >]8e&; r; {8d+; e&+; d+;}3;
+	1-2,4-8,10,12: mr;
+
+	rom above 3 dist 0: 1.5 "1.";
+	rom above 9 dist 0: 0.5 "1.";
+	rom between 15&16: 1.2 "subito";
+	rom above 17 dist 0: 0.5 "div.";
+	rom above 21 dist 0: 0.5 "arco";
+
+	// cello has 2 "f" dynamics, is this dup?
+	DYN1(3,2,f)
+	DYN1(9\,11\,17,1,mf)
+	DYN2(1,f)
+	DYN1(18-21,1,f)
+
+	> between 15&16: 2 til 2.8;
+	phrase below 3: 2 til 1m+1;
+	phrase above 20: 2 til 2.67;
+
+	bar
+
+// bar 93
+	3: [with .]8d&; r; {dn; e&; d;}3;
+	15-16: 16b; an; a&; f&; c+; c&+; b; g;
+	17: [with .]...8e&+e&6; f&f&+; f+f&6; e&e+;
+	18-19: 8d&; r; 4;
+	20: [with .]8d&+; r; {dn+; e&+; d+;}3;
+	1-2,4-12,21: mr;
+
+	DYN2(1,mp)
+	ital between 15&16: 2 "\s(14)cresc.";
+	rom above 18-19: 0.5 "pizz.";
+
+	phrase below 3: 2 til 1m+1;
+	phrase above 20: 2 til 2.67;
+
+	bar
+
+// bar 94
+staff 16
+	clef = treble
+
+music
+	3: [with .]8d&; r; 4;
+	15: 16d&+; dn+; f&+; g+; an+; g+; fn+; f&+;
+	16: 16d&; dn; f&; g; an; g; fn; f&;
+	17: [with .]...8e&+; f&; f&+; e&;
+	18-19: 8d&; r; 4;
+	20: [with .]8d&+; r; {c&+; b; a&;}3;
+	1-2,4-12,21: mr;
+
+	rom above 17 dist 0: 0.5 "unis.";
+	> below 17: 2 til 1m+1.5;
+	> below 20: 2 til 1m+1;
+	phrase above 20: 2 til 2.67;
+	
+	bar
+
+// bar 95
+	4,6: 4r; {8d&; c; b-;}3;
+	15: 16e&+; f&+; g&+; a&+; gn+; an+; bn+; c6;
+	16: 16e&; f&; g&; a&; gn; an; bn; c+;
+	17: [with .]8e&+; []d; 4r;
+	20: [with .]8g; r; 4;
+	1-3,5,7-12,18-19,21: mr;
+
+	rom above 4,6: 1.5 "a2";
+	DYN1(4\,6,2,f)
+
+	phrase below 4,6: 2 til 1m+1;
+	< between 15&16: 1 til 2.8;
+
+	dblbar
+
+// bar 96, section 40
+
+score
+	key = a& major
+
+music
+	4,6: 8a-; r; 4;
+	15: [with >]16d6; c6; e6; c6;; b+; d6; b+;
+	16: [with >]16d+; c+; e+; c+;; b; d+; b;
+	20-21: [with >]4a-; {[with .]...8f; e; d;}3;
+	1-3,5,7-12,17-19: mr;
+
+	DYN2(1,f)
+	DYN1(20-21,1,mp)
+
+	bar
+
+// bar 97
+	15: 16b+; a+; c6; a+; b+; c6; b+; a+;
+	16: 16b; a; c+; a; b; c+; b; a;
+	20-21: [with .]4c; []g;
+	1-12,17-19: mr;
+
+	bar
+
+// bar 98
+	15: 16g+; f+; a+; f+;; e+; g+; e+;
+	16: 16g; f; a; f;; e; g; e;
+	18: [with >]4f; {[with .]...8d+; c+; b;}3;
+	19: [with >]4f-; {[with .]...8d; c; b-;}3;
+	20-21: [with >]4.f-; 8r;
+	1-12,17: mr;
+
+	rom above 18-19 dist 0: 0.5 "arco";
+	DYN1(18-19,1,p)
+
+	bar
+
+// bar 99
+	15: 16e+; d+; f+; d+; c+; d+; e+; f+;
+	16: 16e; d; f; d; c; d; e; f;
+	18: [with .]4a; []e+;
+	19: [with .]4a-; []e;
+	1-12,17,20-21: mr;
+
+	bar
+
+// bar 100
+	15: 16g+; f+; a+; f+;; e+; g+; e+;
+	16: 16g; f; a; f;; e; g; e;
+	18: [with >]4.d; 8r;
+	19: [with >]4.d-; 8r;
+	20-21: [with >]4d; {[with .]...8b; a; g;}3;
+	1-12,17: mr;
+
+	DYN1(20-21,1,p)
+
+	bar
+
+// bar 101
+	15: 16e+; d+; f+; d+; e+; f+; e+; d+;
+	16: 16e; d; f; d; e; f; e; d;
+	20-21: [with .]4f; []c+;
+	1-12,17-19: mr;
+
+	bar
+
+// bar 102
+	15: 16b; c+; d+; e+; f+; g+; a+; b+;
+	16: 16b-; c; d; e; f; g; a; b;
+	18: [with >]4b-; {[with .]...8g; f; e;}3;
+	19: [with >]4b-; {[with .]...8g-; f-; e-;}3;
+	20-21: [with >]4.b-; 8r;
+	1-12,17: mr;
+
+	DYN1(18-19,1,p)
+	< between 15&16: 2 til 1m+2.8;
+
+	bar
+
+// bar 103
+	15-16: 16c+; d+; e+; f+; g+; a+; b+; c6;
+	18: [with .]4d; []g;
+	19: [with .]4d-; []g-;
+	1-12,17,20-21: mr;
+
+	octave above 15: 1 "8" til 7m+2.85;
+
+	bar
+
+// bar 104, section 41
+	15-16: [with >]16d6; c6; e6; c6;; b+; d6; b+;
+	18: [with >]4.c; 8r;
+	19: [with >]4.c-; 8r;
+	20-21: [with >]4a-; {[with .]...8f; e; d;}3;
+	1-12,17: mr;
+
+	DYN2(1,ff)
+	DYN1(20-21,1,mf)
+
+	> below 20-21: 2 til 2.8;
+
+	bar
+
+// bar 105
+	1: [with >]4a+; {[with .]...8c+; d+; e+;} 3;
+	4: [with >]4a; {[with .]...8c; d; e;} 3;
+	15-16: 16b+; a+; c6; a+; b+; c6; b+; a+;
+	20-21: [with .]4c; []g;
+	2-3,5-12,17-19: mr;
+
+	rom above 1,4: 0.5 "a2";
+	DYN1(1\,4\,20-21,1,p)
+
+	bar
+
+// bar 106
+	1: [with .]4f+; []b;
+	4: [with .]4f; []b-;
+	15-16: 16g+; f+; a+; f+;; e+; g+; e+;
+	18: [with >]4f; {[with .]...8d+; c+; b;}3;
+	19: [with >]4f-; {[with .]...8d; c; b-;}3;
+	20-21: [with >]4.f-; 8r;
+	2-3,5-12,17: mr;
+
+	DYN1(18-19,1,p)
+
+	bar
+
+// bar 107
+	1: [with >]4.f6; 8r;
+	4: [with >]4.f+; 8r;
+	9: [with >]4f; {[with .]...8a&-; b&-; c;}3;
+	15-16: 16e+; d+; f+; d+; c+; d+; e+; f+;
+	18: [with .]4a; []e+;
+	19: [with .]4a-; []e;
+	2-3,5-8,10-12,17,20-21: mr;
+
+	rom above 9: 0.5 "1.";
+	DYN1(9,1,p)
+
+	bar
+
+// bar 108
+	9: [with .]4d&; []g-;
+	15-16: 16g+; f+; a+; f+;; e+; g+; e+;
+	18: [with >]4.d; 8r;
+	19: [with >]4.d-; 8r;
+	20-21: [with >]4d; {[with .]...8b; a; g;}3;
+	1-8,10-12,17: mr;
+
+	DYN1(20-21,1,p)
+	bar
+
+// bar 109
+	3: [with >]4d+; {[with .]...8f; g; a;}3;
+	4: [with >]4d; {[with .]...8f-; g-; a-;}3;
+	9: [with >]4.a&; 8r;
+	15-16: 16e+; d+; f+; d+; e+; f+; e+; d+;
+	20-21: [with .]4f; []c+;
+	1-2,5-8,10-12,17-19: mr;
+
+	rom above 3-4: 0.5 "a2";
+	DYN1(3-4,1,mp)
+	bar
+
+// bar 110
+
+music
+	3: [with .]4b; []e;
+	4: [with .]4b-; []e-;
+	15-16: 16b; c+; d+; e+; f+; e+; d+; c+;
+	18: [with >]4b-; {[with .]...8g; f; e;}3;
+	19: [with >]4b-; {[with .]...8g-; f-; e-;}3;
+	20-21: [with >]4.b-; 8r;
+	1-2,5-12,17: mr;
+
+	DYN1(18-19,1,p)
+	bar
+
+// bar 111
+
+staff 7
+	vscheme = 2f
+
+music
+	3: [with >]4.f+; 8r;
+	4: [with >]4.f; 8r;
+	6: [with >]4b; {[with .]...8d; e; f;}3;
+	7 1: [with >]4b-; {[with .]...8d&-; e&-; f-;}3;
+	7 2: mr;
+	15: 16b+; f+; d+; b; f; d; b-; f-;
+	16: 16b; f; d; b-; <<staff clef=bass>>f; d; b-; f-;
+	18: [with .]4d; []g;
+	19: [with .]4d-; []g-;
+	1-2,5,8-12,17,20-21: mr;
+
+	rom above 6: 0.5 "a2";
+	rom above 7: 0.5 "1.";
+	DYN1(6-7,1,mp)
+	bar
+
+// bar 112, section 42
+
+score
+	key = c major
+
+staff 15
+	clef = bass
+
+music
+	1: 4r; [slash 1; grace]8c7<>; c6; r;
+	6: [with >]4g; r;
+	7 1: [with >]4g-; r;
+	7 2: mr;
+	9: [with >]8c; r; 4;
+	11: [with >]8c; r; 4;
+	15: [with >]16c; e; g; c+; g; c+; d&+; f+;
+	16: [with >]16c-; e-; g-; c; g-; c; d&; f;
+	17: 4r; [slash 1; grace]8c+f+c7<>; c+; r;
+	18 1: [with >]8c; r;; {[=a]16d&+; e+; [=b]d+;}3;
+	18 2: 4.s; [with .]8d&+;
+	19 1: [with >]8c; r;; {[=c]16d&; e; [=d]d;}3;
+	19 2: 4.s; [with .]8d&;
+	20-21: [with >]8c; r; 4;
+	2-5,8,10,12: mr;
+
+	rom above 1: 1.5 "1.";
+	rom above 9: 0.5 "1.";
+	rom above 18-19 dist 0: 2 "div.";
+
+	DYN1(1\,17,2(-1\),f)
+	DYN1(9\,11,1,mf)
+	DYN2(1,f)
+	DYN1(18-21,1,f)
+	DYN1(18-19,2.5,p)
+
+	mussym above 1,17: 2(-1) "smacc_gt";
+
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	> between 15&16: 2 til 2.9;
+	bar
+
+// bar 113
+staff 7
+	vscheme = 1
+
+staff 15
+	clef = treble
+
+music
+	3: 4r; [with >]d#+f#+<a>;
+	4: 4r; [with >]b&c+<a>;
+	7: 4r; [with >]d#f#<c>;
+	8: 4r; [with >]b-<a->c;
+	15-16: 16e; g; c+; e+; c+; d&+; c+; b&;
+	18 1: 8c+; r; 4;
+	18 2: 8c+; s; 4;
+	19 1: 8c; r; 4;
+	19 2: 8c; s; 4;
+	1-2,5-6,9-12,17,20-21: mr;
+
+	DYN1(3-4\,7-8,2,mp)
+	DYN2(1,p)
+
+	> below 3-4 dist 3: 2.3 til 2.8;
+	> below 7-8 dist 4: 2.3 til 2.8;
+	bar
+
+// bar 114
+staff 17
+	beamstyle = 4,4r
+
+staff 18
+	beamstyle = 4,4r
+
+staff 19
+	beamstyle = 4,4r
+
+staff 20
+	beamstyle = 4,4r
+
+music
+	3-4: 8f#a; r; 4;
+	7-8: 8a-c#; r; 4;
+	15-16: 16a; g#; f#; g; a; b#; c#+; b;
+	17: [with .]8a; 16r; [with .]b#; []8c#+; []a;
+	18: [with .]8f#; 16r; [with .]g#; []8a; []f;
+	19: [with .]8c#; 16r; [with .]b#-; []8a-; []c;
+	20: [with .]8a; 16r; [with .]g#; []8f#; []a;
+	21: 8f#; r; 4;
+	1-2,5-6,9-12: mr;
+
+	DYN1(3-4\,7-8\,17-21 dist 0,1,p)
+	rom above 18-19 dist 0: 0.5 "unis.";
+	rom above 21 dist 0: 0.5 "pizz.";
+
+	bar
+
+// bar 115
+staff 16
+	clef = treble
+
+music
+	3: [with .]...8c#6; d+; d6; c#+;
+	6: [with .]...8c#+; d; d+; c#;
+	15: 16c#+; e#+; f#+; e+; f+; a+; b&+; a+;
+	16: 16c#; e#; f#; e; f; a; b&; a;
+	1-2,4-5,7-12,17-21: mr;
+
+	rom above 3,6: 0.5 "a2";
+	DYN1(3,1,p)
+	DYN1(6,1,mp)
+
+	bar
+
+// bar 116
+	1: 4r; [slash 1; grace]8c7<>; c6; r;
+	9,11: [with >]8c; r; 4;
+	15: 16c6; e6; g6; e6; c6; g+; d&+; f+;
+	16: 16c+; e+; g+; e+; c+; g; d&; f;
+	17: 4r; [slash 1; grace]8c+f+c7<>; c5; r;
+	18 1: [with >]8c; r;; {[=a]16d&+; e&+; [=b]d+;}3;
+	18 2: 4.s; [with .]8d&+;
+	19 1: [with >]8c; r;; {[=c]16d&; e&; [=d]d;}3;
+	19 2: 4.s; [with .]8d&;
+	20-21: [with >]8c; r; 4;
+	2-8,10,12: mr;
+
+	rom above 1: 1.5 "1.";
+	rom above 9: 0.5 "1.";
+	rom between 15&16: 1.2 "subito";
+	rom above 18-19 dist 0: 2 "div.";
+	rom above 21: 0.5 "arco";
+
+	DYN1(1\,17,2(-1\),f)
+	DYN1(9\,11,1,mf)
+	DYN2(1,f)
+	DYN1(18-21,1,f)
+	DYN1(18-19,2.5,p)
+
+	mussym above 1,17: 2(-1) "smacc_gt";
+
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	> between 15&16: 2 til 2.9;
+	bar
+
+// bar 117
+staff 16
+	clef = bass
+
+music
+	3: 4r; [with >]d#+f#+<a>;
+	4: 4r; [with >]b&c+<a>;
+	7: 4r; [with >]d#f#<c>;
+	8: 4r; [with >]b-<a->c;
+	15-16: 16e+; c+; g; e; c; d&; c; b&-;
+	18 1: 8c+; r; 4;
+	18 2: 8c+; s; 4;
+	19 1: 8c; r; 4;
+	19 2: 8c; s; 4;
+	1-2,5-6,9-12,17,20-21: mr;
+
+	DYN1(3-4\,7-8,2,mp)
+	DYN2(1,p)
+
+	> below 3-4 dist 3: 2.3 til 2.8;
+	> below 7-8 dist 4: 2.3 til 2.8;
+	bar
+
+// bar 118
+	3-4: 8f#a; r; 4;
+	7-8: 8a-c#; r; 4;
+	15-16: 16a-; g#-; f#-; g-; a-; b#-; c#; e#;
+	17: [with .]8a; 16r; [with .]b#; []8c#+; []a;
+	18: [with .]8f#; 16r; [with .]g#; []8a; []f;
+	19: [with .]8c#; 16r; [with .]b#-; []8a-; []c;
+	20: [with .]8a; 16r; [with .]g#; []8f#; []a;
+	21: 8f#; r; 4;
+	1-2,5-6,9-12: mr;
+
+	DYN1(3-4\,7-8\,17-21 dist 0,1,p)
+	rom above 18-19 dist 0: 0.5 "unis.";
+	rom above 21 dist 0: 0.5 "pizz.";
+
+	bar
+
+// bar 119
+	1: [with .]...8f#6; g+; g6; f#+;
+	6: [with .]...8f#+; g; g+; f#;
+	15: 16f#; a#; b; g+; e+; e#+; f#+; f#6;
+	16: 16f#; a#; b; g+; <<staff clef=treble>>e; e#; f#; f#+;
+	2-5,7-12,17-21: mr;
+
+	rom above 1,6: 0.5 "a2";
+	DYN1(1\,6 dist 0,1,p)
+	< between 15&16: 2 til 2.9;
+
+	bar
+
+// bar 120, section 43
+	1: 4r; [slash 1; grace]8f6<>; f+; r;
+	9,11: [with >]8f; r; 4;
+	15: 16fn6; c6; a+; f+; c+; a; g&; b&;
+	16: 16fn+; c+; a; f; <<staff clef=bass>>c+; a; g&; b&;
+	17: 4r; [slash 1; grace]8f+b&+f7<>; f+; r;
+	18 1: [with >]8f; r;; {[=a]16g&+; a&+; [=b]g+;} 3;
+	18 2: 4.s; [with .]8g&+;
+	19 1: [with >]8f; r;; {[=c]16g&; a&; [=d]g;} 3;
+	19 2: 4.s; [with .]8g&;
+	20-21: [with >]8f; r; 4;
+
+	// "a2" mark for flute is already present in previous measure
+	rom above 9: 0.5 "1.";
+	rom above 18-19 dist 0: 2 "div.";
+	rom above 21: 0.5 "arco";
+
+	DYN1(1\,17,2(-1\),f)
+	DYN1(9\,11,1,mf)
+	DYN2(1,f)
+	DYN1(18-21,1,f)
+	DYN1(18-19,2.5,p)
+
+	mussym above 1,17: 2(-1) "smacc_gt";
+
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	> between 15&16: 2 til 2.9;
+	bar
+
+// bar 121
+	3: 4r; [with >]g#+b+<b>;
+	4: 4r; [with >]e&+f+<b>;
+	7: 4r; [with >]g#bn<f>;
+	8: 4r; [with >]e&f<f>;
+	15-16: 16a; f; c; a-; f-; f#-; g-; g#-;
+	18 1: 8f+; r; 4;
+	18 2: 8f+; s; 4;
+	19 1: 8f; r; 4;
+	19 2: 8f; s; 4;
+	1-2,5-6,9-12,17,20-21: mr;
+
+	DYN1(3-4 dist 0,2,mp)
+	DYN1(7-8,2,mp)
+	DYN2(1,p)
+
+	> below 3-4 dist 1: 2.3 til 2.8;
+	> below 7-8 dist 4: 2.3 til 2.8;
+	bar
+
+// bar 122
+	3: 8gnb; r; 4;
+	4: [up]8gb; r; 4;
+	7-8: 8df#; r; 4;
+	15-16: 16a-; f#; d; g#; c#+; b; a; gn;
+	17: [with .]8b; 16r; [with .]c+; []8c#+; []a;
+	18: [with .]8g; 16r; [with .]a&; []8an; []f#;
+	19: [with .]8f#; 16r; [with .]fn; []8d; []f#;
+	20: [with .]8d+; 16r; [with .]c+; []8b; []d+;
+	21: 8a; r; 4;
+	1-2,5-6,9-12: mr;
+
+	DYN1(3-4\,7-8\,17-21 dist 0,1,p)
+	rom above 18-19 dist 0: 0.5 "unis.";
+	rom above 21 dist 0: 0.5 "pizz.";
+
+	bar
+
+// bar 123
+
+score
+	bracket = 1-6, 7-10, 17-21
+
+staff 7
+	label = "Cor.\nin Fa"
+	label2 = "Cor.\nin Fa"
+
+music
+	1: [with .]...8f#6; g+; g6; f#+;
+	6: [with .]...8f#+; g; g+; f#;
+	15: 16f#; e; d; c#; <<staff clef=bass>>b; c#; d; e;
+	16: 16f#; e; d; c#; b-; c#-; d-; e-;
+	2-5,7-12,17-21: mr;
+
+	DYN1(1,1,p)
+	DYN1(6,1,mp)
+	bar
+
+// bar 124, section 44
+	1: 4r; [slash 1; grace]8f6<>; f+; r;
+	9,11: [with >]8f; r; 4;
+	15: 16f; a; c+; f+; <<staff clef=treble>>c; f; g&; b&;
+	16: 16f-; a-; c; f; c; f; g&; b&;
+	17: 4r; [slash 1; grace]8f+b&+f7<>; f+; r;
+	18 1: [with >]8f; r;; {[=a]16g&+; a&+; [=b]g+;} 3;
+	18 2: 4.s; [with .]8g&+;
+	19 1: [with >]8f; r;; {[=c]16g&; a&; [=d]g;} 3;
+	19 2: 4.s; [with .]8g&;
+	20-21: [with >]8f; r; 4;
+	2-8,10,12: mr;
+
+	rom between 15&16: 1.2 "subito";
+	rom above 18-19 dist 0: 2 "div.";
+	rom above 21: 0.5 "arco";
+
+	DYN1(1\,17,2(-1\),f)
+	DYN1(9\,11,1,mf)
+	DYN2(1,f)
+	DYN1(18-21,1,f)
+	DYN1(18-19,2.5,mf)
+
+	mussym above 1,17: 2(-1) "smacc_gt";
+
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	> between 15&16: 2 til 2.9;
+
+	bar
+
+// bar 125
+	1: 4r; [slash 1; grace]8f6<>; f+; r;
+	15: 16a; f; a; c+; f+; c+; g&+; b&+;
+	16: 16a; f; a; c+; <<staff clef=treble>>f; c; g&; b&;
+	17: 4r; [slash 1; grace]8f+b&+f7<>; f+; r;
+	18 1: 8f+; r;; {[=a]16g&+; a&+; [=b]g+;} 3;
+	18 2: 8f+; s;; [with .]g&+;
+	19 1: 8f; r;; {[=c]16g&; a&; [=d]g;} 3;
+	19 2: 8f; s;; [with .]g&;
+	20: [with >]8f+; r; 4;
+	2-12,21: mr;
+
+	DYN2(1,mp)
+	DYN1(20,1,mf)
+	ital (14) between 15&16: 2 "cresc.";
+	rom above 20: 0.5 "pizz.";
+
+	mussym above 1,17: 2(-1) "smacc_gt";
+
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	bar
+
+// bar 126
+staff 17
+	beamstyle = 2
+
+staff 18
+	beamstyle = 2
+	vscheme = 1
+
+staff 19
+	beamstyle = 2
+	vscheme = 1
+
+staff 20
+	beamstyle = 2
+	vscheme = 1
+
+music
+	15: 16a+; e+; f+;; a+; e+; f+;;
+	16: 16a; e; f;; a; e; f;;
+	17,20: [with >]8f+;;;;
+	18: 8f+; r; 4;
+	19: 8f; r; 4;
+	1-12,21: mr;
+
+	rom above 18-19 dist 0: 0.5 "unis.";
+	rom above 17 dist 0: 0.5 "pizz.";
+
+	DYN1(17\,20 dist 0,1,fp)
+	< below 17,20: 1.5 til 1m+2.85;
+
+	bar
+
+// bar 127
+	15: 16a+; b&+; g#+; a+;; b+; a+;;
+	16: 16a; b&; g#; a;; b; a;;
+	17: 8f+; f#+; g+; g#+;
+	18: 8r; f+; e+; e&+;
+	19: 8f; f#; g; g#;
+	20: 8f+;; e+; e&+;
+	1-12,21: mr;
+
+	rom above 18: 1.3 "pizz.";
+	rom above 19: 0.5 "pizz.";
+	DYN1(18,1.5,mf)
+	DYN1(19,1,mp)
+
+	< between 15&16: 1 til 2.85;
+	< below 18: 1.8 til 2.85;
+	< below 19: 1.3 til 2.85;
+
+	dblbar
+
+// bar 128, section 45
+
+score
+	key = f major
+
+staff 1
+	beamstyle = 4,4
+
+staff 3
+	beamstyle = 4,4
+
+staff 4
+	beamstyle = 4,4
+	vscheme = 2f
+
+staff 6
+	beamstyle = 4,4
+
+music
+	1: [pad 6; with " "]16a+; d6; 4.a6<>;
+	4 1: 16d+; a+; d+; a+; d+; a+; d+; a+;
+	4 2: 16d+; a; d+; a; d+; a; d+; a;
+	6: [with >]2f;
+	9: [with .]8d+; [with >]4.a+;
+	12: [with "+"]2b<>;
+	15-16: [with >]16b+; a+; b+; a+; b+; a+; b+; a+;
+	17: [with >]8daa+; r; daa+;;
+	18: [with >]8dd+a+; r; dd+a+;;
+	19: [with >]8a-da; r; da;;
+	20: [with >]8fd+; r; d+;;
+	21: [with >]8f+; r; 4;
+	2-3,5,7-8,10-11: mr;
+
+	rom above 1,6: 0.5 "a2";
+	rom above 9: 0.5 "1. Solo"; 1.4 "ten."; 2.5 "Con\nsord.";
+	rom above 12 dist 0: 0.5 "Piatti";
+	rom above 21: 0.2 "pizz.";
+
+	DYN1(1\,4\,6 dist 0,0.5,ff)
+	DYN1(9 dist 0,0.5,f)
+	DYN1(12 dist 0,0.2,mf)
+	DYN2(1,ff)
+	DYN1(17-21 dist 0,0.5,f)
+
+	octave above 15: 1 "8" til 2m+1.85;
+	phrase above 1,4: 1 til 1m+1;
+	phrase below 4: 1 til 2m+1;
+
+	mussym above 4: 1 "acc_gt";
+	mussym below 4: 1 "acc_gt";
+	bar
+
+// bar 129
+	1: [pad 6]4.a6; 8r;
+	4 1: 8d+; r; 4;
+	4 2: 16d+; a; d+; a; d+; a; d+; a;
+	9: [with .]8d+; [with >]4.a+;
+	12: 4b; r;
+	15-16: 16b+; a+; b+; a+; b+; a+; b+; a+;
+	17: 8daa+;;;;
+	18: 8dd+a+;;;;
+	19: 8da;;;;
+	20: 8d+;;;;
+	2-3,5-8,10-11,21: mr;
+
+	rom above 9: 0.2 "2. Solo"; 1.4 "ten.";
+	DYN1(9,0.5,f)
+
+	> below 1: 1 til 2.5;
+	> between 15&16: 1 til 2.85;
+	> below 4,17-20: 1 til 2.85;
+	
+	bar
+
+// bar 130
+score
+	bracket = 1-6, 7-10, 17-21, \
+		  9-10 ("\s(12)Tr.\nin Do", "\s(12)Tr.\nin Do")
+
+staff 9
+	label = "\s(-1)1."
+	label2 = "\s(-1)1."
+
+staff 10
+	label = "\s(-1)2."
+	label2 = "\s(-1)2."
+
+music
+	3: [with .]8d+; [with >]4.a+;
+	4 1: mr;
+	4 2: 8d; r; 4;
+	15: 16b+; a+; g+; f+; e6; d6; c6; b+;
+	16: 16b+; a+; g+; f+; e+; d+; c+; b;
+	17: 8aa+;; d+; aa+;
+	18: 8dd+;;;;
+	19: 8da;;;;
+	20: 8d+;;;;
+	1-2,5-12,21: mr;
+
+	DYN1(3 dist 0,1,f)
+	DYN1(4 dist 0,1,p)
+	DYN2(1,p)
+	DYN1(17-20 dist 0,1,p)
+	bar
+
+// bar 131
+	1: [with .]8g+; [with " "]16b; e&+; 8g; e&;
+	4: [with .]8be&+; 16e&g; gb; 8b-e&; g-b-;
+	6: [with .]8g+; [with " "]16b; e&+; 8g; [with " "]e&;
+	15: 16c6; g+; e&+; d+; c+; b; a; g;
+	16: 16c+; g; e&; d; <<staff clef=bass>>c+; b; a; g;
+	17,20: [with >]8g+; e&+; b; g;
+	18: [with >]8e&+; b; g; e&;
+	19: [with >]8b; g; e&; b-;
+	2-3,5,7-12,21: mr;
+
+	DYN1(1 dist 0,1,f)
+	DYN1(4\,6\,17-20 dist 0,1,mf)
+	DYN2(1,f)
+	
+	phrase above 1,6: 1.5 til 2.5;
+	phrase below 4: 1.5 til 2.5;
+	> below 1,4,6,17-20: 1.5 til 2.8;
+
+	bar
+
+// bar 132
+staff 4
+	vscheme = 1
+
+staff 6
+	vscheme = 2f
+
+voice 6 2
+	beamstyle = 2
+
+staff 7
+	vscheme = 2f
+
+music
+	6 1: [pad 6]16d+; a; d+; a; d+; a; d+; a;
+	6 2: 8d; a; d; a;
+	7 1: [with .]8d; [with >]4.a;
+	7 2: mr;
+	12: [with "+"]2b;
+	15-16: [with >]16b; a; b; a; b; a; b; a;
+	17-18,20: [with >]8a-da; r; da;;
+	19: [with >]8d-a-da; r; a-d;;
+	21: [with >]8dd+; r; 4;
+	1-5,8-11: mr;
+ 
+	rom above 7: 0.2 "1. Solo"; 1.4 "ten.";
+	rom below 7 dist 0: 2.5 "con\nsord.";
+	rom above 12: 0.5 "Piatti";
+
+	DYN1(6-7\,17-21 dist 0,0.5,f)
+	DYN1(12 dist 0,0.5,p)
+	DYN2(0.5,f)
+
+	mussym above 6: 1 "acc_gt";
+	mussym below 6: 1 "acc_gt";
+
+	phrase above 6: 1 til 1m+1;
+	phrase below 6: 1 til 1m+2;
+	> below 6: 1.25 til 2.85;
+	> between 15&16: 2 til 2m+2.85;
+	> below 17,19-20: 2 til 2m+2.5;
+	> below 18: 2 til 2m+2;
+	bar
+
+// bar 133
+voice 6 2
+	beamstyle = 4,4
+
+music
+	6 1: [pad 6]8d+; r; 4;
+	6 2: 8d; a; d; r;
+	7 1: mr;
+	7 2: [with .]8d; [with >]4.a;
+	15-16: 16b; a; g; f; e; d; c; b-;
+	17-18: 8da;; d; da;
+	19: 8a-d;;;;
+	20: 8da;;;;
+	1-5,8-12,21: mr;
+
+	rom below 7: 0.2 "2. Solo"; 1.4 "ten."; 2.5 "senza\nsord.";
+
+	DYN1(6 dist 0!,0.5,p)
+	DYN3(7 dist 0!,0.5,f)
+	bar
+
+// bar 134
+staff 6
+	vscheme = 1
+
+staff 7
+	vscheme = 1
+
+staff 15
+	clef = bass
+
+staff 18
+	beamstyle = 4,4
+
+music
+	15: 16c+; g; e&; d; e; g; c+; e&+;
+	16: 16c; g-; e&-; d-; e-; g-; c; e&;
+	17: 8g; e&; b-; g-;
+	18: 8e&; b-; g-; r;
+	19: 8b-; g-; e&-; e-;
+	20: 8g; e&; c; b-;
+	1-12,21: mr;
+
+	DYN1(17,2.8,p)
+	DYN1(18,2.3,p)
+	bar
+
+// bar 135, section 46
+staff 15
+	clef = treble
+
+staff 17
+	beamstyle = 4,4
+
+staff 19
+	beamstyle = 2r
+
+staff 20
+	beamstyle = 2r
+
+staff 21
+	beamstyle = 2r
+
+music
+	1: 8e;; d;;
+	4: 8e-a-;; d-b-;;
+	6: 8f-a-;; c-b-;;
+	15-16: [with >]16en; a; e; a-; [with >]b-; g; d; g-;
+	19: 8r; en-a-e; r; d-b-d;
+	20: 8r; a-ena; r; c-b-d;
+	21: [with .]8f; r; [with .]c; r;
+	2-3,5,7-12,17-18: mr;
+
+	rom above 1: 0.5 "a2";
+	rom above 21: 0.5 "arco";
+
+	DYN1(1\,4\,6,1,p)
+	DYN2(1,p)
+	DYN1(19-20,1.5,p)
+	DYN1(21,1,pp)
+
+	bar =_bar0
+
+// bar 136
+staff 14
+	vscheme = 2f
+
+music
+	1: 8e;; d;;
+	4: 8e-a-;; d-b-;;
+	6: 8f-a-;; c-b-;;
+	13: [with >]16e; a; e; a-; [with >]b-; g; d; [=_brack1]with g below;
+	14: [with >; =_ossia1]16e bm; a; e; a- ebm; [with >]b- bm; g; d; [=_brack2]g- ebm;
+	15: [with >; =_pfte1]16e; a; e; a-; [with >]b-; g; d; g-;
+	16: [with >]16e; a; e; a-; [with >]b-; g; d; g-;
+	19: 8r; e-a-e; r; d-b-d;
+	20: 8r; a-ea; r; c-b-d;
+	21: [with .]8f; r; [with .]c; r;
+	2-3,5,7-12,17-18: mr;
+
+	BRACK(_brack1.x,_brack1.y+3,_brack2.y-4)
+
+	bar =_bar1
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 137
+staff 13
+	vscheme = 2f
+
+music
+	1: 8e; f; e; d;
+	4: 8e-a-;; d-b-;;
+	6: 8f-a-;; c-b-;;
+//	13 1: [pad 2; with >; =_brack1]16e+ bm; a; f; c ebm; 4s;
+//	13 2: [=_brack2]16e bm with staff below; s;; ebm; \
+//	      [up; with >]b- bm with staff below; g; d; s ebm;
+//	14 1: [=_ossia1]16s bm with staff above; a; f; [down]c ebm; \
+//	      16s bm with staff above;;; [=_brack3]g ebm;
+//	14 2: 4s; [with >]16b- bm; g; d; [=_brack4]g- ebm;
+	13: [pad 2; with >; =_brack1]16e+; a; f; c; [with >]b-; g; d; [=_brack3]with g below;
+	14: [=_brack2]16 with e+ above; a; f; c; [with >]b-; g; d; [=_brack4]g-;
+	15: [with >; =_pfte1]16e+; a; f; c; [with >]b-; g; d; g-;
+	16: [with >]16e+; a; f; c; [with >]b-; g; d; g-;
+	19: 8r; a-f; r; d-b-d;
+	20: 8r; a-ea; r; c-b-d;
+	21: [with .]8f; r; [with .]c; r;
+	2-3,5,7-12,17-18: mr;
+
+	mussym below 13: 1 "acc_gt";
+
+	BRACK(_brack1.x,_brack1.y+3,_brack2.y-4)
+	BRACK(_brack3.x,_brack3.y+3,_brack4.y-4)
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 138
+	1: 8e; f; e; d;
+	4: 8e-a-; e&-a-; d-b-;;
+	6: 8f-a-;; c-b-;;
+	13 1: [pad 2; with >; =_brack1]16e+ bm; a; f; c ebm; 4s;
+	13 2: [down; =_brack2]16e bm with staff below; s;; ebm; \
+	      [with >]b- bm with staff below; g; d; s ebm;
+//	      [up; with >]b- bm with staff below; g; d; s ebm;
+//	14 1: [=_ossia1]16s bm with staff above; a; f; [down]c ebm;
+	14 1: [=_ossia1]16s bm with staff above; a; f; c ebm; \
+	      16s bm with staff above;;; [=_brack3]g ebm;
+	14 2: 4s; [with >]16b- bm; g; d; [=_brack4]g- ebm;
+	15: [with >; =_pfte1]16e+; a; f; c; [with >]b-; g; d; g-;
+	16: [with >]16e+; a; f; c; [with >]b-; g; d; g-;
+	19: 8r; a-f; r; d-b-d;
+	20: 8r; a-e&a; r; c-b-d;
+	21: [with .]8f; r; [with .]c; r;
+	2-3,5,7-12,17-18: mr;
+
+	mussym below 13: 1 "acc_gt";
+
+	BRACK(_brack1.x,_brack1.y+3,_brack2.y-4)
+	BRACK(_brack3.x,_brack3.y+3,_brack4.y-4)
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 139
+	1: 8f;; e;;
+	4: 8f-b-;; e-c;;
+	6: 8g-b-;; d-c;;
+	13,16: [with >]16f; b; f; b-; [with >]c; a; e; a-;
+	14: [with >; =_ossia1]16f; b; f; b-; [with >]c; a; e; a-;
+	15: [with >; =_pfte1]16f; b; f; b-; [with >]c; a; e; a-;
+	19: 8r; f-b-f; r; c-ce;
+	20: 8r; g-f; r; ec+;
+	21: [with .]8g; r; [with .]d; r;
+	2-3,5,7-12,17-18: mr;
+
+	DYN1(1\,4\,6,1,p)
+	DYN1(19-20,1.5,p)
+	DYN1(21,1,pp)
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 140
+	1: 8f;; e;;
+	4: 8f-b-;; e-c;;
+	6: 8g-b-;; d-c;;
+	13: [with >]16f bm; b; f; b- ebm; [with >; up]c bm with staff below; a; e; s ebm;
+	14 1: 4s; 16s bm with staff above; s;; [=_brack1]a ebm;
+	14 2: [with >; =_ossia1]16f bm; b; f; b- ebm; [with >]c bm; a; e; [=_brack2]a- ebm;
+	15: [with >; =_pfte1]16f; b; f; b-; [with >]c; a; e; a-;
+	16: [with >]16f; b; f; b-; [with >]c; a; e; a-;
+	19: 8r; f-b-f; r; c-ce;
+	20: 8r; g-f; r; ec+;
+	21: [with .]8g; r; [with .]d; r;
+	2-3,5,7-12,17-18: mr;
+
+	BRACK(_brack1.x,_brack1.y+4,_brack2.y-3)
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 141
+	1: 8f; g; f; e;
+	4: 8f-b-;; e-c;;
+	6: 8g-b-;; d-c;;
+	13 1: [pad 2; with >; =_brack1]16f+ bm; b; g; d ebm; 4s;
+	13 2: [=_brack2]16f bm with staff below; s;; ebm; \
+	      [with >]c bm with staff below; a; e; s ebm;
+//	      [up; with >]c bm with staff below; a; e; s ebm;
+//	14 1: [=_ossia1]16s bm with staff above; b; g; d ebm;
+	14 1: [=_ossia1]16s bm with staff above; b; g; [down]d ebm; \
+	      16s bm with staff above;;; [=_brack3]a ebm;
+	14 2: 4s; [with >]16c bm; a; e; [=_brack4]a- ebm;
+	15: [with >; =_pfte1]16f+; b; g; d; [with >]c; a; e; a-;
+	16: [with >]16f+; b; g; d; [with >]c; a; e; a-;
+	19: 8r; b-g; r; c-ce;
+	20: 8r; g-f; r; ec+;
+	21: [with .]8g; r; [with .]d; r;
+	2-3,5,7-12,17-18: mr;
+
+	mussym below 13: 1 "acc_gt";
+
+	BRACK(_brack1.x,_brack1.y+4,_brack2.y-3)
+	BRACK(_brack3.x,_brack3.y+4,_brack4.y-3)
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 142
+	1: 8f; g; f; e;
+	4: 8f-b-;; e-c;;
+	6: 8g-b-;; d-c;;
+	13 1: [pad 2; with >; =_brack1]16f+ bm; b; g; d ebm; 4s;
+	13 2: [=_brack2]16f bm with staff below; s;; ebm; \
+	      [up; with >]c bm with staff below; a; e; s ebm;
+//	      [with >]c bm with staff below; a; e; s ebm;
+//	14 1: [=_ossia1]16s bm with staff above; b; g; [down]d ebm;
+	14 1: [=_ossia1]16s bm with staff above; b; g; d ebm; \
+	      16s bm with staff above;;; [=_brack3]a ebm;
+	14 2: 4s; [with >]16c bm; a; e; [=_brack4]a- ebm;
+	15: [with >; =_pfte1]16f+; b; g; d; [with >]c; a; e; a-;
+	16: [with >]16f+; b; g; d; [with >]c; a; e; a-;
+	19: 8r; b-g; r; c-ce;
+	20: 8r; g-f; r; ec+;
+	21: [with .]8g; r; [with .]d; r;
+	2-3,5,7-12,17-18: mr;
+
+	mussym below 13: 1 "acc_gt";
+
+	BRACK(_brack1.x,_brack1.y+4,_brack2.y-3)
+	BRACK(_brack3.x,_brack3.y+4,_brack4.y-3)
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 143, section 47
+	1: 8g;; f;;
+	3: 8r; [with .]c; [with >]4d~;
+	4: 8g-c;; f-d;;
+	6: 8a-c;; e-d;;
+	13,16: [with >]16g; c+; g; c; [with >]d; b; f; b-;
+	14: [with >; =_ossia1]16g; c+; g; c; [with >]d; b; f; b-;
+	15: [with >; =_pfte1]16g; c+; g; c; [with >]d; b; f; b-;
+	19: 8r; c-cg; r; f-df;
+	20: 8r; a-g; r; dd+;
+	21: [with .]8a; r; [with .]e; r;
+	2,5,7-12,17-18: mr;
+
+	rom above 3 dist 0: 1.3 "a2";
+	DYN1(1\,4\,6 dist 0,1,p)
+	DYN1(3 dist 0,1.5,f)
+	DYN1(19-20 dist 0,1.5,p)
+	DYN1(21 dist 0,1,pp)
+	DYN2(1,p)
+	boldital (16) between 13&14: 1 "p";
+	
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 144
+	1: 8g;; f;;
+	3: 8d; [with .]c+; [with >]4f~;
+	4: 8g-c;; f-d;;
+	6: 8a-c;; e-d;;
+	13: [with >]16g bm; c+; g; c ebm; [with >; up]d bm with staff below; b; f; s ebm;
+	14 1: 4s; 16s bm with staff above; s;; [=_brack1]b ebm;
+	14 2: [with >; =_ossia1]16g bm; c+; g; c ebm; [with >]d bm; b; f; [=_brack2]b- ebm;
+	15: [with >; =_pfte1]16g; c+; g; c; [with >]d; b; f; b-;
+	16: [with >]16g; c+; g; c; [with >]d; b; f; b-;
+	19: 8r; c-cg; r; f-df;
+	20: 8r; a-g; r; dd+;
+	21: [with .]8a; r; [with .]e; r;
+	2,5,7-12,17-18: mr;
+
+	BRACK(_brack1.x,_brack1.y+5,_brack2.y-2)
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 145
+staff 3
+	beamstyle = 2
+
+music
+	1: 8g; a; g; f;
+	3: 8f; [with .]...f; g; a;
+	4: 8g-c;; f-d;;
+	6: 8a-c;; e-d;;
+	13 1: [pad 2; with >; =_brack1]16g+ bm; c+; a; e ebm; 4s;
+	13 2: [=_brack2]16g bm with staff below; s;; ebm; \
+	      [with >]d bm with staff below; b; f; s ebm;
+//	      [up; with >]d bm with staff below; b; f; s ebm;
+//	14 1: [=_ossia1]16s bm with staff above; c+; a; [down]e ebm;
+	14 1: [=_ossia1]16s bm with staff above; c+; a; e ebm; \
+	      16s bm with staff above;;; [=_brack3]b ebm;
+	14 2: 4s; [with >]16d bm; b; f; [=_brack4]b- ebm;
+	15: [with >; =_pfte1]16g+; c+; a; e; [with >]d; b; f; b-;
+	16: [with >]16g+; c+; a; e; [with >]d; b; f; b-;
+	19: 8r; c-ca; r; f-df;
+	20: 8r; a-g; r; dd+;
+	21: [with .]8a; r; [with .]e; r;
+	2,5,7-12,17-18: mr;
+
+	mussym below 13: 1 "acc_gt";
+
+	BRACK(_brack1.x,_brack1.y+5,_brack2.y-2)
+	BRACK(_brack3.x,_brack3.y+5,_brack4.y-2)
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 146
+staff 3
+	beamstyle = 4,4
+
+music
+	1: 8g; a; g; f;
+	3: 8b<>; c+; [with >]4d+;
+	4: 8g-c; g&-c; f-d;;
+	6: 8a-c;; e-d;;
+	13 1: [pad 2; with >; =_brack1]16g+ bm; c+; a; e ebm; 4s;
+	13 2: [=_brack2]16g bm with staff below; s;; ebm; \
+	      [with >]d bm with staff below; b; f; s ebm;
+//	      [up; with >]d bm with staff below; b; f; s ebm;
+//	14 1: [=_ossia1]16s bm with staff above; c+; a; [down]e ebm;
+	14 1: [=_ossia1]16s bm with staff above; c+; a; e ebm; \
+	      16s bm with staff above;;; [=_brack3]b ebm;
+	14 2: 4s; [with >]16d bm; b; f; [=_brack4]b- ebm;
+	15: [with >; =_pfte1]16g+; c+; a; e; [with >]d; b; f; b-;
+	16: [with >]16g+; c+; a; e; [with >]d; b; f; b-;
+	19: 8r; c-ca; r; f-df;
+	20: 8r; a-g&; r; dd+;
+	21: [with .]8a; r; [with .]e; r;
+	2,5,7-12,17-18: mr;
+
+	rom above 9 dist 0: 2 "Con sord.";
+	mussym below 13: 1 "acc_gt";
+
+	BRACK(_brack1.x,_brack1.y+5,_brack2.y-2)
+	BRACK(_brack3.x,_brack3.y+5,_brack4.y-2)
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 147, section 48
+	1: 8a;; g;;
+	4: 8a-d;; g-e;;
+	6: 8b-d;; f-e;;
+	9: 8r; [with .]d; 16e; f; 8e;
+	13,16: [with >]16a; d+; a; d; [with >]e; c+; g; c;
+	14: [with >; =_ossia1]16a; d+; a; d; [with >]e; c+; g; c;
+	15: [with >; =_pfte1]16a; d+; a; d; [with >]e; c+; g; c;
+	18: 16r; [with .]...a-; b-; bn-; c; d; e; c;
+	19: 8r; a-da; r; g-e;
+	20: 8r; b-da; r; ge+;
+	21: [with .]8b; r; [with .]f; r;
+	2-3,5,7-8,10-12,17: mr;
+
+	rom above 9 dist 0: 1.4 "Solo"; 2.4 "ten.";
+	rom above 18 dist 0: 1 "arco";
+
+	DYN1(1\,4\,6 dist 0,1,mp)
+	DYN1(9,1.5,mf)
+	DYN1(18,1,pp)
+	DYN1(19-20 dist 0,1.5,p)
+	DYN1(21 dist 0,1,p)
+	DYN2(1,mp)
+	boldital (16) between 13&14: 1 "mp";
+	
+	mussym below 9: 2 "acc_gt";
+
+	phrase below 9: 2 til 2.5;
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 148
+	1: 8a;; g;;
+	4: 8a-d;; g-e;;
+	6: 8b-d;; f-e;;
+	9: [with .]...8f bm; g; a; b& ebm;
+	13: [with >]16a bm; d+; a; d ebm; [with >; up]e bm with staff below; c+; g; s ebm;
+	14 1: 4s; 16s bm with staff above; s;; [=_brack1]c+ ebm;
+	14 2: [with >; =_ossia1]16a bm; d+; a; d ebm; [with >]e bm; c+; g; [=_brack2]c ebm;
+	15: [with >; =_pfte1]16a; d+; a; d; [with >]e; c+; g; c;
+	16: [with >]16a; d+; a; d; [with >]e; c+; g; c;
+	18: [with .]...16d; d#; e; f; e; f; f#; g;
+	19: 8r; a-da; r; g-e;
+	20: 8r; b-da; r; ge+;
+	21: [with .]8b; r; [with .]f; r;
+	2-3,5,7-8,10-12,17: mr;
+
+	BRACK(_brack1.x,_brack1.y+6,_brack2.y-1)
+
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 149
+	1: 8a; b; a; g;
+	4: 8a-d;; g-e;;
+	6: 8b-d;; f-e;;
+	9: 8c+<>; a+; [with -]4e+;
+	13 1: [pad 2; with >; =_brack1]16a+ bm; d+; b; f ebm; 4s;
+	13 2: [=_brack2]16a bm with staff below; s;; ebm; \
+	      [with >]e bm with staff below; c+; g; s ebm;
+//	      [up; with >]e bm with staff below; c+; g; s ebm;
+//	14 1: [=_ossia1]16s bm with staff above; d+; b; [down]f ebm;
+	14 1: [=_ossia1]16s bm with staff above; d+; b; f ebm; \
+	      16s bm with staff above;;; [=_brack3]c+ ebm;
+	14 2: 4s; [with >]16e bm; c+; g; [=_brack4]c ebm;
+	15: [with >; =_pfte1]16a+; d+; b; f; [with >]e; c+; g; c;
+	16: [with >]16a+; d+; b; f; [with >]e; c+; g; c;
+	17: 16r; [with .]...e; f; g; a; a&; g; a;
+	18: [with .]8a; r; 4;
+	19: 8r; db; r; g-e;
+	20: 8r; b-da; r; ge+;
+	21: [with .]8b; r; [with .]f; r;
+	2-3,5,7-8,10-12: mr;
+
+	BRACK(_brack1.x,_brack1.y+6,_brack2.y-1)
+	BRACK(_brack3.x,_brack3.y+6,_brack4.y-1)
+
+	rom above 17 dist 0: 1 "arco";
+	ital (14) below 1,4,6,21 dist 0: 1 "cresc.";
+	ital (14) between 13&14,15&16: 1.2 "cresc.";
+	ital (14) below 17,19-20 dist 0: 1.5 "cresc.";
+
+	bar =_bar0
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// bar 150
+	1: 8a; b; g;;
+	4: 8a-d; a&-d; g-e;;
+	6: 8b-d;; f-e;;
+	9: [with -]4e+; [];
+	13 1: [pad 2; with >; =_brack1]16a+ bm; d+; b; f ebm; 4s;
+	13 2: [=_brack2]16a bm with staff below; s;; ebm; \
+	      [up; with >]e bm with staff below; c+; g; s ebm;
+//	      [with >]e bm with staff below; c+; g; s ebm;
+//	14 1: [=_ossia1]16s bm with staff above; d+; b; [down]f ebm;
+	14 1: [=_ossia1]16s bm with staff above; d+; b; f ebm; \
+	      16s bm with staff above;;; [=_brack3]c+ ebm;
+	14 2: 4s; [with >]16e bm; c+; g; [=_brack4]c ebm;
+	15: [with >; =_pfte1]16a+; d+; b; f; [with >]e; c+; g; c;
+	16: [with >]16a+; d+; b; f; [with >]e; c+; g; c;
+	17: [with .]...16an; bn; b&; a; b; c+; b; bn;
+	19: 8r; db; r; g-e;
+	20: 8r; b-a&; r; ge+;
+	21: [with .]8b; r; [with .]f; r;
+	2-3,5,7-8,10-12,18: mr;
+
+	BRACK(_brack1.x,_brack1.y+6,_brack2.y-1)
+	BRACK(_brack3.x,_brack3.y+6,_brack4.y-1)
+
+	< below 9: 2 til 1m+2.5;
+	bar =_bar1
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 151
+	1: [pad 4]8a;; g;;
+	4: 8an-d; a-d; g-e;;
+	6: 8b-d;; f-e;;
+	9: [with -]4e+; [];
+	10: [=a; with -]4e+; [];
+	13 1: [with >; =_brack1]16a+; d+; b; f; [with >]e; g; c+; e+;
+	13 2: [=_brack2]16a bm with staff below; s;; ebm; 4s;
+	14: [=_ossia1]16s bm with staff above; d+; b; [down]f ebm; \
+	    [with >]e bm; g; c+; e+ ebm;
+	15: [with >; =_pfte1]16a+; d+; b; f; [with >]e; g; c+; e+;
+	16: [with >]16a+; d+; b; f; [with >]e; g; c+; e+;
+	17: [with .]...16c+; d+; d&+; c+; c#+; dn+; d#+; e+;
+	19: 8r; a-da; r; g-e;
+	20: 8r; b-da; r; ge+;
+	21: [with .]8b; r; [with .]f; r;
+	2-3,5,7-8,11-12,18: mr;
+
+	BRACK(_brack1.x,_brack1.y+6,_brack2.y-1)
+
+	DYN1(1\,4\,6\,10\,17\,19-20 dist 0,2.75,f)
+	DYN1(9 dist 0, 2.75,mf)
+	DYN1(10 dist 0,1,mf)
+	DYN1(21,2.2,f)
+	DYN2(2.75,f)
+	boldital (16) between 13&14: 2.75 "f";
+	rom above 10: 1 "(senza sord.)";
+
+	< below 10: 1.3 til 2.5;
+	bar =_bar0
+// FIXME cross score bar?
+//	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+
+// What does the bracket around Trumpet mean?
+	medium line (_bar1.x+3,a.y+6) to (_bar1.x+1,a.y+5);
+	medium line (_bar1.x+1,a.y+5) to (_bar1.x+1,a.y-5);
+	medium line (_bar1.x+1,a.y-5) to (_bar1.x+3,a.y-6);
+	medium line (_bar0.x-3,a.y+6) to (_bar0.x-1,a.y+5);
+	medium line (_bar0.x-1,a.y+5) to (_bar0.x-1,a.y-5);
+	medium line (_bar0.x-1,a.y-5) to (_bar0.x-3,a.y-6);
+
+// bar 152, section 49
+score
+	bracket = 1-6, 7-10, 17-21
+
+staff 9
+	label = "Tr.\nin Do"
+	label2 = "Tr.\nin Do"
+
+staff 10
+	label = ""
+	label2 = ""
+
+staff 16
+	clef = treble
+
+music
+	1: [with .]8f+; []f6; []f+; r;
+	6: [with .]...8b bm; c+; d&+; e&+ ebm;
+	15: 16f+; e+; e&+; d+; d&+; f+; d+; c+;
+	16: 16f; e; e&; d; d&; f; d; c;
+	17: 4r; 8d&+; d+;
+	18: 8d+f+;; f+;;
+	19: 8b;;;;
+	2-5,7-12,20-21: mr;
+
+	rom above 6: 0.5 "a2";
+	rom above 17: 1.9 "pizz.";
+	rom above 18: 0.5 "pizz.";
+	DYN1(1\,6\,18-19 dist 0,1,p)
+	DYN2(1,p)
+	DYN1(17 dist 0,1.8,p)
+
+	< below 6,18-19: 1.4 til 2.85;
+	< between 15&16: 1.4 til 2.85;
+	< below 17: 2 til 2.85;
+	bar
+
+// bar 153
+staff 4
+	vscheme = 2f
+
+staff 17
+	beamstyle = 2
+
+staff 18
+	beamstyle = 2
+
+music
+	3& 4 1: 4r; [with .]8d+; []d;
+	4 2: mr;
+	6: [with >]8en+; r; 4;
+	7: [with >]4.e; 8r;
+	15: 16bn; e+; g+; bn+; a+; g+; f#+; e+;
+	16: 16bn-; e; g; bn; a; g; f#; e;
+	17: [with >]8e+;;;;
+	18: [with >]8bn; b;;;
+	19: [with >]8g;;;;
+	20: [with >]4e+; r;
+	1-2,5,8-12,21: mr;
+
+	rom above 3: 1.7 "a2";
+	rom above 4: 1.3 "1.";
+	rom above 7: 0.5 "1.";
+
+	DYN1(3 dist 0,1.7,mp)
+	DYN3(4 dist 0,1.6,mp)
+	DYN1(6 dist 0,1,mf)
+	DYN1(7\,17-20 dist 0,1,mp)
+	DYN2(1,mf)
+
+	> between 15&16: 1.4 til 2.85;
+	> below 17-19: 1.4 til 2.85;
+	bar
+
+// bar 154
+	1: [with .]8f+; []f6; []f+; r;
+	3 & 4 1: [with .]8d+; r; 4;
+	4 2: mr;
+	6: [with .]...8b bm; c+; d&+; e&+ ebm;
+	15: 16fn+; g+; e+; f+; b&+; f+; d&+; c+;
+	16: 16fn; g; e; f; b&; f; d&; c;
+	17: 8f+;;;;
+	18: 8d+;; d&+; d+;
+	19: 8g;;;;
+	2,5,7-12,20-21: mr;
+
+	DYN1(1\,6\,17-19 dist 0,1,p)
+	DYN2(1,p)
+
+	< below 6,17-19: 1.4 til 2.85;
+	< between 15&16: 1.4 til 2.85;
+	bar
+
+// bar 155
+score
+	time = 1/4
+	beamstyle = 4
+
+music
+	6: [with >]8en+; r;
+	7: [with >]4e~;
+	15: 16bn; e+; bn+; e6;
+	16: 16bn-; e; bn; e+;
+	17,20: [with >]4e+;
+	18: [with >]4bn;
+	19: [with >]4g;
+	1-5,8-12,21: mr;
+
+	DYN1(6 dist 0,1,mf)
+	DYN1(7\,17-20 dist 0,1,mp)
+	DYN2(0.5,mf)
+	
+	> between 15&16: 1.2 til 1.85;
+	bar
+
+// bar 156
+score
+	time = 2/4
+	beamstyle = 4,4
+
+staff 17
+	beamstyle = 2r
+
+staff 18
+	beamstyle = 2r
+
+staff 19
+	beamstyle = 2r
+
+staff 20
+	beamstyle = 2r
+
+music
+	1: [with .]8g6; []g+; []g6; r;
+	3: 4r; [with .]8bn; []bn+;
+	6: [with .]...8g bm; a; bn; c#+ ebm;
+	7: 8e; r; 4;
+	15: 16f+; e+; e&+; d+; d&+; f+; d+; c+;
+	16: 16f; e; e&; d; d&; f; d; c;
+	17: 8g+;;;;
+	18: 8bn; b;;;
+	19: 8f;;;;
+	2,4-5,8-12,20-21: mr;
+
+	rom above 1,6: 0.2 "a2";
+	rom above 3: 1.7 "a2";
+//	rom above 7: 0.5 "1.";
+
+	DYN1(1\,6\,17-19 dist 0,1,p)
+	DYN1(3 dist 0,2,mp)
+	DYN2(1,p)
+
+	< below 6,17-19: 1.4 til 2.85;
+	< between 15&16: 1.4 til 2.85;
+	bar
+
+// bar 157
+	3: [with .]8bn; r; 4;
+	4: 4r; [with .]8bn; []bn-;
+	6: [with >]8d#+; r; 4;
+	15: 16bn; d#+; f#+; bn+; a#+; g#+; f+; e+;
+	16: 16bn-; d#; f#; bn; a#; g#; f; e;
+	17: [with >]8f#+; f+;;;
+	18: [with >]8bn; b;;;
+	19: [with >]8f#; f;;;
+	20: [with >]4d#+; r;
+	1-2,5,7-12,21: mr;
+
+	rom above 4: 1.7 "a2";
+
+	DYN1(6 dist 0,1,mf)
+	DYN1(17-20 dist 0,1,mp)
+	DYN2(1,mf)
+
+	> between 15&16: 1.5 til 2.85;
+	> below 17-19: 1.5 til 2.85;
+	bar
+
+// bar 158
+	3: 4r; [with >]f#f#+;
+	4: [with .]8bn; r; [with >]4bd#+;
+	6: [with .]8g; []bn; [with >]d#+; r;
+	7: 4r; [with >]d#;
+	15: 16fn+; bn+; e+; f+; bn; d#+; f#+; b+;
+	16: 16fn; bn; e; f; bn-; d#; f#; b;
+	17: 8g+;; [with >]4f#+;
+	18: 8bn; b; [with >]4d#+;
+	19: 8fn; f; [with >]4f#bn;
+	20: 4r; [with >,"\(dnbow)"]d#+;
+	1-2,5,8-12,21: mr;
+
+	rom above 19 dist 0: 1.8 "div.";
+	rom above 20 dist 0: 1.8 "arco";
+
+	DYN1(6\,17-19 dist 0,1,p)
+	DYN1(3-4\,6\,17-20 dist 0,2,f)
+	DYN1(7,2,mf)
+	DYN2(1,p)
+	DYN2(2,f)
+
+	< below 6,17-19: 1.2 til 1.9;
+	< between 15&16: 1.2 til 1.9;
+
+	bar
+
+// bar 159
+	3: [with >]4f#f#+; []ff+;
+	4: [with >]4bndn+; []bnd#+;
+	7: [with >]4dn; []d#;
+	15: 16dn+; f#+; bn+; d6; f+; b+; d#6; f#6;
+	16: 16dn; f#; bn; d+; f; b; d#+; f#+;
+	17: [with >,"\(dnbow)"]4f#+; []f+;
+	18: [with >,"\(dnbow)"]4dn+; []d#+;
+	19: [with >,"\(dnbow)"]4f#bn; []fb;
+	20: [with >,"\(dnbow)"]4dn+; []d#+;
+	1-2,5-6,8-12,21: mr;
+
+	rom above 17-19 dist 0: 0.5 "arco";
+	ital (14) between 15&16: 1 "cresc.";
+
+	bar
+
+// bar 160, section 50
+	1: 16g#+; e+; 8g+; 16a+; d6; 8a+;
+	3: [with .]...8e+g#+; e+g+; d+a+;;
+	6: [with .]...8c#+g#+; c+g+; d+f+;;
+	15: [with >]16a6; g#6; a6; g6; gn6; fn6; g6; f6;
+	16: [with >]16a+; g#+; a+; g+; gn+; fn+; g+; f+;
+	18: 8r; e+g#+; r; aa+;
+	19: 8r; c#g#; r; dd+;
+	2,4-5,7-12,17,20-21: mr;
+
+	rom above 1: 0.5 "a2";
+	rom above 18-19: 0.5 "pizz.";
+	rom above 19: 1.4 "non div.";
+
+	DYN1(1,1,mp)
+	DYN1(3\,6,1,p)
+	DYN2(1,ff)
+	DYN1(18-19,1.5,p)
+	phrase above 1: 1 til 1.5; 2 til 2.5;
+
+	bar
+
+// bar 161
+	1: 16e+; c#+; 8e+; 16f+; a+; 8f+;
+	3: [with .]...8c#+e+; c+e+; af+;;
+	6: [with .]...8g#e+; ge+; ad+;;
+	15: 16f6; e6; f6; e6; e6; d6; e6; d6;
+	16: 16f+; e+; f+; e+; e+; d+; e+; d+;
+	18: 8r; c#+e+; r; af+;
+	19: 8r; g#-e; r; a-d;
+	2,4-5,7-12,17,20-21: mr;
+
+	ital (14) between 15&16: 1 "dim.";
+	phrase above 1: 1 til 1.5; 2 til 2.5;
+	bar
+
+// bar 162
+	1: 16c#+; g#; 8c+; 16d+; f+; 8d+;
+	3: [with .]...8g#c#+; gc+; fd+;;
+	6: [with .]...8ec#+; ec+; fa;;
+	15: 16d6; c#6; d6; c6; cn6; b+; c6; b+;
+	16: 16d+; c#+; d+; c+; cn+; b; c+; b;
+	18: 8r; g#c#+; r; dd+;
+	19: 8r; e-c#; r; f-a-;
+	2,4-5,7-12,17,20-21: mr;
+
+	phrase above 1: 1 til 1.5; 2 til 2.5;
+	bar
+
+// bar 163
+	1: 16g#; e; 8g; 16a; d+; 8a;
+	3: [with .]...8eg#; eg; da;;
+	6: [with .]...8c#g#; cg; df;;
+	15: 16a+; g#+; a+; g+; gn+; f+; g+; f+;
+	16: 16a; g#; a; g; gn; f; g; f;
+	18: 8r; eg#; r; da;
+	19: 8r; c#-g#-; r; f-d;
+	20: 4r; 8; dd+;
+	2,4-5,7-12,17,21: mr;
+
+	rom above 20: 2 "pizz.";
+	DYN1(20 dist 0,2.5,p)
+	phrase above 1: 2 til 2.5;
+	phrase below 1: 1 til 1.5;
+	bar
+
+// bar 164
+	4: [with .]...8c#e; ce; a-f;;
+	6: [with .]...8g#-e; g-e; a-d;;
+	15: 16f+; e+; f+; e+;; d+; e+; d+;
+	16: 16f; e; f; e;; d; e; d;
+	18: 8r; e; r; f;
+	19: 8r; c#; r; a-;
+	20: 8r; g#-e; r; a-d;
+	1-3,5,7-12,17,21: mr;
+
+	DYN1(4,1,p)
+	DYN2(1,p)
+	bar
+
+// bar 165
+	4: [with .]...8g#-c#; g-c; f-d;;
+	6: [with .]...8e-c#; e-c; f-a-;;
+	15: 16d+; c#+; d+; c+; cn+; b; c+; b;
+	16: 16d; c#; d; c; <<staff clef=bass>>cn+; b; c+; b;
+	18: 8r; c#; r; d;
+	19: 8r; g#-; r; f-;
+	20: 8r; e-; r; a-;
+	1-3,5,7-12,17,21: mr;
+
+	bar
+
+// bar 166
+	4: [with .]...8e-g#-; e-g-; d-a-;;
+	6: [with .]...8c#-g#-; c-g-; d-f-;;
+	15-16: 16a; g#; a; g; gn; f; g; f;
+	18: 8r; g#-; r; a-;
+	19: 8r; e-; r; d-;
+	20: 8r; c#-; r; f-;
+	1-3,5,7-12,17,21: mr;
+
+	bar
+
+// bar 167
+	6: [with .]...8e-c#; e-c; f-d;;
+	15-16: 16f; e; f; e;; d; a-; f-;
+	19: 8r; c#-; 4r;
+	20: 8r; e-; r; f-d;
+	1-5,7-12,17-18,21: mr;
+
+	DYN1(6\,20,2.7,p)
+	DYN1(19 dist 0,1.5,p)
+	bar
+
+// bar 168, section 51
+staff 15
+	clef = bass
+
+staff 18
+	vscheme = 2f
+	beamstyle = 4,4
+
+staff 19
+	vscheme = 2f
+	beamstyle = 4,4
+
+music
+	1: 4r; [slash 1; grace]8c7<>; c6; r;
+	9,11: [with >]8c; r; 4;
+	15: [with >]16c; e; g; c+; g; c+; d&+; f+;
+	16: [with >]16c-; e-; g-; c; g-; c; d&; f;
+	17: 4r; [slash 1; grace]8c+f+c7<>; c+; r;
+	18 1: [with >]8c; r;; {[=a]16d&+; e&+; [=b]d+;}3;
+	18 2: 4.s; [with .]8d&+;
+	19 1: [with >]8cn-c; r;; {[=c]16d&; e&; [=d]d;}3;
+	19 2: 4.s; [with .]8d&;
+	21: [with >]8c; r; 4;
+
+	rom above 1: 1 "1.";
+	rom above 9: 0.5 "1. senza sord.";
+	rom between 15&16: 1.2 "subito";
+	rom above 18-19 dist 0: 2 "div.";
+	rom above 18-19 dist 0: 0.5 "arco";
+	DYN1(1\,17 dist 0,2(-1\),f)
+	DYN1(9\,11 dist 0,1,mf)
+	DYN2(1,f)
+	DYN1(18-19\,21,1,f)
+	DYN1(18-19,2.5,p)
+
+	mussym above 1,17: 2(-1) "smacc_gt";
+
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	> between 15&16: 2 til 2.9;
+	bar
+
+// bar 169
+newscore
+
+score
+	bracket = 1-6, 7-10, 17-21, \
+		  7-8 ("\s(12)Cor.\nin Fa", "\s(12)Cor.\nin Fa")
+	brace =	15-16 ("\s(12)Pfte.", "\s(12)Pfte.")
+
+staff 7
+	label = "\s(-1)1,2"
+	label2 = "\s(-1)1,2"
+
+staff 15
+	clef = treble
+
+music
+	3: 4r; [with >]d#+f#+<a>;
+	4: 4r; [with >]bc+<a>;
+	7: 4r; [with >]d#f#<c>;
+	8: 4r; [with >]b-<a->c;
+	15-16: 16e; g; c+; e+; c+; d&+; c+; b;
+	18 1: 8c+; r; 4;
+	18 2: 8c+; s; 4;
+	19 1: 8c; r; 4;
+	19 2: 8c; s; 4;
+	1-2,5-6,9-12,17,20-21: mr;
+
+	DYN1(3-4\,7-8,2,mp)
+	DYN2(1,p)
+
+	> below 3-4,7-8: 2.3 til 2.9;
+
+	bar
+
+// bar 170
+staff 17
+	beamstyle = 4,4r
+
+staff 18
+	beamstyle = 4,4r
+
+staff 19
+	beamstyle = 4,4r
+
+staff 20
+	beamstyle = 4,4r
+
+music
+	3-4: 8f#a; r; 4;
+	7-8: 8a-c#; r; 4;
+	15-16: 16a; g#; f#; g; a; b#; c#+; e#+;
+	17: [with .]8a; 16r; [with .]b#; []8c#+; []a;
+	18: [with .]8f#; 16r; [with .]g#; []8a; []f;
+	19: [with .]8c#; 16r; [with .]b#-; []8a-; []c;
+	20: [with .]8a; 16r; [with .]g#; []8f#; []a;
+	21: 8f#; r; 4;
+	1-2,5-6,9-12: mr;
+
+	DYN1(3-4\,7-8\,17-21 dist 0,1,p)
+
+	rom above 18-19 dist 0: 0.5 "unis.";
+	rom above 20 dist 0: 0.5 "arco";
+	rom above 21 dist 0: 0.5 "pizz.";
+
+	bar
+
+// bar 171
+staff 1
+	beamstyle = 4,4r
+
+staff 16
+	clef = treble
+
+music
+	1: [with .]8f#+a+; 16r; [with .]g#+b#+; []8a+c#6; []f+a+;
+	6: [with >]4g#-; r;
+	15: 16f#+; g#+; a+; b#+; c#+; e#+; f#+; g#+;
+	16: 16f#; g#; a; b#; c#+; e#+; f#+; g#+;
+	17: [with .]8a; 16r; [with .]b#; []8c#+; []a;
+	18: [with .]8f#; 16r; [with .]g#; []8a; []f;
+	19: [with .]8c#; 16r; [with .]b#-; []8a-; []c;
+	20: [with .]8a; 16r; [with .]g#; []8f#; []a;
+	21: [with >]8g#; r; 4;
+	2-5,7-12: mr;
+
+	rom above 6: 0.5 "a2";
+	rom above 4: 2.7 "1. Solo";
+	DYN1(1,1,p)
+
+	octave above 15: 2 "8" til 3m+2.85;
+	< between 15&16: 1 til 2.85;
+
+	bar
+
+// bar 172, section 52
+staff 18
+	beamstyle = 2r
+
+staff 19
+	beamstyle = 2r
+
+music
+	1: [pad 6]16g#+; e+; 8g+; 16a+; d6; 8a+;
+	3: [with .]...8e+g#+; e+g+; d+a+;;
+	4 1: 16c#6; f6; e6; e&6; d6; bn+; b&+; a+;
+	4 2: [dist -6]mr;
+	6: [with .]...8c#+g#+; c+g+; d+f+;;
+	15-16: [with >]16a+; g#+; a+; g+; gn+; fn+; g+; f+;
+	18: 8r; e+g#+; r; aa+;
+	19: 8r; c#g#; r; dd+;
+	2,5,7-12,17,20-21: mr;
+
+	rom above 1: 0.2 "a2";
+	rom above 18-19: 1 "pizz.";
+	DYN1(1 dist 0,0.5,mp)
+	DYN1(3\,6 dist 0,0.5,p)
+	DYN2(0.5,ff)
+	DYN1(18-19 dist 0,1.2,p)
+	DYN1(4 dist -6!,0.5,mf)
+
+	phrase above 1: 1 til 1.5; 2 til 2.5;
+	phrase above 4: 1 til 1.75; 2 til 2.75;
+	> below 4 dist -5!: 1.5 til 2.85;
+	bar
+
+// bar 173
+	1: 16e+; c#+; 8e+; 16f+; a+; 8f+;
+	3: [with .]...8c#+e+; c+e+; af+;;
+	4 1: 16a&+; g+; f+; e+; c#+; bn; b&; a;
+	4 2: mr;
+	6: [with .]...8g#e+; ge+; ad+;;
+	15-16: 16f+; e+; f+; e+;; d+; e+; d+;
+	18: 8r; c#+e+; r; af+;
+	19: 8r; g#-e; r; a-d;
+	2,5,7-12,17,20-21: mr;
+
+	ital (14) between 15&16: 1 "dim.";
+	DYN1(4 dist -6!,1,mp)
+
+	phrase above 1: 1 til 1.5; 2 til 2.5;
+	phrase above 4: 1 til 1.75; 2 til 2.75;
+	bar
+
+// bar 174
+staff 4
+	beamstyle = 4,4r
+
+music
+	1: 16c#+; g#; 8c+; 16d+; f+; 8d+;
+	3: [with .]...8g#c#+; gc+; fd+;;
+	4: 16a&; g; g&; f; e; r; e&; d;
+	6: [with .]...8ec#+; ec+; fa;;
+	15-16: 16d+; c#+; d+; c+; cn+; b; c+; b;
+	18: 8r; g#c#+; r; dd+;
+	19: 8r; e-c#; r; f-a-;
+	2,5,7-12,17,20-21: mr;
+
+	rom above 4: 0.5 "a2";
+	DYN1(4 dist 0,1,mf)
+	phrase above 1: 1 til 1.5; 2 til 2.5;
+	phrase below 4: 1 til 2; 2.5 til 1m+1.75;
+
+	bar
+
+// bar 175
+	1: 16g#; e; 8g; 16a; d+; 8a;
+	3: [with .]...8eg#; eg; da;;
+	4: 16c#; cn; bn-; b&-; a-; a&-; g-; f-;
+	6: [with .]...8c#g#; cg; df;;
+	15: 16a+; g#+; a+; g+; gn+; f+; g; f;
+	16: 16a; g#; a; g; gn; f; <<staff clef=bass>>g; f;
+	18: 8r; eg#; r; da;
+	19: 8r; c#-g#-; r; f-d;
+	2,5,7-12,17,20-21: mr;
+
+	DYN2(1,p)
+	phrase below 1: 1 til 1.5;
+	phrase above 1: 2 til 2.5;
+	phrase below 4: 2 til 2.75;
+
+	bar
+
+// bar 176, section 53
+staff 1
+	vscheme = 2f
+
+staff 15
+	clef = bass
+
+staff 20
+	vscheme = 2f
+
+music
+	1 1: [pad 6]4r; [slash 1; grace]8c7<>; c6; r;
+	1 2: mr;
+	9,11: [with >]8c; r; 4;
+	15: [with >]16c; e; g; c+; g; c+; d&+; f+;
+	16: [with >]16c-; e-; g-; c; g-; c; d&; f;
+	17: 4r; [slash 1; grace]8c+f+c7<>; c+; r;
+	18 1: 4r; 8; {[=a]16d&+; e&+; [=b]d+;}3;
+	18 2: 4s; 8; [with .]d&+;
+	19 1: 4r; 8; {[=c]16d&; e&; [=d]d;}3;
+	19 2: 4s; 8; [with .]d&;
+	20 1: [with >]8c+; r; 4;
+	20 2: [with >]8c-c; s; 4;
+	21: [with >]8c; r; 4;
+	2-8,10,12: mr;
+
+	rom above 1: 1.5 "1.";
+	rom above 9: 0.5 "1.";
+	rom between 15&16: 1.2 "subito";
+	rom above 18-19 dist 0: 2.5[-11] "arco\ndiv.";
+	rom above 20: 0.1 "div.";
+	rom above 21: 0.1 "arco";
+
+	DYN3(1,1.6,f)
+	DYN1(9\,11,0.8,mf)
+	DYN2(1,f)
+	DYN1(17,2(-1\),f)
+	DYN1(18-19 dist 2!,2.5[-6],p)
+	DYN1(20-21 dist 0,0.5,f)
+	
+	mussym above 1,17: 2(-1) "smacc_gt";
+
+	// can't use phrase because it overlaps tuplet number
+	medium curve (a.x, a.n+2) to (b.x, b.n+2) bulge 2;
+	medium curve (c.x, c.n+2) to (d.x, d.n+2) bulge 2;
+
+	> between 15&16: 2 til 2.85;
+	bar
+
+// bar 177
+staff 15
+	clef = treble
+
+music
+	3: 4r; [with >]d#+f#+<a>;
+	4: 4r; [with >]bc+<a>;
+	7: 4r; [with >]d#f#<c>;
+	8: 4r; [with >]b-<a->c;
+	15-16: 16e; g; c+; e+; c+; d&+; c+; b;
+	18 1: 8c+; r; 4;
+	18 2: 8c+; s; 4;
+	19 1: 8c; r; 4;
+	19 2: 8c; s; 4;
+	1-2,5-6,9-12,17,20-21: mr;
+
+	DYN1(3-4\,7-8 dist 0,2,mp)
+	DYN2(1,p)
+
+	> below 3-4,7 dist 2: 2.2 til 2.9;
+	> below 8: 2.2 til 2.9;
+	bar
+
+// bar 178
+staff 18
+	beamstyle = 4,4r
+
+staff 19
+	beamstyle = 4,4r
+
+music
+	1: [pad 6]4r; [slash 1; grace]8f#6<>; f#+; r;
+	3-4: 8f#a; r; 4;
+	7-8: 8a-c#; r; 4;
+	9: [with >]8f#; r; 4;
+	11: [with >]8a-; r; 4;
+	15-16: 16a; g#; f#; g; a; b#; c#+; f#+;
+	17: 4r; [slash 1; grace]8f#+b+f#7<>; f#+; r;
+	18 1: [with >]8f#; r;; {[=a]16f; g#; [=b]f;}3;
+	18 2: [with >]8f#; s;; [with .]f;
+	19 1: [with >]8f#; r;; {[=c]16f#-; g#-; [=d]f-;}3;
+	19 2: [with >]8f#; s;; [with .]f#-;
+	20-21: [with >]8f#; r; 4;
+	2,5-6,10,12: mr;
+
+	rom above 1: 2(-1)[-7] "a2";
+	rom above 9: 0.5 "1.";
+	DYN1(1\,17,2(-1\),f)
+	DYN1(3-4\,7-8,1,p)
+	DYN1(9\,11,1,mf)
+	DYN1(18-21 dist 2!,1[-6],f)
+// is this duplicate?
+	DYN1(18,2.5[-5],f)
+	DYN1(19,2.5[-8],f)
+
+	mussym above 1,17: 2(-1) "smacc_gt";
+
+	< between 15&16: 2 til 1m+2.85;
+	bar
+
+// bar 179
+staff 16
+	clef = treble
+
+music
+	1: 4r; [with >]fn6<>;
+	3: 4r; [with >]f+c#6<a+>;
+	4: 4r; [with >]c#+a+<d+>;
+	6: 4r; [with >]a<>;
+	7: 4r; [with >]c#bn<d>;
+	8: 4r; [with >]a-<d->g;
+	15: 16fn+; b+; c6; c#6; a+; c6; f+; a+;
+	16: 16fn; b; c+; c#+; a; c+; f+; a+;
+	17: [with >]8g-f; r; 4;
+	18 1: 8fn; r; 4;
+	18 2: 8fn; s; 4;
+	19 1: 8fn-; r; 4;
+	19 2: 8fn-; s; 4;
+	20 1: [with >]8bc#+; r; 4;
+	20 2: [pad 2; with >]8a-gc#+; s; 4;
+	21: [with >]8a; r; 4;
+	2,5,9-12: mr;
+
+	rom above 6: 2[-7] "a2";
+	rom above 17,21: 0.5 "pizz.";
+	rom above 20: 0[-7] "div.\npizz.";
+	
+	DYN1(1\,3-4\,6 dist 0,2,ff)
+	DYN1(7-8 dist 0,2,f)
+	DYN1(17 dist 0,0.5,f)
+	DYN1(21 dist 0,1,f)
+	DYN1(20 dist 0!,0.2,f)
+
+	octave above 15: 2.5 "8" til 2m+1.85;
+	bar
+
+// bar 180, section 54
+	1: 8d6; r; 4;
+	3: 8d+a+; r; 4;
+	4: 8ad+; r; 4;
+	6: 8d; r; 4;
+	7: 8a-d; r; 4;
+	8: 8d-d; r; 4;
+	11: [with >]8d; r; 4;
+	15-16: [with >]16d6; c#6; d6; c6; d6; cn6; b+; a+;
+	17: [with .]8f; 16r; [with .]g#; []8a; []f;
+	18: [with .]8d; 16r; [with .]e; []8f; []d;
+	19: [with .]8a-; 16r; [with .]g#-; []8f-; []a-;
+	20: [with .]8f; 16r; [with .]e; []8d; []f;
+	21: [with >]8dd+; r; 4;
+	2,5,9-10,12: mr;
+
+	rom above 17 dist 0: 0.5 "arco";
+	rom above 18-20 dist 0: 0.5 "unis.";
+	rom above 20: 0[-9] "arco";
+
+	DYN1(11 dist 0,1,mf)
+	DYN2(1,ff)
+	DYN1(17-20 dist 0,1,p)
+	DYN1(21 dist 0,1,f)
+
+	bar
+
+// bar 181
+	15: 16g+; f+; e+; d+; c6; a+; f+; a+;
+	16: 16g+; f+; e+; d+; c+; a; f; a;
+	17: [with .]8f; 16r; [with .]g#; []8a; []f;
+	18: [with .]8d; 16r; [with .]e; []8f; []d;
+	19: [with .]8a-; 16r; [with .]g#-; []8f-; []a-;
+	20: [with .]8f; 16r; [with .]e; []8d; []f;
+	1-12,21: mr;
+
+	bar
+
+// bar 182
+staff 16
+	clef = bass
+
+music
+	15-16: 16d+; c#+; d+; c+; d+; cn+; b; a;
+	17: [with .]8f; 16r; [with .]g#; []8a; []f;
+	18: [with .]8d; 16r; [with .]e; []8f; []d;
+	19: [with .]8a-; 16r; [with .]g#-; []8f-; []a-;
+	20: [with .]8f; 16r; [with .]e; []8d; []f;
+	1-12,21: mr;
+	bar
+
+// bar 183
+	15: 16g; f; e; d; <<staff clef=bass>>c+; f; a; f;
+	16: 16g; f; e; d; c; f-; a-; f-;
+	17: [with .]8f; 16r; [with .]g#; []8a; []f;
+	18: [with .]8d; 16r; [with .]e; []8f; []d;
+	19: [with .]8a-; 16r; [with .]g#-; []8f-; []a-;
+	20: [with .]8f; 16r; [with .]e; []8d; []f;
+	1-12,21: mr;
+
+	bar
+
+// bar 184
+	15: 16d; d-; g-; f-; d;; g; f;
+	16: 16d-; d1; g1; f1; d-;; g-; f-;
+	17: [with .]8f; [slash 1; grace]g#; [with .]a; []f; [slash 1; grace]g#; [with .]a; 
+	18: [with .]8d; [slash 1; grace]e; [with .]f; []d; [slash 1; grace]e; [with .]f; 
+	19: [with .]8a-; [slash 1; grace]g#-; [with .]f-; []a-; [slash 1; grace]g#-; [with .]f-; 
+	20: [with .]8f; [slash 1; grace]e; [with .]d; []f; [slash 1; grace]e; [with .]d; 
+	1-12,21: mr;
+
+	phrase below 17-19: 1.5(-1) til 1.5; 2.5(-1) til 2.5;
+	phrase above 20: 1.5(-1) til 1.5; 2.5(-1) til 2.5;
+	bar
+
+// bar 185
+staff 15
+	clef = treble
+
+music
+	15: 16d;; g; f; d+;; g+; f+;
+	16: 16d;; g; f; <<staff clef=treble>>d;; g; f;
+	17: [with .]8f; [slash 1; grace]g#; [with .]a; []f; [slash 1; grace]g#; [with .]a; 
+	18: [with .]8d; [slash 1; grace]e; [with .]f; []d; [slash 1; grace]e; [with .]f; 
+	19: [with .]8a-; [slash 1; grace]g#-; [with .]f-; []a-; [slash 1; grace]g#-; [with .]f-; 
+	20: [with .]8f; [slash 1; grace]e; [with .]d; []f; [slash 1; grace]e; [with .]d; 
+	1-12,21: mr;
+
+	phrase below 17-19: 1.5(-1) til 1.5; 2.5(-1) til 2.5;
+	phrase above 20: 1.5(-1) til 1.5; 2.5(-1) til 2.5;
+	bar =_bar0
+
+// bar 186
+staff 13
+	beamstyle = 4,4r
+
+music
+	11: 4r; 8; a-;
+	13 1: [=_ossia1]4s; 16g#6; r; g6;;
+	13 2: 4s; 16g#+; g+; r; g+;
+	15: [=_pfte1]16d+; e+; f+; g+; g#+; g+;;;
+	16: 16d+; e+; f+; g+; g#+; g+;;;
+	17: [with .]8f; r; 4;
+	18: [with .]8d; r; 4;
+	19: [with .]8a-; r; 4;
+	20: [with .]8f; r;; 16f;;
+	21: 4r; 8; 16f;;
+	1-10,12: mr;
+
+	rom (14) above 13: 1 "Ossia";
+	ital between 15&16: 1 "brioso";
+	rom above 21: 2.5[-11] "arco";
+
+	DYN1(11,2.5,ff)
+	DYN1(17-20,1,p)
+	DYN1(20-21,2.5,ff)
+	
+	octave above 15: 1 "8" til 1m+1.3;
+	bar = _bar1
+	dashed line (_bar0.x, _ossia1.y-4) to (_bar0.x, _pfte1.y+4);
+	dashed line (_bar1.x, _ossia1.y-4) to (_bar1.x, _pfte1.y+4);
+
+// bar 187
+	1,3,18: [pad 6;with >]8d+d6; r; 4;
+	4,15-17: [with >]8d6; r; 4;
+	6: [with >]8d-; r; 4;
+	7,11: [with >]8d; r; 4;
+	8: [with >]8d-d; r; 4;
+	9,19-21: [with >]8dd+; r; 4;
+	2,5,10,12: mr;
+
+	rom above 4,6-7 dist 0: 0.3 "a2";
+	DYN1(1\,3-4\,6-9\,17-19 dist 0,0.2,ff)
+	DYN2(0.2,ff)
+
+	octave above 1: 0.5 "8" til 1.3;
+	
+	endbar
+// status:
+//	time = 2/4; bs = 4,4
+//	 1: bs=4,4r; vs=2f
+//	 4: vs=2f
+//	13: vs=2f
+//	14: vs=2f
+//	17: bs=4,4r
+//	18: bs=2r
+//	19: bs=2r
+//	20: bs=4,4r, vs=2f
+
