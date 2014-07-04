@@ -1,0 +1,356 @@
+//!Mup-Arkkra-5.3
+
+define CHORD(COUNT, KEY)
+	helvetica bold(12) chord above 1: COUNT[-2] `KEY`;
+@
+
+score
+	staffs = 2
+	key = 1#
+	time = 3/4
+	brace = 1-2
+	barstyle = 1-2
+	beamstyle = 2.
+	beamslope = 1.0, 10.0
+	packfact = 1.3
+
+staff 1
+	aboveorder = mussym, chord, octave, dyn & othertext
+
+staff 2
+	vscheme = 2f
+
+
+music
+	midi all: 0 "tempo=85"; 0 "par=7, 80"; 0 "par=91, 64";
+	midi 1: 0 "onvelocity=76,60"; 0 "chanpressure=96";
+	midi 2: 0 "onvelocity=60"; 0 "chanpressure=64";
+
+// bar 1
+	1: 8e+; e; g; b; e+; d+f+;
+	2 1: 2.b;
+	2 2: 2e; 4d;
+	octave above 1: 0.5 "8va" til 3m+1.5;
+	rom (16) above 1: 0 "Con sentimento \(smup4n) = 85";
+	CHORD(1, Em)
+	bold above 1: 0[-5] "\[A\]";
+	bar
+
+// bar 2
+	1: 2.e+g+;
+	2: 2.cc+;
+	CHORD(1, C)
+	bar
+
+// bar 3
+	1: 8d+; d; f; a; d+; c+e+;
+	2 1: 2.a;
+	2 2: 2d; 4c;
+	CHORD(1, D)
+	bar
+
+// bar 4
+	1: 2.d+f+;
+	2: 2.b-b;
+	CHORD(1, Bm)
+	bar
+
+staff 2
+	vscheme = 1
+
+music
+// bar 5
+	1: 4b+;;;
+	2: 8c; g; d+; c+; e+; f+;
+	CHORD(1, Cmaj7)
+	bar
+
+// bar 6
+	1: b+; 4.a+; 8d6;
+	2: 2.c+e+g+;
+	CHORD(1, Bm)
+	bar
+
+staff 1
+	vscheme = 2f
+
+music
+// bar 7
+	1 1: 2f+; 4s;
+	1 2: 2s bm with staff below; 8d+ =b; f+ ebm;
+	2: 8b- bm with staff above; f; b; c#+ =a; 4s ebm;
+	// line (a.x+1.5, a.y+8) to (b.x-1.5, b.y-8) 
+	bar
+
+staff 1
+	vscheme = 1
+
+music
+// bar 8
+	1: 2.b+;
+	2: mr;
+	bar
+
+// bar 9
+	1: 4e+;;;
+	2: 8a-; e; b; a; c+; d+;
+	octave above 1: 0.5 "8va" til 2m+1.5;
+	CHORD(1, Am)
+	bar
+
+// bar 10
+	1: 4e+; 4.d+; 8g+;
+	2: 2.ac+e+;
+	bar
+
+staff 2
+	clef = bass
+
+music
+// bar 11
+	1: 2.c+;
+	2: 8fn; c+; f+n; g+; with a+ above; with c5 above;
+	CHORD(1, F)
+	bar
+
+// bar 12
+	1: 8fn+; c+; f+; g+; a+; c6;
+	2: mr;
+	CHORD(1, F)
+	repeatstart rehearsal "B"
+
+	midi all: 0 "tempo=85";
+
+// bar 13
+	1: 4.ge+; 8b; e+ bm; f+ ebm;
+	2: 8e; b; e+; f+; g+; a+;
+	CHORD(1, Em)
+	bar
+
+// bar 14
+	1: 4bg+; f+; e+;
+	2: 8c+; 4g+; 8f+; e+ bm; c+ ebm;
+	CHORD(1, Cmaj7)
+	bar
+
+// bar 15
+	1: 4.fd+; 8ge+; 4ac+d+;
+	2: 8d; a; d+; e+; f+; c+;
+	CHORD(1, D)
+	bar
+
+// bar 16
+	1: 2.gb;
+	2: 8g-; d; g; a; b; d+;
+	CHORD(1, G)
+	bar
+
+// bar 17
+	1: 4.ge+; 8b; e+ bm; f+ ebm;
+	2: 8e; b; e+; f+; g+; a+;
+	CHORD(1, Em)
+	bar
+
+// bar 18
+	1: 4bg+; f+; g+;
+	2: 8c+; 4g+; 8f+; e+ bm; c+ ebm;
+	CHORD(1, Cmaj7)
+	bar
+
+// bar 19
+	1: 4.af+a+; 8gg+; 4af+a+;
+	2: 8d; a; d+; e+; f+; c+;
+	CHORD(1, D)
+	bar
+
+// bar 20
+	1: 2.bg+b+;
+	2: 8g-; d; g; a; b; d+;
+	CHORD(1, G)
+	dblbar rehearsal "B'"
+
+// bar 21
+	1: [pad 3]4.ge+; 8b; e+ bm; f+ ebm;
+	2: 8e; b; e+; f+; g+; a+;
+	CHORD(1, Em)
+	bar
+
+// bar 22
+	1: 4bg+; f+; e+;
+	2: 8c+; 4g+; 8f+; e+ bm; c+ ebm;
+	CHORD(1, Cmaj7)
+	bar
+
+// bar 23
+	1: 4.fd+; 8ge+; 4ac+d+;
+	2: 8d; a; d+; e+; f+; c+;
+	CHORD(1, D)
+	bar
+
+// bar 24
+	1: 2gb; 8g; a;
+	2: 8g-; d; g; a; b; f;
+	CHORD(1, G)
+	bar
+
+// bar 25
+	1: 4deb; eb;;
+	2: 8c; g; c+; g; b; g;
+	CHORD(1, Cmaj7)
+	bar
+
+staff 1
+	vscheme = 2f;
+
+music
+// bar 26
+	1 1: 4b; a; d+;
+	1 2: 2.ef;
+	2: 2.dc+;
+	CHORD(1, D7(9\))
+	bar
+
+staff 1
+	vscheme = 1;
+
+music
+// bar 27
+	1: 4.ceg; 8g; f bm; d ebm;
+	2: 8a- bm; e ebm; 4a; b-f;
+	CHORD(1, Am7)
+	CHORD(3, Bm)
+	bar
+
+// bar 28
+	1: 4.e; 8e; g bm; c+ ebm;
+	2: 8c bm; g ebm; 2c+;
+	CHORD(1, C)
+	bar
+
+// bar 29
+	1: 8e+; e; g; c+; e+; g+;
+	2: mr;
+	dblbar rehearsal "C"
+
+staff 2
+	clef = treble
+
+music
+// bar 30
+	1: [pad 3]2a; 4e+;
+	2: 8a-; e; a; b; c+; e+;
+	octave above 1: 0.5 "8va" til 3m+1.5;
+	CHORD(1, Am)
+	bar
+
+// bar 31
+	1: 4gae+; d+; fnc+;
+	2: 8fn-; c; fn; g; a; c+;
+	CHORD(1, F)
+	bar
+
+// bar 32
+	1: 2gb; 4g+;
+	2: 8g-; d; g; a; b; d+;
+	CHORD(1, G)
+	bar
+
+// bar 33
+	1: 2.be+g+;
+	2: 8e-; b-; e; f; g; b;
+	CHORD(1, Em)
+	roll 1: 1;
+	bar
+
+	// first beat sounds too weak
+	midi 1: 0 "onvelocity=80"; 2 "onvelocity=76, 60";
+
+// bar 34
+	1: 2b+; 4f6;
+	2: 8b-; f; b; c#+; d+; e+;
+	CHORD(1, Bm)
+	bar
+
+// bar 35
+	1: 2.a+c#6f6;
+	2: 2.f;
+	CHORD(1, F#m)
+	roll 1: 1;
+	bar
+
+// bar 36
+	1: 2e+a+; 4e6;
+	2: 8a-; e; a; b; c+; a;
+	CHORD(1, Am)
+	bar
+
+	// E -> D# sounds too "short" due to roll
+	midi all: 0 "tempo=75"; 1 "tempo=85";
+
+// bar 37
+	1: 4f+b+e6; 2d#6;
+	2: 2b-b; <<staff clef=bass>>8b bm; a ebm;
+	// FIXME: 2 chord names stick too close 
+	helvetica bold(12) chord above 1: 1[-6] "Bsus4";
+	helvetica bold(12) chord above 1: 2 "B";
+	roll 1: 1;
+	dblbar rehearsal "D"
+
+// bar 38
+	1: [pad 3]2fb; 4fd+f+;
+	2: 8b-; f; b; c#+; d+; f;
+	CHORD(1, Bm)
+	bar
+
+// bar 39
+	1: 4abf+; gbe+; fbd+;
+	2: 8g-; d; g; a; b; d;
+	CHORD(1, G)
+	bar
+
+// bar 40
+	1: 2eac#+; 4bc+a+;
+	2: 8a-; e; a; b; c#+; e;
+	CHORD(1, A)
+	bar
+
+// bar 41
+	1: 2.ac#+f+a+;
+	2: 8f-; c#; f; g#; a; b;
+	CHORD(1, F#m)
+	bar
+
+// bar 42
+	1: 4g#c#+g#+; e+; c+;
+	2: 2.c#g#;
+	CHORD(1, C#m)
+	bar
+
+// bar 43
+	1: 2gb; 4f+;
+	2: 2g-; 4gbd+;
+	CHORD(1, Gmaj7)
+	bar
+
+// bar 44
+	1: 4.a; 8f; 4ea;
+	2: 2fac#+; 4ae+;
+	CHORD(1, F#m7)
+	bar
+
+	// simulate rit.
+	midi all: 0.5 "tempo=80"; 1 "tempo=76"; 1.5 "tempo=73"; 2 "tempo=70";
+	midi 1: 0 "onvelocity=76,60";
+	midi 2: 0 "onvelocity=80"; 0 "param=91, 96"; 0 "chanpressure=127";
+
+// bar 45
+	1: 2.fb;
+	2: 8b1; b-; d#; f; b; d#+;
+	CHORD(1, B)
+	bar
+
+// bar 45
+	1: mr;
+	2: 2f+; 4r;
+	boldital(14) below 2: 0 "Repeat & F.O.";
+	repeatend
