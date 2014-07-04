@@ -1,4 +1,1 @@
-music-typeset
-=============
-
-Musical scores typesetted by me
+These are musical scores I have typesetted over these years. The majority are done with [Mup](http://www.arkkra.com), which changed from shareware to libre license recently. A few were done with [LilyPond](http://www.lilypond.org), which is very powerful but difficult to use.
