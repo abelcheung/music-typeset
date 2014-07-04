@@ -1,0 +1,3927 @@
+//Mup-Arkkra-5.4
+
+header
+	title "" "\s(24)Sonata No. 1" "\s(16)Sergey Rachmaninoff\nOp. 28"
+top
+	title(18) "I"
+
+score
+	key = 1&
+	time = cut
+	staffs = 2
+	brace = 1-2
+	barstyle = 1-2
+	measnum = y
+	beamstyle = 2,2
+	beamslope = 1.0, 10.0
+	packfact = 0.8
+	scale = 0.85
+	units = cm
+	pageheight = 29.7039
+	pagewidth = 20.9903
+
+staff 1
+	clef = bass
+
+staff 2
+	clef = bass
+
+
+// Now some macros first
+define DYN( COUNT, VOLUME )
+boldital between 1&2: COUNT "\s(+4)" + VOLUME + "\s(PV)";
+@
+
+define DYN1( DIST, COUNT, VOLUME )
+boldital above 1 DIST: COUNT "\s(+4)" + VOLUME + "\s(PV)";
+@
+
+define DYN2( DIST, COUNT, VOLUME )
+boldital below 1 DIST: COUNT "\s(+4)" + VOLUME + "\s(PV)";
+@
+
+define DYN3( DIST, COUNT, VOLUME )
+boldital above 2 DIST: COUNT "\s(+4)" + VOLUME + "\s(PV)";
+@
+
+define DYN4( DIST, COUNT, VOLUME )
+boldital below 2 DIST: COUNT "\s(+4)" + VOLUME + "\s(PV)";
+@
+
+define TEMPO( COUNT, STRING )
+bold (14) above all: COUNT STRING;
+@
+
+
+music
+
+// bar 1
+1: 2. with d below tie up; 8 with d below; with a below;
+2: [down]...2.d- tie down; 8; a-;
+phrase above 1: 1 til 1m+1;
+phrase below 2: 1 til 1m+1;
+DYN3(,1[-3], "p")
+TEMPO(0,"Allegro Moderato ( \\(smup2n\) = 76 \)")
+ital above 2: 1[+4] "m. d.";
+bar
+
+// bar 2
+1: 2. with d below; 8r; [with -]egc#+;
+2: [down]2.d-; 8r; [with -]a1a-;
+DYN(2.75,"f")
+bar
+
+// bar 3
+1: [with -]1fd+ tie;
+2: [with -]1d-a- tie;
+bar
+
+// bar 4
+1: 4fd+; r; 2 with a below slur up;
+2: 4d-a-; r; [down]2a- slur down;
+DYN3(,2[-3], "p")
+ital above 2: 2[+4] "m. d.";
+bar
+
+// bar 5
+1: 2. with d below; 8 with d below; with a below;
+2: [down]...2.d-; 8; a-;
+phrase above 1: 2.5 til 1m+1;
+phrase below 2: 2.5 til 1m+1;
+bar
+
+// bar 6
+1: 2. with d below; 8r; [with -]egc#+;
+2: [down]2.d-; 8r; [with -]a1a-;
+DYN(2.75,"f")
+bar
+
+// bar 7
+1: [with -]...4.fd+; <<staff clef=treble>> 8g-a-c#g; 2f-df tie;
+2: [with -]...4.d-a-; 8a1a-; 2d-a- tie;
+bar
+
+// bar 8
+1: 2f-df tie; 8; r; 4 with a- below;
+2: 2d-a- tie; 8; r; [down]4a-;
+DYN3(,2.5[-3], "p")
+phrase above 1: 2.75 til 1m+1;
+phrase below 2: 2.75 til 1m+1;
+bar
+
+// bar 9
+1: 4. with d- below; 8 with a- below; 4. with d- below; 16 with d- below; with a- below;
+2: [down]...4.d-; 8a-; 4.d-; 16d-; a-;
+phrase above 1: 1.75 til 2;
+phrase below 2: 1.75 til 2;
+phrase above 1: 2.75 til 1m+1;
+phrase below 2: 2.75 til 1m+1;
+ital above 2: 1 "cresc.";
+bar
+
+score beamstyle = 4,4,4,4
+staff 2 
+
+music
+// bar 10
+1: 8. with d- below; 16 with g- below; with g#- below; with a- below; c#; d; 4f; <<staff clef=bass>>8.r; [with -]16egc#+;
+2: [down]...8.d-; 16g-; g#-; a-; c#; d; 4f; 8.r; [with -]16a1a-;
+phrase above 1: 1.375 til 2;
+phrase below 2: 1.375 til 2;
+DYN(2.87,"f")
+bar
+
+// bar 11
+1: [with -]1fd+ tie;
+2: [with -]1d-a- tie;
+ital between 1&2: 0[+2] "marcato";
+bar
+
+// bar 12
+1: 4..fd+; <<staff clef=treble>>[with -]...16g-a-c#g; 4..f-df; 16g-a-c#a;
+2: 4..d-a-; [with -]...16a1a-; 4..d-a-; 16a1a-;
+ital between 1&2: 1.87 "dim.";
+bar
+
+// bar 13
+staff 2 vscheme = 2f;
+music
+1: [with -]1f-df tie;
+2 1: 2r; [with -]d tie;
+2 2: [with -]1d-a- tie;
+phrase above 2: 2 til 1m+2;
+DYN3(dist 2!,2[-4],"p")
+bar
+
+// bar 14
+1: 1f-df;
+2 1: 4.d; 8a; 2d;
+2 2: 1d-a-;
+bar
+
+// bar 15
+staff 1 vscheme = 2o;
+music
+1 1: [dist 0]4r; [with -]...d+; 2c+;
+1 2: 4s; 4fa; 2;
+2: 4r; [with -]...fad+; 2efac+;
+DYN(1.5[-2],"mf")
+TEMPO(0,"Meno mosso")
+bar
+
+// bar 16
+1 1: [with -]4d+; 2.f+ tie;
+1 2: 1fbd+ tie;
+2 1: 1dfbd+ tie;
+2 2: 4r; 2.d-;
+phrase above 1: 1 til 1m+1;
+bar
+
+// bar 17
+1 1: 8f+; [dist 0]r; [with -]...4a; 2g;
+1 2: 8fbd+; s; 4df; 2de;
+2 1: 8dfbd+; r; [with -]...4cdfa; 2b-deg;
+2 2: ms;
+bar
+
+// bar 18
+1 1: [with -]4a; 2.d+ tie;
+1 2: 1dfa tie;
+2 1: 1a-dfa tie;
+2 2: 4r; 2.d-;
+DYN(1,"p")
+bar
+
+// bar 19
+1 1: 8d+; s; [with -]...4a-df; 2b-de;
+1 2: 8dfa; [dist 0]r; 2.s;
+2 1: 8a-dfa; r; [with -]...4a-df; 2g-de;
+2 2: ms;
+bar
+
+score beamstyle = 4,4,4,4
+
+staff 1 unset vscheme
+
+// FIXME: cross-staff rest cause segfault, thus make 3 voices instead
+staff 2 vscheme = 3f
+
+music
+// bar 20
+1: [with -]2.g-b-e& tie; 8; a&-db;
+2 1: ms;
+2 2: [with -]2.e&-b-e& tie; 8; b1b- slur;
+2 3: ms;
+DYN(1[-2],"mf")
+ital between 1&2: 2.5 "dim.";
+bar
+
+// bar 21
+1: 1g-e&g;
+2 1: 2r; 4; [=a]16b-; c; d&; dn;
+2 2: 1e-b-;
+2 3: 2.s; [down]16b1; c-; d&-; dn-;
+DYN(1, "p")
+TEMPO(2.5,"Allegro ( \\(smup2n\) = 92 \)")
+// avoid collision with phrase
+ital below 1: 2.5 "poco a poco cresc.";
+bar
+
+staff 2 unset vscheme
+
+music
+// bar 22
+1: [=b]16 with e&- below; with en- below; with f- below; with f#- below; \
+	[=c]with g- below; with a&- below; with an- below; with b- below; \
+	[=d]with c below; with b- below; with a- below; [len 5]with b- below; \
+	[=e]with g- below; with g2 below; with b2 below; with e&- below;
+2: [down]...16 e&-; en-; f-; f#-; g-; a&-; an-; b-; \
+	c; b-; a-; b-; g-; g1; b1; e&-;
+//	medium curve (a.x+1, a.n+1) to (b.x, b.n+3) to (d.x, d.n+2) to (e.x+1, e.n+2);
+	medium curve (a.x+1, a.n+1) to (e.x+1, e.n+1) bulge 4;
+	phrase above 1: 2.625 til 2m+1;
+bar
+
+// bar 23
+1: 16 with g- below; with b- below; e&; f; [up]...g; d; e; f; \
+	g; b; c+; d+; e&+; en+; f+; f#+;
+2: [down]...16 g-; b-; e&; f; g; d; e; f; [-]g; b; with c+ above; with d+ above; \
+	with e&+ above; with en+ above; with f+ above; with f#+ above;
+bar
+
+// bar 24
+1: [up]8e&+g+; r; 4; 4; 16a+ =a; bn+; c6; c#6;
+2: 8 with e&+g+ above; r; 4; 4; 16a =c; bn; c+; c#+;
+// FIXME: avoid "ff" overlap with note
+DYN3(,1[-2], "ff")
+< between 1&2: 2.4 til 2.875;
+bar
+
+// bar 25
+staff 1
+	defoct = 5
+	vscheme = 2f
+staff 2
+	defoct = 4
+	vscheme = 2f
+
+music
+1 1: 8r; 16d; a; b; a; d; a; e; d; a-; d; b-; a-; d-; a-;
+1 2: [with >]1dd+ =b;
+2 2: [dist 14]8r; 16 with d above; with a above; \
+	with b above; with a above; with d above; with a above; \
+	with e above; with d above; with a- above; with d above; \
+	<< staff defoct = 3 >>[-]b; a; d; a;
+2 1: [with >]1d =d;
+// not between, collision with rest below
+DYN2(dist -2!, 1[-1], "ff")
+medium curve (a.x, a.y+2) to (b.x, b.y+2) bulge 2;
+medium curve (c.x, c.y+2) to (d.x, d.y+2) bulge 2;
+phrase above 1: 1.25 til 1m+2.375;
+phrase below 2: 1.25 til 1m+2.375;
+bar
+
+// bar 26
+staff 1
+	defoct = 4
+	unset vscheme
+music
+1: 16e; d; a-; d; with b- below; with d below; with a- below; with b- below; \
+	with f- below; with a- below; with d- below; with f- below; \
+	with a2 below; with bn2 below; with c- below; with c#- below;
+2 2: [up]16e; d; a-; d; [down]...b-; d; a-; b-; f-; a-; d-; f-; a1; bn1; c-; c#-;
+phrase above 1: 2.5 til 1m+1.875;
+phrase below 2: 2.5 til 1m+1.875;
+bar
+
+// bar 27
+music
+1: 16 \
+	with d- below; with a- below; with d- below; with a- below; \
+	[with >]with b- below; with a- below; with d- below; with a- below; \
+	with d- below; with a- below; with d- below; with a- below; \
+	[with >]with e  below; with d  below; with d- below; with a- below; 
+2 2: [down]...16 \
+	d-; a-; d-; a-; b-; a-; d-; a-; \
+	d-; a-; d-; a-; e ; d ; d-; a-;
+phrase above 1: 2 til 2.875;
+phrase below 2: 2 til 2.875;
+// FIXME: How to put accent inside phrase?
+mussym below 2: 1.5 "acc_gt"; 2.5 "acc_gt";
+bar
+
+// bar 28
+staff 2 unset vscheme
+music
+1: 8 with d- below; 16 with a- below; with g- below; \
+	16 with g#- below; with a- below; c#; d; 8f; r; 8.; 16e-g-c#;
+2: [down]...8d-; 16a-; g-; g#-; a-; c#; d; 8f; r; 8.; [-]16a1a-;
+DYN(2[-3], "sff")
+DYN(2.625, "f")
+phrase above 1: 1 til 2;
+phrase below 2: 1 til 2;
+TEMPO(2.875, "Tempo I")
+bar
+
+// bar 29
+1: 2.f-d tie; 8.; 16g-a-c#g;
+2: 2.d-a- tie; 8.; 16a1a-;
+ital between 1&2: 0[+2] "marcato";
+bar
+
+// bar 30
+1: 4..f-df; 16b-deb; 4..g-b-e; 16g-a-c#a;
+2: 4..d-a-; 16g1g-; 4..d-d; 16a1a-;
+ital between 1&2: 1.87 "dim.";
+bar
+
+staff 2 vscheme = 2f;
+
+// bar 31
+music
+1: 1f-df;
+2 1: 4.r; 8a; 4.d; 16a-; d;
+2 2: 1d-a-;
+phrase above 2: 1.75 til 2; 2.75 til 1m+1.375;
+DYN3(, 1.5, "p")
+bar
+
+staff 2 unset vscheme
+
+// bar 32
+music
+1: 2r; 4; eg;
+2: 16f; g#; bn; d+; [with -]4f+~; 8f+; [with -]16e+; [with -]d+; d&+; c+; b; b&;
+< between 1&2: 1 til 1.375;
+> between 1&2: 2.5 til 2.875;
+phrase above 1: 2.5 til 1m+1.5;
+phrase above 2: 2.25 til 1m+1.625;
+bar
+
+// bar 33
+staff 1 vscheme = 2f;
+music
+1 1: [with -]4a; 2c+; 4g;
+1 2: 2.cfa; 4e;
+2: 16a; f; d&; c; c; f-; 8r; 16; c; f; a; b; bn; c+; d&+;
+TEMPO(1, "Tempo precedente")
+DYN(0[+2], "p")
+< between 1&2: 2.5 til 2.875;
+phrase above 1: 2.5 til 1m+1.5;
+phrase above 2: 2.125 til 1m+1.625;
+bar
+
+// bar 34
+1 1: [with -]4a; 2c+; 4bn;
+1 2: 2.fa; 4g#;
+2: 16c+; a; f; d&; c; f-; 8r; 16; f+; e+; d#+; dn+; e+; d#+; dn+;
+> between 1&2: 1 til 1.5; 2.125 til 2.875;
+phrase above 1: 2.5 til 1m+1.5;
+phrase above 2: 2.125 til 1m+1.625;
+bar
+
+// bar 35
+1 1: [with -]4c#+; 2e+; 4bn;
+1 2: 2.eac+; 4g#;
+2: 16c#+; a; f; e; e; a-; 8r; 16; e; a; c+; d+; d#+; e+; f+;
+phrase above 1: 2.5 til 1m+1.5;
+phrase above 2: 2.125 til 1m+1.625;
+< between 1&2: 2.5 til 2.875;
+DYN(2.5[-4], "p")
+ital between 1&2: 2.5 "poco & poco cresc.";
+bar
+
+// bar 36
+1 1: [with -]4c#+; 2e+; 4c#gc+ tie;
+1 2: 2.ac+; 4s;
+2: 16e+; c#+; a; f; e; a-; 8r; ; 16a-; e; g; g#; a; b;
+phrase above 1: 2.5 til 1m+2.5;
+phrase above 2: 2.25 til 1m+1.75;
+> between 1&2: 1 til 1.5;
+bar
+
+// bar 37
+staff 1 unset vscheme
+staff 2 vscheme = 2f
+
+music
+1: 4cgc+; dgbd+; 4.egbc#+e+; 8fbd+f+;
+2 1: 16a; gn; e; c#; a-; e-; 8a1; 4s; c#+;
+2 2: 2s; 8r; 16e<>; g; c#+; g; e; g;
+// Huh, doesn't work
+// phrase above 2: 2.25 til 2.375;
+phrase below 2: 2.5 til 2.875;
+bar
+
+// bar 38
+staff 2 vscheme = 3f // FIXME: maybe bad design
+music
+1: [with -]4fbd+f+; 2gbc#+e+g+; 4egbc+e+ tie;
+2 1: 2s; 8.s; 16e; g; g#; a; b;
+2 2: 16d+; g; e; g; e+; g; e; g; e; a-; r; s; 4s;
+2 3: [up]...4d+; 2e+; 4s;
+phrase above 1: 1 til 1.5; 2.5 til 1m+2.5;
+phrase below 2: 1 til 1.375; 1.5 til 2.125;
+phrase above 2: 2.375 til 1m+1.75;
+< between 1&2: 2.5 til 2.875;
+bar
+
+// bar 39
+1: 4egbc+e+; fbd+f+; 4.gbc#+e+g+; 8ac+f+a+;
+2 1: 16a; g; e; c#; a-; e-; 8a1; r; 4.s;
+2 2: 2s; 8s; 16g<>; c#+; e+; c+; g; c+;
+2 3: 2.s; 4e+;
+phrase below 2: 2.5 til 2.875;
+> between 1&2: 1 til 1.5;
+bar
+
+// bar 40
+1: [with -]4ac#+f+a+; 2bc+e+g+b+; 4gbc+e+g+ tie;
+2 1: 2s; 8; 16r; e; g; g#; a; b;
+2 2: 16f+; c#+; g; c+; g+; c+; g; c+; g; a-; 4.s;
+2 3: 4f+; 2g+; 4s;
+phrase above 1: 1 til 1.5; 2.5 til 1m+2.5;
+phrase below 2: 1 til 1.375; 1.5 til 2.125;
+phrase above 2: 2.375 til 1m+1.75;
+bar
+
+// bar 41
+staff 2 unset vscheme
+music
+1: 4gbc+e+g+; ac#+f+a+; 4.bc+e+g+b+; 8cn+e+a+c6;
+2: 16a; g; e; c#; a-; e-; 8a1; r; 16a-; e; g; g#; a; b;
+phrase above 2: 2.25 til 1m+1.75;
+bar
+
+// bar 42
+1: [with -]4c+e+a+c6; 2c#+e+g+b+c#6; [with >]4d+g+b+d6;
+2: 16a; g; e; c#; a-; e-; 8a1; r; 16a-; e; g; b; d+; e+;
+phrase above 1: 1 til 1.5;
+phrase above 2: 2.25 til 1m+1.5;
+bar
+
+// bar 43
+staff 2 vscheme = 2f;
+music
+1: [with >]...4e+g+b+c#6e6; f+b+d6f6; 2g+b+c6e6g6 tie;
+2 1: 16c#+; b; g; e; 4a-; [with >]...e+; f+;
+2 2: 2s; 16e+; c+; cn+; b; f+; c#+; b; a;
+phrase below 2: 2 til 2.375; 2.5 til 2.875;
+bar
+
+// bar 44
+1: 2.g+b+c6e6g6 tie; 8; [with -]f#+c#6f#6;
+// 2 1: [with >; len 4]...4 with g+ above; with a+ above; with b+ above; [-]8s; [with -]a+;
+// 2 2: 16 with g+ above; with c#+ above; b; g; \
+// 	with a+ above; with c+ above; b; f; \
+// 	with b+ above; with c+ above; b; e; 4a1;
+2 1: [with >]...4g+; a+; b+; [-]8s; [with -]a+;
+2 2: 16g+; c#+; b; g; a+; c+; b; f; b+; c+; b; e; [up]4a1;
+phrase below 2: 1 til 1.375; 1.5 til 1.875; 2 til 2.5;
+bar
+
+// bar 45
+1: [with -]4fn+c#6fn6; e+c6e6; 4.g+g6; 8e+b+e6;
+2 1: [with -]4a+; 2g+; 4c#5;
+2 2: {8a+; c#+; g;}3; {8g+; c+; g;}3; {8c+; a-; r;}3; {8c5; c+; g;}3;
+phrase below 2: 1 til 1.33; 1.5 til 2.17; 2.5 til 2.83;
+DYN(1[-5], "ff")
+bar
+
+// bar 46
+1: [with -]4e&+b+e&6; d+b+d6; 4.b+b6; 8d+g+d6;
+2 1: [with -]4f#+; 2fn+; 4b+;
+2 2: {8f+; b; g;}3n; {8f+; b; g;}3n; {8b; a-; r;}3n; {8b+; b; g;}3n;
+phrase below 2: 1 til 1.33; 1.5 til 2.17; 2.5 til 2.83;
+bar
+
+// bar 47
+1: [with -]4c#+g+c#6; cn+g+cn6; 4.e+e6; 8c+g+c6;
+2 1: [with -]4f+; 2e+; 4g+;
+2 2: {8f+; b; g;}3n; {8e+; b; g;}3n; {8g; a-; r;}3n; {8g+; b; g;}3n;
+phrase below 2: 1 til 1.33; 1.5 til 2.17; 2.5 til 2.83;
+bar
+
+// bar 48
+1: [with -]4c&+g+c&6; bg+b+; 4.g+g6; 8ad+a+;
+2 1: [with -]4e&+; 2d+; 4f+;
+2 2: {8e+; b; g;}3n; {8d+; b; g;}3n; {8d; a-; r;}3n; {8f+; b; g;}3n;
+phrase below 2: 1 til 1.33; 1.5 til 2.17; 2.5 til 2.83;
+bar
+
+// bar 49
+staff 1 vscheme = 2f;
+music
+1 1: [with -]4aa+<g+>; 2gg+; [with -]4c#+c#6;
+1 2: 1c#+;
+2 1: [with -]...2c#+; e+;
+2 2: {8c+; g; a-;}3n; {r; g; c+;}3n; {e+; a+; b+;}3n; {a+; g+; c+;}3n;
+phrase below 2: 1 til 1.33; 1.67 til 1m+1.33;
+ital between 1&2: 1[-2] "dim.";
+bar
+
+// bar 50
+1 1: [with -]4gg+<f+>; 2ff+; [with -]4c+cn6;
+1 2: 1cn+;
+2 1: [with -]...2cn+; e&+;
+2 2: {8c+; f; a-;}3n; {r; f; c+;}3n; {e+; g+; a+;}3n; {g+; f+; c+;}3n;
+phrase below 2: 1.67 til 1m+1.33;
+bar
+
+// bar 51
+1 1: [with -]4ff+<e+>; 2ee+; [with -]4bbn+;
+1 2: 1bnd+;
+2 1: [with -]...2bn; d+;
+2 2: {8b; e; a-;}3n; {r; e; g#;}3n; {d+; f+; g+;}3n; {f+; d+; b;}3n;
+phrase below 2: 1.67 til 1m+1.33;
+bar
+
+// bar 52
+1 1: [with -]4ee+<d+>; 2dd+; [with -]4bb&+;
+1 2: 1b&;
+2 1: [with -]...2b&; d+;
+2 2: {8b; f; a-;}3n; {r; f; g#;}3n; {d+; e+; f+;}3n; {e+; d+; g;}3n;
+phrase below 2: 1.67 til 2.83;
+bar
+
+// bar 53
+1 1: 4r; 16; e+; a+; b+; a+; g+; e+; a; [with -]4e+<>;
+1 2: 2.s; [with -]4d+<>;
+2 1: {8a-; e; a;}3n; [with -]2e+; 4s;
+2 2: 4s; [with -]d+<>; c#+; <<staff clef=treble>>16r; e; a; b;
+phrase above 1: 1.625 til 2.375;
+< between 1&2: 1.625 til 1.875; 2.625 til 2.875;
+> between 1&2: 2 til 2.375;
+phrase below 2: 2.75 til 1m+1.375;
+DYN(1, "p")
+bar
+
+// bar 54
+1 1: 4e+; [with -]e&+<d+>; [=a]fnd+; [with -]e<>;
+1 2: 4c#+; 16b; a; b; a; 4s; [with -]4d<>;
+2 1: 4s; f# =b; <<staff clef=bass>>16b; a; b; a; r; e; a; b;
+2 2: 16a; g; e; a-; 2.s;
+> between 1&2: 1 til 1.375;
+phrase above 2: 2 til 2.375; 2.625 til 1m+1.375;
+line (a.x-3, a.y-7) to (b.x+2, b.n+2)
+bar
+
+// bar 55
+staff 2 unset vscheme
+music
+1 1: 4e; 16b-; e; g; g#; a; gn; e; a-; 4r;
+1 2: 4c#; [with -]...b-; a-; g-#;
+2: 16a; g; e; a-; 4r; 8c#-<>; a-; 16r; gn; e; a-;
+phrase above 1: 1.5 til 2.375;
+phrase below 1: 1.5 til 2.5;
+phrase above 2: 2.625 til 2.875;
+ital between 1&2: 1.5[-5] "cresc.";
+bar
+
+// bar 56
+staff 2 vscheme = 2f;
+music
+1 1: [with -]4a<>; 2g#; [with -]4b&e+b&+;
+1 2: 16a; f; d; a-; 4r; 2;
+2 1: 4s; [with -]4b; []bn; 8c+; c#+;
+2 2: {8d-; a-; f;}3; {8b; f; d;}3; {b; f; d;}3; 4e<>;
+phrase above 2: 2.5 til 1m+1;
+phrase below 2: 1 til 1.33; 1.5 til 1.83; 2 til 2.33; 2.5 til 1m+1.375;
+bar
+
+// bar 57
+1 1: [with -]4ae+a+; [with -]2a+; 16r; a+; d6; e&6;
+1 2: 4s; [with -]g+<>; f#+; s;
+2 1: 4e+; 16r; <<staff clef=treble>>a; d+; e&+; d+; cn+; a; d; 4a<>;
+2 2: 16e; c#+; a; e; 2s; [with -]4g<>;
+phrase above 2: 1.625 til 2.375;
+phrase above 1: 2.625 til 1m+1.375;
+DYN(1, "f")
+< below 1: 2.625 til 2.875;
+bar
+
+// bar 58
+1 1: 16d6; c6; a+; d+; e&+; d+; e+; d+; 4r; an<>;
+1 2: 2s; 4g =a; [with -]g<>;
+2 1: 4a; a& =b; 16e&; d; e; d; r; <<staff clef=bass>>a; d+; e&+;
+2 2: 4f#; bn-<>; b&-; s;
+phrase above 1: 1.5 til 1.875;
+phrase above 2: 2 til 2.375; 2.625 til 1m+1.375;
+ital between 1&2: 1.5[-3] "dim.";
+DYN(2.5, "p")
+line (a.x-2, a.s-2) to (b.x+2, b.n+2)
+> below 1: 1 til 1.375;
+bar
+
+// bar 59
+staff 2 unset vscheme
+music
+1 1: 4a; 16e&; a; c+; c#+; d+; cn+; a; d; 4r;
+1 2: 4f#; [with -]...e; d; c#;
+2: 16d+; c+; a; d; 4r; 8f#-; d; 16r; c+; a; d;
+phrase above 1: 1.5 til 2.375;
+phrase below 1: 1.5 til 2.5;
+phrase above 2: 2.625 til 2.875;
+phrase below 2: 2 til 2.5;
+ital between 1&2: 1.5[-5] "cresc.";
+bar
+
+// bar 60
+staff 2 vscheme = 2f
+music
+1 1: [with -]4d+<>; 2c#+; [with -]4e&+a+e&6;
+1 2: 16d+; b; g; d; [dist -6]4r; 2;
+2 1: {8g-; d; b;}3; 4e&+; en+; 8f+; f#+;
+2 2: 4s; {8e+; b; g;}3; {e+; a; d;}3; 4a<>;
+phrase above 2: 1 til 1.33; 1.5 til 1m+1; // FIXME: wrong endpoint
+phrase below 2: 1.5 til 1.83; 2 til 2.33;
+phrase above 1: 2.5 til 1m+1.5;
+bar
+
+// bar 61
+staff 1 vscheme = 3f
+music
+1 1: [with -]4d+a+d6; [with -]2d&+b+d&6; 4r;
+1 2: 4s; 16s bm with staff below; [=a]b; d+; en+ ebm; [with -]4f; []e;
+1 3: 2s; 16fn+ bm; d+; b; [=b]f ebm; 4s;
+2 1: 4a+; 16g&+ bm with staff above; 8.s ebm; 4s; [dist 4]8r; e;
+2 2: 16a bm; f#+; d+; a ebm; 8g+ bm; d&+; b; fn ebm; 4b-~;
+medium curve (a.x, a.y+3) to (b.x+1.2, b.y+9) bulge 5;
+phrase below 1: 2 til 2.5;
+phrase below 2: 1.5 til 1m+1;
+phrase above 2: 2.75 til 1m+1.33;
+ital between 1&2: 2 "cresc.";
+bar
+
+// bar 62
+staff 1 vscheme = 2f
+music
+1 1: [with -]4f+<>; 2e+; 4g&+c6g&6<f6>;
+1 2: 16f+; d&+; b; f; 4r; 2;
+2 1: {8f; b; d&+;}3; <<staff clef=treble>>4g&; gn; 8a&; an; 
+2 2: 4b-; {8g; d; b-;}3; {g; c; f-;}3; 4c<>;
+phrase below 1: 1 til 1.375;
+phrase above 2: 1.5 til 1m+1;
+phrase below 2: 1.5 til 1.83; 2 til 2.33; 2.5 til 1m+1.375;
+bar
+
+// bar 63
+score
+	time = 3/2
+	beamstyle = 4,4,4,4,4,4
+music
+1 1: 4f+c6f6; 16g&; b; d&+; e+; f+; d+; b; f; 4r; [with -]f+b+d&6f6; e+b+d6e6 tie;
+1 2: 4s; g; f; e; 2s;
+// FIXME: cheat! create virtual note b- so phrase is allowed
+2 1: 4c+; r; <<staff clef=bass>>8d&+; b<>; 16; d+; b; f; [len 0]4b-; [with -]4g&+;
+2 2: 16c; a; f; c; 2.s; 16b-; f; b; d+; {8g+; d+; b;}3;
+phrase above 1: 1.5 til 2.375; 3 til 1m+1;
+phrase below 1: 1.5 til 2.5;
+phrase above 2: 2 til 2.875; 3 til 3.5;
+DYN(1.5, "f")
+bar
+
+// bar 64
+1 1: [down]4e+b+d6e6; 16g&; b; d&+; e+; f+; d+; b; f; 4r; \
+	[down; with -]f+b+d&6f6; [down]e+b+d6e6 tie;
+1 2: 4s; g; f; e; 2s;
+// FIXME: cheat! create virtual note b- so phrase is allowed
+2 1: 4gn+; [dist 0]r; [down]8d&+; b<>; [down]16; d+; b; f; [len 0]4a-; [with -]4g&+;
+2 2: 16g+; d&+; b; f; 2.s; 16a&-; f; b; d+; {8g+; d+; b;}3;
+phrase above 1: 1.5 til 2.375; 3 til 1m+1;
+phrase below 1: 1.5 til 2.5;
+phrase above 2: 2 til 2.875; 3 til 3.5;
+phrase below 2: 1 til 1.375;
+bar
+
+// bar 65
+1 1: [down]4e+b+d6e6; [down;with -]f+b&+d6f6<g6>; [down]g&+b+d6g&6; d+; e+; a;
+1 2: 2.s; 16d&+; d6; g+; a&+; e&+; e&6; a+; b+; a&; a+; d+; e+;
+2 1: [with -]4gn+; 2s; 4c&+; b; a;
+2 2: 16g+; d&+; b; f; {8g&- =a; d&; b~;}3; [down]16; <<staff clef=treble>>d&; g&; b =b; \
+	{8c+; e&; g;}3; {b; d; g;}3; {a; b-; d;}3;
+phrase below 1: 2.5 til 2.875; 3 til 3.375; 3.5 til 3.875;
+phrase below 2: 1 til 1.375; 2.5 til 2.83; 3 til 3.33; 3.5 til 3.83;
+medium curve (a.x, a.y+3) to (b.x, b.y+3) bulge 8;
+DYN(1.5, "f")
+bar
+
+// bar 66
+1 1: 4b; [with -]c+g&+b+c6<d6>; d&+g+b+d&6; \
+	16a&; a&+; d+; e+; b; b+; e+; f+; f; f+; a; b;
+1 2: 16b; b+; e+; f+; 2s; 4a; b; f;
+2 1: 4g&; 2s; 4a&; g; <<staff clef=bass>>e&+;
+2 2: {8g; d&-; b-;}3; {<<staff clef=bass>>8r; g&- =a; d&;}3; \
+	16g&; b; <<staff clef=treble>>d; g& =b; \
+	{8a; c&; d;}3; {g; b-; d;}3; {e+; g; b;}3;
+phrase above 1: 2.5 til 2.875; 3 til 3.375; 3.5 til 3.875;
+phrase below 1: 1 til 1.375;
+phrase below 2: 1 til 1.33; 2.5 til 2.83; 3 til 3.33; 3.5 til 3.83;
+medium curve (a.x+2, a.y+10) to (b.x, b.y+3) bulge 5;
+ital between 1&2: 1.5[-3] "dim.";
+bar
+
+// bar 67
+score
+time = cut
+beamstyle = 4,4,4,4
+music
+1 1: 16g&; g&+; b; d&+; [with -]4a&a&+<b+>; bb+; 16d&; d+; g; a;
+1 2: 4g; 2d+g+; 4d;
+2 1: 4d&+; {8r; g&-; d;}3n; {b; d+; g&+;}3n; 4c&+;
+2 2: {8d+; d&; b;}3n; 2s; {8c+; e&; g&;}3n;
+phrase above 1: 1 til 1.375; 2.5 til 2.875;
+phrase above 2: 1.67 til 2.33;
+phrase below 2: 1 til 1.33; 2.5 til 2.83;
+bar
+
+// bar 68
+1 1: 16e&; e&+; a&; b; [with -]4ff+<g+>; g&g&+; 16b&-; b; d&; e;
+1 2: 4e; 2bd&+; 4b-;
+2 1: 4b; {8r; g&-; d;}3n; {g; b; d&+;}3n; 4a&;
+2 2: {8b; d&; g&;}3n; 2s; 8a; d;
+phrase above 1: 1 til 1.375; 2.5 til 2.875;
+phrase above 2: 1.67 til 2.33;
+phrase below 2: 1 til 1.33; 2.5 til 2.75;
+bar
+
+// bar 69
+1 1: 16c&; c&+; e&; g&~; [with -]4cn<d>egbcn+; d&gbd&+; 16a&-; a&; d; e;
+1 2: 4c; 2s; 4a-;
+2 1: 4g&; {8r; g&-; c;}3n; {d&; g; b;}3n; 4f;
+2 2: 8g; e&; 2.s;
+phrase above 1: 1 til 1.375; 2.5 til 2.875;
+phrase above 2: 1.67 til 2.33; 2.5 til 2m+1;
+phrase below 2: 1 til 1.25;
+DYN(2.5[-2], "mf")
+bar
+
+// bar 70
+staff 2 unset vscheme
+music
+1 1: 16b-; b; d&; g&; 16r; <<staff clef=bass>>f; f+; b; \
+	r; g&; g&+; d&+; 8s; [with -]c+;
+1 2: 4b-; 2s; 16r; c; c+; b;
+2: 4e&; d&; b-; g&-~;
+phrase above 1: 1 til 1.375; 1.5 til 1.875; 2 til 2.375;
+phrase below 1: 2.5 til 2.875;
+bar
+
+// bar 71
+1 1: 16s; [ho 0; with -]8.d&+~; 2; 16s; [ho 0; with -]8.c+;
+1 2: 16d&; d+; g&; b; r; g; b; d; r; g; b; d; c; c+; g; b;
+2: 4g-; f-; 2e&-~;
+phrase below 1: 1 til 1.375; 1.625 til 1.875; 2.125 til 2.375; 2.5 til 2.875;
+phrase below 2: 1.5 til 1m+2.5;
+ital between 1&2: 1[-2] "dim.";
+bar
+
+// bar 72
+1 1: 16s; [with -]8.d&+~; 4; [with -]2e&+;
+1 2: 16d&; [ho0]d+; g&; b; r; g; b; e&~; e; g; b; e~; e; g; b; c+;
+2: 4e-; 2d&-; 4c-;
+rom above 1: 1.25[-2] "rit.";
+phrase below 1: 1 til 1.375; 1.625 til 2; 2.125 til 2.875;
+bar
+
+// bar 73
+staff 2 vscheme = 2f
+music
+1 1: [with -]2bdn+f+; <<staff clef=treble>>16r; f; b-; f-; b-; f; b-; f-;
+1 2: 2s; [with -]d~;  // BUG: tie running across notes
+2 1: [with -]2f-dnf; {8d; f; f-;}3; {d; f; f-;}3;
+2 2: 4r; f1; [with -]2d;
+DYN(1, "p")
+DYN(2[-2], "mf")
+phrase above 1: 2.125 til 1m+1.375;
+phrase above 2: 2 til 1m+1.33;
+TEMPO (0, "Moderato ( \\(smup2n\) = 60 \)")
+bar
+
+// bar 74
+1 1: 16b-; f; b-; f-; d; f; b-; f-; d; f; b-; f-; d; f; b-; f-;
+1 2: 4d; [with -]...d; d;;
+2 1: {8d; f; f-;}3n; {d; f; f-;}3n; {d; f; f-;}3n; {d; f; f-;}3n;
+2 2: 4s; [with -]...d;;;
+phrase above 1: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+phrase above 2: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83;
+bar
+
+// bar 75
+1 1: 16d; f; b-; f-; c; f; b-; f-; d; f; b-; f-; b-; f; b-; f-;
+1 2: [with -]...4d; c; 2d~; // BUG: tie running across notes
+2 1: {8d; f; f-;}3n; {c; f; f-;}3n; {d; f; f-;}3n; {d; f; f-;}3n;
+2 2: [with -]...4d; c; 2d~;
+phrase above 1: 1 til 1.375; 1.5 til 1.875; 2 til 1m+1.375;
+phrase above 2: 1 til 1.33; 1.5 til 1.83; 2 til 1m+1.33;
+bar
+
+// bar 76
+1 1: 16b-; f; b-; f-; d; f; a-; f-; a-; f; a-; f-; e&; f; a-; f-;
+// FIXME: with - or not?
+1 2: 4d; [with -]2; [with -]4e;
+2 1: {8d; f; f-;}3n; {d; f; f-;}3n; {d; f; f-;}3n; {e&; f; f-;}3n;
+2 2: 4d; [with -]2; [with -]4e;
+phrase above 1: 1.5 til 2.375; 2.5 til 2.875;
+phrase above 2: 1.5 til 2.33; 2.5 til 2.83;
+ital between 1&2: 2 "dim.";
+rom above 1: 2 "rit." til 1m+1.95;
+bar
+
+// bar 77
+1 1: 16d; f; b-; f-; 4r; 16; f; b-; f-; b-; f; b-; f-;
+1 2: [with -]...2d;~; // BUG: tie running across notes
+2 1: {8d; f; f-;}3n; 4f1; {8d; f; f-;}3n; {d; f; f-;}3n; 
+2 2: [with -]...2d;;
+phrase above 1: 1 til 1.375; 2.125 til 1m+1.375;
+phrase above 2: 1 til 1.33; 2 til 1m+1.33;
+DYN(1, "p")
+DYN(2[-2], "mf")
+rom above 1: 2 "a tempo";
+bar
+
+// bar 78
+1 1: 16b-; f; b-; f-; d; f; b-; f-; d; f; b-; f-; d; f; b-; f-;
+1 2: 4d; [with -]...d; d;;
+2 1: {8d; f; f-;}3n; {d; f; f-;}3n; {d; f; f-;}3n; {d; f; f-;}3n;
+2 2: 4s; [with -]...d;;;
+phrase above 1: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+phrase above 2: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83;
+bar
+
+// bar 79
+1 1: 16d; f; b-; f-; c; f; b-; f-; d; f; b-; f-; b-; f; b-; f-;
+1 2: [with -]...4d; c; 2d;
+2 1: {8d; f; f-;}3n; {c; f; f-;}3n; {d; f; f-;}3n; {d; f; f-;}3n;
+2 2: [with -]...4d; c; 2d;
+phrase above 1: 1 til 1.375; 1.5 til 1.875; 2 til 2.875;
+phrase above 2: 1 til 1.33; 1.5 til 1.83; 2 til 2.83;
+bar
+
+// bar 80
+1 1: 16c; f; a-; f-; a-; f; a-; f-; a-; f; a-; f-; b-; f; b-; g-;
+1 2: [with -]...2.c; 4b-;
+2 1: {8c; f; f-;}3n; {c; f; f-;}3n; {c; f; f-;}3n; {c; f; c-;}3n;
+2 2: [with -]...2.c; 4;
+phrase above 1: 1 til 2.375; 2.5 til 2.875;
+phrase above 2: 1 til 2.33; 2.5 til 2.83;
+DYN(1[-2], "mf")
+ital between 1&2: 2.5 "dim.";
+rom above 1: 1 "rit." til 1m+3;
+bar
+
+// bar 81
+score
+time = 2/4
+beamstyle = 4,4
+music
+1 1: 16c; f; a-; f-; a-; f; d; f;
+1 2: [ho 0;with -]4.c<>; [with -]8d;	// BUG: slur running across notes
+2 1: {8c; f; f-;}3n; 16c; f; d; f;
+2 2: [ho 0;with -]4.c; [with -]8d;
+phrase above 1: 1 til 2.75;
+phrase above 2: 1 til 1.67; 2 til 2.75;
+bar
+
+// bar 82
+score
+time = cut
+beamstyle = 4,4,4,4
+music
+1 1: 16d; f; b-; f-; 8r; 16b-; f; d; f; b-; f-; 8r; 16b-; f;
+1 2: [with -]...2d; ~;  // BUG: slur running across notes
+2 1: 16d; f; d; f-; b1; f-; d; f; d; f; d; f-; b1; f-; d; f;
+2 2: [with -]...2d;;
+phrase above 1: 1 til 1.375; 1.75 til 2.375; 2.75 til 1m+1.375;
+phrase above 2: 1 til 1.875; 2 til 2.875;
+rom above 1: 1 "a tempo";
+DYN(1, "p")
+bar
+
+// bar 83
+1 1: 16b-; f; b-; f-; d; f; b-; f-; d; f; b-; f-; d; f; b-; f-;
+1 2: 4d; [with -]...;;;
+2 1: 16d; f; d; f-; b1; f-; d; f; d; f; d; f-; d; f; d; f-;
+2 2: 2s; [with -]...4d;;
+phrase above 1: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+phrase above 2: 1 til 1.875; 2 til 2.375; 2.5 til 2.875;
+ital between 1&2: 1.5[-2] "cresc.";
+bar
+
+// bar 84
+1 1: 16d; f; b-; f-; c; f; b-; f-; d; f; b-; f-; 8r; 16b-; f;
+1 2: [with -]...4d; c; 2d~;  // BUG: slur running across notes
+2 1: 16d; f; d; f-; c; f; c; f-; d; f; d; f-; b1; f-; d; f;
+2 2: [with -]...4d; c; 2d;
+phrase above 1: 1 til 1.375; 1.5 til 1.875; 2 til 2.375; 2.75 til 1m+1.375;
+phrase above 2: 1 til 1.375; 1.5 til 1.875; 2 til 1m+1.375;
+bar
+
+// bar 85
+1 1: 16b-; f; b-; f-; d; f; a-; f-; a-; f; a-; f-; e&; g&; a-; g&-;
+1 2: 4d; [with -]2; [with -]4e;
+2 1: 16d; f; d; f-; d; f; d; f-; d; f; d; f-; e&; g&; e; f-;
+2 2: 4s; [with -]...2d; 4e;
+phrase above 1: 1.5 til 2.375; 2.5 til 2.875;
+phrase above 2: 1.5 til 2.375; 2.5 til 2.875;
+DYN(1.5[-2], "mf")
+bar
+
+// bar 86
+1 1: 16d; f; b-; f-; 8r; 16b-; f; e&; g; bn-; g-; f; a&; b-; a&-;
+1 2: [with -]...2d; 4e; f;
+2 1: 16d; f; d; f-; b1; f-; d; f; e&; g; e; g-; f; a&; f; g-;
+2 2: [with -]...2d; 4e; f;
+ital between 1&2: 1.75[-5] "cresc.";
+phrase above 1: 1 til 1.375; 1.75 til 2.875;
+phrase below 1: 2 til 2.5;
+phrase above 2: 1 til 1.875; 2 til 2.875;
+rom above 1: 1 "rit." til 2m+3;
+bar
+
+// bar 87
+1 1: 16e&; g; c; g-; 8r; 16c; g; d; g; b&-; g-; b-; g; b-; g-;
+1 2: [with -]...2e; d~;	// BUG: tie running across notes
+2 1: 16e&; g; e; g-; c-; g-; e; g; d; g; d; g-; d; g; d; g-;
+2 2: [with -]...2e; d;
+ital between 1&2: 1.75[-3] "dim.";
+phrase above 1: 1 til 1.375; 1.75 til 1m+1.375;
+phrase above 2: 1 til 1.875; 2 til 1m+1.375;
+bar
+
+// bar 88
+1 1: 16b-; g; b-; g-; c; g; c; a-; d; g; b-; g-; [with -]...b-; d; g; b;
+1 2: 4d; [with -]...c; 2d;
+2 1: 16d; g; d; g-; d; g; d; d-; d; g; d; g-; d; g; b; d+;
+2 2: 4s; [with -]...d; 2;
+phrase above 1: 1.5 til 1.875; 2 til 2.875;
+phrase above 2: 1.5 til 1.875; 2 til 2.875;
+DYN(2, "p")
+bar
+
+// bar 89
+staff 1 unset vscheme
+staff 2
+	vscheme = 3f
+	beamstyle = 4,4,2
+music
+1: [with -]...2dbd+; tie;
+2 1: 2s; 4f+; s;
+2 2: 4r; {8b1 =a; f; b;}3; {f+ =b; b; f+; b; f; b;}6n;
+2 3: 1fbf+;
+rom above 1: 1 "a tempo";
+// phrase above 2: 1.5 til 1m+1.833;  FIXME: b0rked!
+bar
+
+// bar 90
+staff 2
+	beamstyle = 2,4,4
+	vscheme = 2f
+music
+1: 4dbd+; [with -]...;;;
+2 1: 2s; 4f+;;
+2 2: {8f; b-; f; b; f; b =c;}6n; {f+; f; b;}3n; {f+; f; b;}3n;
+medium curve (a.x+2, a.y+20) to (b.x, b.y+6) to (c.x, c.y+2);
+phrase below 2: 2 til 2.33; 2.5 til 2.83;
+bar
+
+// bar 91
+staff 2 beamstyle = 4,4,2
+music
+1: [with -]...4dbd+; cbc+; 2dbd+ tie;
+2 1: 4f+; e&+; 2f+;
+2 2: {8f+; f; b;}3n; {e+; f; b;}3n; {[=a] f+; f; b; f; b-; f;}6n;
+ital between 1&2: 2 "cresc.";
+phrase below 2: 1 til 1.33; 1.5 til 1.83; // 2 til 1m+1.33; FIXME: ugly!
+bar
+
+// bar 92
+1: 4dbd+; [with -]2e&be&+; [with -]4fbf+;
+2 1: 4s; [with -]2.g&+;
+2 2: {[=b] 8b1; f; [=c] b;}3n; {g+; b; g+;}3n; {b; a&; b; a; b-; b;}6n;
+medium curve (a.x-1.2, a.y-6) to (b.x, b.y-11) to (c.x, c.y-6);
+phrase below 2: 1.5 til 2.83; 
+bar
+
+// bar 93
+staff 2 beamstyle = 2,2
+music
+1: [with -]...2e&be&+; ebe+ tie;
+2 1: [with -]...2gn+; g+;
+2 2: {8g+; b; g; e&-b-; g; b;}6n; {g+; b; g+; b; g; b;}6n;
+DYN(2[-2], "mf")
+TEMPO(1, "Pi\\(ugrave\) mosso")
+phrase below 2: 1 til 1.833; 2 til 1m+1.833;
+bar
+
+// bar 94
+staff 2 beamstyle = 4,4,4,4
+music
+1: 4ebe+; [with -]...e&be&+; ebe+;;
+2 1: 2s; 4g+;;
+2 2: {8g; b-; g;}3n; {e&-b-; g; b;}3n; {g+; g; b;}3n; {g+; g; b;}3n;
+phrase below 2: 2 til 2.333; 2.5 til 2.833;
+bar
+
+// bar 95
+staff 2 beamstyle = 4,4,2
+music
+1: [with -]...4e&be&+; dbd+; 2ebe+ tie;
+2 1: 4g+; f+; 2g+;
+2 2: {8g+; g; b;}3n; {f+; f; b;}3n; {[=a]g+; g; b; g; b-; [=b]g;}6n;
+phrase below 2: 1 til 1.333; 1.5 til 1.833; // 2 til 1m+1.333; Wow! shit.
+ital between 1&2: 2 "cresc.";
+bar
+
+// bar 96
+1: 4ebe+; [with -]2fc+f+; [with -]4gc+g+;
+2 1: {[up]8e&-b-; g; [=c]b~;}3n; [with -]2.ba&+;
+2 2: 4s; {8a+; c+; a+;}3n; {c+; b; c+; b; c; c+;}6n;
+medium curve (a.x-1.2, a.y-6) to (b.x, b.y-10) to (c.x, c.y-6);
+phrase below 2: 1.5 til 2.833;
+bar
+
+// bar 97
+score
+time = 2/4
+staff 2 beamstyle = 2
+music
+1: [with -]2fc+f+;
+2 1: [with -]2an+;
+2 2: {8a+; c+; a; f-c; a; c+;}6n;
+phrase below 2: 1 til 2.833;
+bar
+
+// bar 98
+score
+time = cut
+beamstyle = 4,4,2
+music
+1: [with -]4fc+f+; [with >]2gd+g+; [with -]4ad+a+;
+2 1: [with -]4a+; [with >; ho 3]2.c+b+ =n;
+2 2: {8a+; c+ =m; a;}3n; {b+; d+; b+;}3n; {d+; c+; d+; c+; d; d+;}6n;
+phrase below 2: 1 til 1.33; 1.5 til 2.83;
+medium curve (m.x+1, m.y+1) to (n.x-1, n.y-5) bulge 1;
+DYN(0[+2], "f")
+bar
+
+// bar 99
+staff 1 vscheme = 2f
+staff 2 beamstyle = 2,4,4
+music
+1 1: [with -]4ge&+g+; [down;with -]2ac+e+a+; 4be+b+;
+1 2: [with -]2c+ =p; s;
+2 1: 2s; 4c+; d+;
+2 2: {8r; e&-; c; e&; g; bn;}6n; {c+; g+; g;}3n; {d+; g+; g;}3n;
+// FIXME: the line to right endpoint is too short
+line (n.x+3, n.y+4) to (p.x-2, p.y-4);
+phrase below 2: 1 til 2.833;
+phrase above 1: 1.5 til 2.5;
+bar
+
+// bar 100
+staff 1 unset vscheme
+music
+1: [with -]4ae&+g+a+; [with -]2be+g+b+; 4c+e+g+c6;
+2 1: 2s; 4d+; e&+;
+2 2: {8r; c-; c; g; b&; c+;}6n; {d+; g+; g;}3n; {e+; g+; g;}3n;
+phrase below 2: 1 til 2.833;
+phrase above 1: 1.5 til 2.5;
+bar
+
+// bar 101
+1: [with -]4be&+g+b+; [with -]2c+e+g+c6; 4d+g+d6;
+2 1: 2s; 4e&+; f+ =m;
+2 2: {8r; b1; b-; g; b; d+;}6n; {e+; g+; g;}3n; {f+; g+; g;}3n;
+phrase below 2: 1 til 2.833;
+phrase above 1: 1.5 til 2.5;
+ital between 1&2: 1[-2] "dim.";
+bar
+
+// bar 102
+staff 1 vscheme = 2f
+staff 2 beamstyle = 2,2
+music
+1 1: 4c+e&+g+c6; [down; with -]2d+g+d6; 4e+c6e&6;
+1 2: [with -]2g =n; s;
+2 1: 2s; [with -]an+ =p;
+2 2: {8r; g1; g-; e&; g; c+;}6n; {a+; e&+; c+~;; f#; d;}6n;
+phrase below 2: 1.167 til 1.833; 2 til 2.833;
+phrase above 1: 1.5 til 2.5;
+rom above 1: 1 "rit.";
+roll 1 1 to 1 2: 1;
+line (m.x+3, m.y+2) to (n.x-3, n.y-2);
+line (n.x+3, n.y-2) to (p.x-2, p.y+4);
+bar
+
+// bar 103
+score
+	time = 3/2
+	beamstyle = 2,2,2
+staff 1
+	beamstyle = 4,2,2,4
+staff 2
+	unset vscheme
+music
+1 1: [=q]4bnd+g+d6; [with -]d6; s; [with -]d6; s; [with -]d6;
+1 2: 4s; {8d6; a&+; g+;; a+; g+;}6; {d6; e&+; d+;; e+; d+;}6; {[len 11]d6; a+ =a; [len 7]g+;}3n;
+2: {8g-; e&; d;}3n; 4bn; <<staff clef=treble>>[with .]...4bn-d; b-g; gbn; \
+	{[-]8d+; c+; b;}3n;
+phrase below 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1.33;
+phrase above 2: 1 til 1.5; 3.5 til 1m+1;
+phrase below 2: 2 til 3;
+line (p.x+3, p.y+4) to (q.x-3, q.y-4);
+roll 1 1: 1;
+TEMPO(0, "a tempo ( \\(smup2n\) = 80 \)")
+DYN(1, "p")
+ital between 1&2: 1.5 "leggiero";
+bar
+
+// bar 104
+staff 1 beamstyle = 4,4,2,2
+music
+1 1: 4s; [with .]...e&6; f6; g6; bn+; c6;
+1 2: {[len 7]8g+; a&+ =b; [len 7]g+;}3n; {e6; a+; g+;}3n; {f6; a+; g+;}3n; \
+	{g6; a+; g+;}3n; {b+; e&+; d+;}3n; {c6; e+; d+;}3n;
+2: 4bn; 8g<>be&+; d; g<>bf+; d; g<>bg+; d; g<>b; d; a<>c+; d;
+// FIXME: band aid + bubble gum. How absurd, beam width looks different when
+// under low resolution, but ok under high resolution
+wide line (a.x, a.y-7.5) to (b.x, b.y-7.5);
+phrase below 1: 1.5 til 1.83; 2 til 2.83; 3 til 3.83;
+roll 2: 2.5;
+bar
+
+// bar 105
+staff 1 beamstyle = 4,2,2,4
+staff 2 vscheme = 2f
+music
+1 1: [with .]4d6; [with -]4g+; s; [with -]g+; s; [with -]g+;
+1 2: {8d6; a&+; g+;}3n; {g+; e&+; d+;; e+; d+;}6n; \
+	{g+; a&; g;; a; g;}6n; {[len 12]g+; c+ =a; [len 7]bn;}3n;
+2 1: 8bn<>d+; d; [with -]4c+<>; b; 2; 4d;
+2 2: 4s; 2g; [with -]4e&<>; d; {8d; a&-; g-;}3n; // FIXME: phrase or slur?
+phrase below 1: 1 til 1.33; 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1.33;
+phrase above 2: 3.5 til 1m+1;
+bar
+
+// bar 106
+staff 1 beamstyle = 4,4,2,2
+staff 2 unset vscheme
+music
+1 1: 4s; [with .]...a+; bn+; c6; e+; f+;
+1 2: {[len 7]8bn; c+ =b; [len 7]b;}3n; {a+; e&+; d+;}3n; {b+; e+; d+; c6; e+; d+;}6n; \
+	{e+;; d+; f+; e+; d+;}6n;
+2: 4g-d; 8g<>c+; d; g<>d+; d; g<>e&+; d; g<>; d; a<>; d;
+phrase below 1: 1.5 til 1.83; 2 til 2.83; 3 til 3.33; 3.5 til 3.83;
+// FIXME: yet another band aid + bubble gum. I want cross-bar beaming!
+wide line (a.x, a.y-7.5) to (b.x, b.y-7.5);
+bar
+
+// bar 107
+staff 1 beamstyle = 4,2,4,2
+music
+1 1: [with -]4g+; d+; e+; f+; bn; c+;
+1 2: {8g+; e&+; d+;}3n; {d+; a&; g;; a; g;}6n; {f+; a; g;}3n; \
+	{b; g; d; c+; g; d;}6n;
+2: 8bn<> bm; d ebm; {<<staff clef=bass>>d+ bm; c+; bn; b; e&; d ebm;}6n; 4g-d; d+; e&+;
+phrase below 1: 1 til 1.333; 1.5 til 2.333; 2.5 til 2.833; 3 til 3.333; 3.5 til 3.833;
+phrase above 2: 1.5 til 1.833; 2 til 2.333; 3 til 1m+2.5;
+bar
+
+// bar 108
+1 1: 4d+; g; a; bn; e; f;
+1 2: {8d+; g; d;}3n; {g; e&; d;; e; d;}6n; {b; e; d;}3n; {e;; d; f; e; d;}6n;
+2: 4f+; bn; c+; d+; 8g; e&; a; f;
+phrase below 1: 1 til 1.33; 1.5 til 2.33; 2.5 til 2.83; 3 til 3.83;
+phrase above 2: 3 til 3m+1;
+DYN(3,"p")
+bar
+
+// bar 109
+staff 1 unset beamstyle
+music
+1 1: 4g; r; 2; 8d; bn-; e; c;
+1 2: {8g; e&; d;}3n; 2.s; 2;
+2: 8bn; g; e&; c; f; d; g; e; bn-; g-; c; a-;
+phrase below 1: 1 til 1.33;
+phrase above 1: 3 til 2m+1;
+bar
+
+// bar 110
+staff 1 unset vscheme
+music
+1: 8f; d; <<staff clef=bass>>bn; g; c+; a; d+; b; g; e&; a; f#;
+2: 8d; bn-; g-; e&-; a-; f#-; b-; g-; e-; c-; f-; e-;
+ital between 1&2: 1 "dim.";
+bar
+
+// bar 111
+staff 2
+	vscheme = 2f
+	beamstyle = 4,4,2,2
+music
+1: 4dgbn; r; 2; 8; c; a; e&;
+2 1: 4g; {8bn1; g1; b1;}3n; {c-; b1; c-; d-; g1; d-;}6n; {e&-; d-; e-; f#-; g1; f-;}6n; // FIXME: missing tuplet number, add it and the phrase will b0rk
+2 2: 4s; b1; c-; d-; e-; f-;
+phrase above 1: 3.25 til 1m+1;
+phrase above 2: 1.5 til 1m+1.33;
+DYN3(, 1.5[-2], "pp")
+bar
+
+// bar 112
+1: 4dgbn; r; 2; 4; 8a; e&;
+2 1: {8g-; d-; g1;}3n; {bn1; g1; b1;}3n; {c-; b1; c-; d-; g1; d-;}6n; {e&-; d-; e-; f#-; g1; f-;}6n;
+2 2: 4g-; b1; c-; d-; e-; f-;
+phrase above 1: 3.5 til 1m+1;
+phrase above 2: 1.5 til 1m+1.33;
+bar
+
+// bar 113
+1: 4gdbn; bn-; c; d; e&; f;
+2 1: {8g-; d-; g1;}3n; 4bn1; c-; d-; e&-; fn-;
+2 2: 4g-; s; 1;
+phrase above 1: 1.5 til 3m+1;
+phrase above 2: 1.5 til 3m+1;
+ital between 1&2: 1.5 "un poco a cresc.";
+rom above 1: 1.5 "rit.";
+bar
+
+// bar 114
+staff 2
+	unset vscheme
+	unset beamstyle // FIXME: why doesn't work?
+music
+1: 4g; a; bn; c+; d+; e&+;
+2: 4g-; a-; bn-; c; d; e&;
+bar
+
+// bar 115
+score
+	time = common
+	beamstyle = 4,4,4,4
+music
+1: 4f+; g+; [with -]2a&+~;
+2: 4f; g; [with -]2a&~;
+bar
+
+// bar 116
+1: 2a+; r;
+2: 2a; [with -]g1g-;
+DYN(3, "p")
+bar
+
+// bar 117
+staff 2 vscheme = 2f
+music
+1: ms;
+2 1: 2.c~; 8; g;
+2 2: 2.c-~; 8; g-;
+phrase above 2: 1 til 1m+1;
+phrase below 2: 1 til 1m+1;
+TEMPO(1, "Tempo I")
+bar
+
+// bar 118
+1: 4s; 8.r; 16dfbn; 2e&c+ tie;
+2 1: 4c; 8.r; 16g1g-; 2c-g- tie;
+2 2: 4c-; 2.s;
+DYN(2.75, "f")
+bar
+
+// bar 119
+1: 4ec+; r; 2s;
+2 1: 4c-g-; r; 2g;
+2 2: 2s; g-;
+DYN3(dist 2!, 3[-4], "p")
+phrase above 2: 3 til 1m+3;
+phrase below 2: 3 til 1m+3;
+ital above 2: 3 "m. d.";
+bar
+
+// bar 120
+1: 2.s; 8.r; 16dfbn;
+2 1: 4.c; 8g; 4c; 8.r; 16g1g-;
+2 2: 4.c-; 8g-; 4c-; s;
+DYN(4.75, "f")
+bar
+
+// bar 121
+staff 2 vscheme = 3f
+music
+1: 4..e&c+; 16egc+; 2dgd+;
+2 1: 2r; 4..; 16g;
+2 3: [down]...4..c-g-; 16; 2b1g-;
+2 2: 2...s; 16g-;
+DYN3(dist 2!, 4.75[-4], "f")
+phrase above 2: 4.75 til 1m+1;
+phrase below 2: 4.75 til 1m+1;
+ital above 2: 4.75 "m. d.";
+bar
+
+// bar 122
+staff 2 vscheme = 2f
+music
+1: 4..s; 16e&gc+; 4..dgd+; 16;
+2 1: 4..b-; 16c-g-; 4..b1g-; 16b1b-;
+2 2: 4..b1; 16s; 2;
+ital between 1&2: 2.75 "cresc.";
+bar
+
+// bar 123
+score
+	time = 3/2
+	beamstyle = 4,4,4,4,4,4
+staff 1 vscheme = 2f
+staff 2 unset beamstyle
+music
+1 1: 4r; <<staff clef=treble>>[with >]b+~; 1~;
+1 2: 2gc#+en+; [dist -4]r;[dist -4];
+2 1: 4a1a-; {8c-; a1; c-;}3n; {d-; c-; d-;}3n; {e-; a1; e-;}3n; \
+	{f-; e-; f-;}3n; {g-; a1; g-;}3n;
+2 2: 4s; c#-; d-; e-; f-; g-;
+TEMPO(0, "Poco pi\\(uacute\) mosso")
+DYN(1[-1], "ff")
+ital between 1&2: 3 "dim.";
+phrase above 2: 1.5 til 3m+1;
+phrase above 1: 1.5 til 3m+2;
+bar
+
+// bar 124
+staff 1 unset vscheme
+music
+1: 4b+; 2g+; e+; 4c#+~;
+2 1: {8a-; a1; a-;}3n; {bn-; a-; b-;}3n; {c#; a-; c;}3n; {d; c; d;}3n; \
+	{e; a-; e;}3n; {f; e; f;}3n;
+2 2: 4a-; b-; c; d; e; f;
+bar
+
+// bar 125
+score
+	time = cut
+	beamstyle = 4,4,4,4
+music
+1: 1c+~;
+2 1: {8g; a-; g;}3n; {a; g; a;}3n; [with -]2b~;
+2 2: 4g; a; 2b;
+DYN(1, "p")
+< between 1&2: 1.5 til 1.9;
+> between 1&2: 2 til 1m+1.8;
+bar
+
+// bar 126
+1: 2c+~; 4; r;
+2 1: 2b; a1a-;
+DYN(2, "p")
+bar
+
+// bar 127
+1: 2.s; <<staff clef=bass>>8.r; 16egc#+;
+2 1: 4.d; 8a; 4d; 8.r; 16a1a-;
+2 2: 4.d-; 8a-; 4d-; s;
+phrase above 2: 1 til 2;
+phrase below 2: 1 til 2;
+ital above 2: 1 "m. d.";
+TEMPO (1, "Tempo I")
+bar
+
+// bar 128
+1: 2fd+ tie; 8; r; 4s;
+2 1: 2d-a- tie; 8; r; 4a;
+2 2: 2.s; 4a-;
+ital above 2: 2.5[-3] "m. d.";
+DYN3(dist 2!, 2.5[-4], "p")
+phrase above 2: 2.5 til 1m+2; // FIXME: distorts dynamics position too much
+phrase below 2: 2.5 til 1m+2;
+bar
+
+// bar 129
+1: 2.s; 8.r; 16egc#+;
+2 1: 4.d; 16d; a; 4d; 8.r; 16a1a-;
+2 2: 4.d-; 16d-; a-; 4d-; s;
+ital above 2: 1.75 "cresc.";
+DYN(2.875, "f")
+bar
+
+// bar 130
+staff 2 vscheme = 3f
+music
+1: 4..fd+; 16fad+; 2eae+;
+2 1: [dist 2]2r; [dist 2]4.; 16c; a;
+2 2: 2s; 4.; 16c-; a-;
+2 3: [down]4..d-a-; 16; 2c-a-;
+phrase above 2: 2.75 til 1m+1;
+phrase below 2: 2.75 til 1m+1;
+ital above 2: 2.75[-3] "m. d.";
+DYN3(dist 2!, 2.75[-4], "f")
+bar
+
+// bar 131
+staff 2 vscheme = 2f
+music
+1: 4..s; 16fad+; 4..eae+; 16ae+;
+2 1: 4..c; 16d-a-; 4..c-a-; 16c-c;
+2 2: 4..c-; 16s; 2;
+ital between 1&2: 1.875 "cresc.";
+bar
+
+// bar 132
+score
+	time = 3/2
+	beamstyle = 4,4,4,4,4,4
+staff 1 vscheme = 2f
+staff 2 unset beamstyle
+music
+1 1: 4r; <<staff clef=treble>>[with -]...2c6; bn+; 4a+~;
+1 2: 2ad#+f#+; [dist -4]r; [dist -4];
+2 1: 4bn1bn-; {8d#-; b1; d-;}3n; {e-; d-; e-;}3n; {f#-; b1; f-;}3n; \
+	{g-; f-; g-;}3n; {a-; b1; a-;}3n;
+2 2: 4s; d-; e-; f-; g-; a-;
+TEMPO(0, "Poco pi\\(uacute\) mosso")
+DYN(1, "ff")
+phrase above 1: 1.5 til 2m+1.5;
+phrase above 2: 1.5 til 2m+1.83;
+bar
+
+// bar 133
+1: 4a+; [with -]...2g+; f#+; 4e+~;
+2 1: {8bn-; bn1; bn-;}3n; {c#; b-; c;}3n; {d#; b-; d;}3n; {e; d; e;}3n; \
+	{f#; b-; f;}3n; {g; f; g;}3n;
+2 2: 4b-; c; d; e; f; g;
+bar
+
+// bar 134
+1 1: 4e+; d#+~; 1~; 
+1 2: 4r; d#; e; f#; g; a;
+2 1: {8a; bn-; a;}3n; {bn; a; b;}3n; 1c+~;
+2 2: 4a; b; 1s;
+DYN(1, "p")
+< between 1&2: 1.5 til 2.4;
+> between 1&2: 2.5 til 3.5;
+phrase below 1: 1.5 til 1m+1.5;
+bar
+
+// bar 135
+1 1: 1.d+~;
+1 2: 4bn; c+~; 1~;
+2 1: 4c+; {<<staff clef=treble>>8d#; dn; d#;}3n; {e; d; e;}3n; {f#; e; f;}3n; \
+	{g; f; g;}3n; {a; g; a;}3n;
+2 2: 4s; d; e; f; g; a;
+< between 1&2: 1 til 1.4;
+> between 1&2: 1.5 til 2;
+< above 2: 3.5 til 3.9;
+phrase above 2: 1.5 til 1m+1.5;
+bar
+
+// bar 136
+1 1: 2d+; [with -]1e+;
+1 2: 1c+<c+>; 2ac+ tie;
+2 1: {8b; a; b;}3n; 2c+; 4b; 2a~;
+2 2: 4b; 2c+; 2.s;
+> above 2: 1.5 til 2.5;
+phrase above 1: 1 til 1m+3;
+phrase above 2: 2.5 til 2m+1;
+ital above 1: 2 "cresc.";
+bar
+
+// bar 137
+1 1: [with -]1f+; 2f#+~;
+1 2: 1.ac+;
+2: 4a; g; 2f; {4e; f#; e;}3;
+rom above 1: 1 "rit.";
+> above 1: 3[+4] til 4;
+bar
+
+// bar 138
+staff 1 unset beamstyle
+music
+1 1: 4f+; {8f#+; c+; b;}3n; {b; c+; b;}3n; {bn+; c+; b;}3n; {b; c+; b;}3n; \
+	{f+; c+; b;}3n;
+1 2: 4abn; s; 1;
+2 1: 4bn-d#; e; d; dn; [with -]e; d#;
+2 2: 4s; a; f#-; a; 2b-;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 3.83;
+phrase above 2: 1.5 til 3.5;
+DYN(1, "p")
+ital between 1&2: 1.5 "leggiero";
+bar
+
+// bar 139
+staff 1 unset vscheme
+staff 2 clef = bass
+music
+1: 4r; {8f#+; c+; bn;}3n; {b; c+; b;}3n; {bn+; c+; b;}3n; {b; c+; b;}3n; \
+	{f+; c+; b;}3n;
+2 1: 4bn-f#; <<staff clef=treble>>e; d#; dn; [with -]e; d#;
+2 2: 4s; a; f#-; a; 2bn-;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 3.83;
+phrase above 2: 1.5 til 3.5;
+bar
+
+// bar 140
+staff 2 clef = bass
+music
+1: 4r; {8g+; c+; bn;}3n; {b; c+; b;}3n; {bn+; c+; b;}3n; {b; c+; b;}3n; \
+	{g+; c+; b;}3n;
+2 1: [slash 1; grace]8f#<g>; 4bn-g; <<staff clef=treble>>e&; d; c#; \
+	[with -]e; d;
+2 2: 4s; g; g-; bn; bn-; g;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 3.83;
+phrase above 2: 1.5 til 3.5;
+ital between 1&2: 1.5 "cresc.";
+bar
+
+// bar 141
+staff 2 clef = bass
+music
+1: 4r; {8g+; c+; bn;}3n; {b; c+; b;}3n; {bn+; c+; b;}3n; {b; c+; b;}3n; \
+	{g+; c+; b;}3n;
+2 1: 4bn-g; <<staff clef=treble>>e&; d; c#; \
+	[with -]e; d;
+2 2: 4s; g; g-; bn; bn-; g;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 3.83;
+phrase above 2: 1.5 til 3.5;
+ital between 1&2: 2.5 "dim.";
+bar
+
+// bar 142
+staff 2 clef = bass
+music
+1: 4r; {8f#6; c6; bn+;}3n; {b+; c6; b+;}3n; {f6; g+; f#+;}3n; \
+	{f+; g+; f+;}3n; {b+; c+; bn;}3n;
+2 1: [slash 1; grace]8g<f>; 4bn-f#; <<staff clef=treble>>d#; dn; c#; \
+	[with -]d#; dn;
+2 2: 4s; f#; f#-; bn; 2bn-;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1.33;
+phrase above 2: 1.5 til 3.5;
+DYN(1, "p")
+bar
+
+// bar 143
+staff 2 clef = bass
+music
+1: {8bn; g+; f#+;}3n; {bn+; g+; f+;}3n; {f+; g+; f+;}3n; \
+	{b+; c+; b;}3n; {b; c+; b~;}3n; {bf+; c+; c#+;}3n;
+2 1: [slash 1; grace]8g-<f->; 4bn1f#-; <<staff clef=treble>>d#; dn; c#; \
+	[with -]d#; dn;
+2 2: 4s; f#; f#-; bn; 2bn-;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 4m+1;
+phrase above 2: 1.5 til 3.5;
+< between 1&2: 3.5 til 3.9;
+bar
+
+// bar 144
+staff 1 vscheme = 2f
+staff 2 clef = bass
+music
+1 1: {8d+; bn; f#;}3n; {e#; en; e#;}3n; {f#; e; f;}3n; \
+	{g#; e; g;}3n; {a; g; a;}3n; {b; e; b;}3n;
+1 2: 4s; e; f; g; a; b;
+2: 4r; [with -]...2d+; c#+; 4bn~;
+DYN(1.5[-1], "mf")
+phrase above 2: 1.5 til 2m+1.45;
+bar
+
+// bar 145
+1 1: {8c#+; bn; c+;}3n; {d#+; e#; d+;}3n; {e#+; b; e+;}3n; \
+	{f#+; e+; f+;}3n; {g#+; b; g+;}3n; {a+; g+; a+;}3n;
+1 2: 4c+; d+; e+; f+; g+; a+;
+2 1: 4b; [with -]...2a; g#; 4f#~;
+2 2: 1.c#-;
+bar
+
+// bar 146
+staff 2 vscheme = 3f
+music
+1 1: {8bn+; bn; b+;}3n; {c#6; b+; c6;}3n; [with -]1d6~;
+1 2: 4b+; c6; 1s;
+2 1: 4f; [up]e#; {8f#; e; f;}3n; {g#; c; g;}3n; {a; g; a;}3n; {bn; c; b;}3n;
+2 2: 4r; s; f; g; a; b;
+2 3: 4s; [down]c#~; 1;
+phrase above 2: 1.55 til 1m+1.5;
+DYN(1, "f")
+ital between 1&2: 2[-1] "dim.";
+bar
+
+// bar 147
+staff 2 vscheme = 2f
+music
+1 1: 4d6; {8e#; en; e#;}3n; {f#; e; f;}3n; {g#; c#; g;}3n; \
+	{a; g; a;}3n; {bn; c; b;}3n;
+1 2: 4s; e; f; g; a; b;
+2 1: {8c#+; bn; c+;}3n; [with -]2d+; <<staff clef=treble>>4e#; f#; g#;
+2 2: 4c+; s; 1;
+DYN(1.5[-1], "mf")
+ital between 1&2: 2.5[-1] "dim.";
+phrase below 2: 2.5 til 1m+1;
+phrase above 1: 1.5 til 3m+1;
+bar
+
+// bar 148
+1 1: {8c#+; bn; c+;}3n; [=a]2bd+; c+e+; 4d+f#+<f+>;
+1 2: 4c+; 1s; [len 0; ho 0; down]4d+~; // fake note for slur
+2 1: [=b]4a; {8e#; en; e#;}3n; {f#; e; f;}3n; {g#; c#; g;}3n; \
+	{a; g; a;}3n; {bn; c; b;}3n;
+2 2: 4s; e; f; g; a; b;
+phrase above 2: 1.5 til 1m+2;
+line (a.x-3, a.y-2) to (b.x+3, b.y+2);
+< between 1&2: 3.5 til 1m+1;
+bar
+
+// bar 149
+1 1: 4f+; [with -]g+~; 2; [with -]g#+~;
+1 2: 4d+; bn~; 1b;
+2 1: {8c#+; bn; c+;}3n; 4d+~; 1;
+2 2: 4c+; d+<>; 2g; {4f#; g#; f;}3;
+> between 1&2: 2 til 3.8;
+rom above 1: 1 "rit.";
+phrase below 2: 3 til 1m+1; 
+bar
+
+// bar 150
+staff 1 beamstyle = 4,2,2,4
+music
+1 1: 4g+; {8g#+; d+; g#; c+; d+; c+;}6n; {c#6; d+; g; c+; d+; c+;}6n; \
+	{g+; d+; c+;}3n;
+1 2: 4bnc#+; s; 1;
+2 1: 4c#e#; f#; e; en; [with -]f; e#;
+2 2: [ho 0; len 0]4c; bn; g#-; b; 2c; // first note is fake, for the sake of phrasing
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1;
+phrase above 2: 1 til 3.5;
+DYN(1, "p")
+rom above 1: 1 "a tempo";
+bar
+
+// bar 151
+staff 1 unset vscheme
+staff 2 clef = bass
+music
+1: 4c#+; {8g#+; d+; g#; c+; d+; c+;}6n; {c#6; d+; g; c+; d+; c+;}6n; \
+	{g+; d+; c+;}3n;
+2 1: 4c#g#; <<staff clef=treble>>f#; e; en; [with -]f; e#;
+2 2: [ho 0; len 0]4c; bn; g#-; b; 2c; // first note is fake, for the sake of phrasing
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1;
+phrase above 2: 1.5 til 3.5;
+bar
+
+// bar 152
+staff 2 clef = bass
+music
+1: 4c#+; {8a+; d+; a; c+; d+; c+;}6n; {c#6; d+; a; c+; d+; c+;}6n; \
+	{a+; d+; c+;}3n;
+2 1: [grace; slash 1]8c#~; 4ca; <<staff clef=treble>>fn; e; d#; [with -]f; e;
+2 2: 4s; a; a-; c#+; c#; a;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1;
+phrase above 2: 1(-1) til 1; 1.5 til 3.5;
+ital between 1&2: 1.5 "cresc.";
+bar
+
+// bar 153
+staff 2 clef = bass
+music
+1: 4c#+; {8a+; d+; a; c+; d+; c+;}6n; {c#6; d+; a; c+; d+; c+;}6n; \
+	{a+; d+; c+;}3n;
+2 1: 4ca; <<staff clef=treble>>fn; e; d#; [with -]f; e;
+2 2: 4s; a; a-; c#+; c#; a;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1;
+phrase above 2: 1.5 til 3.5;
+ital between 1&2: 2.5 "dim.";
+bar
+
+// bar 154
+staff 2 clef = bass
+music
+1: 4c#+; {8g#6; d6; c#6; g#+; a+; g+;}3n; {c6; a+; g+; c+; d+; c+;}3n; \
+	{[len 12]g+; [=p]d+; [len 8]c+;}3n;
+2 1: [grace; slash 1]8c#~; 4cg#; <<staff clef=treble>>e#; en; d#; [with -]e#; en;
+2 2: 4s; g#; g#-; c#+; 2c#;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1.33;
+phrase above 2: 1(-1) til 1; 1.5 til 3.5;
+bar
+
+// bar 155
+staff 2 clef = bass
+music
+1: {[len 5]8g#; [=q]g#+; [len 8]c#+;}3n; {c#6; a+; g+; c+; d+; c+;}6n; \
+	{g+; a; g;; a; g;}6n; [=b]4enc+;
+2 1: [grace; slash 1]8g#-~; 4c#-g-; <<staff clef=treble>>e#; en; d#; \
+	[with -; =a]e#; {<<staff clef=bass>>8c#; dn; d#;}3n;
+// FIXME: slur on grace note is ugly!
+2 2: 4s; g#; g#-; c#+; 2c#;
+phrase above 1: 1.5 til 2.33; 2.5 til 3.33;
+phrase above 2: 1.5 til 3; 3.5 til 3.83;
+phrase below 2: 1(-1) til 1;
+< below 2: 3.5 til 3.83;
+line (a.x+3, a.y+5) to (b.x-4, b.y-7);
+wide line (p.x, p.y-6.5) to (q.x, q.y-6.5);
+bar
+
+// bar 156
+staff 1
+	vscheme = 2f
+	unset beamstyle
+music
+1 1: 4r; [with -]2f&6; [with -]2.e&6;
+1 2: [dist 0]2r;; 4; [with -]f&+~;
+2 1: {8e; c#; g#-;}3n; {gn-; e&-; g-;}3n; {a&-; g-; a-;}3n; \
+	{b-; e-; b-;}3n; {c&; b-; c;}3n; {d&; e-; d;}3n;
+2 2: 4s; g-; a-; b-; c; d;
+phrase above 1: 1.5 til 2m+2;
+phrase above 2: 1 til 3m+1;
+ital between 1&2: 3.5 "cresc.";
+TEMPO (1, "Pi\\(uacute\) vivo")
+bar
+
+// bar 157
+1 1: [with -]...2d&6; c&6; b+;
+1 2: 4f+; [with -]...2e&+; d&+; 4c&+~;
+2 1: {8e&; e&-; e&;}3n; {f; e; f;}3n; {g; e; g;}3n; {a&; g; a;}3n; \
+	{b; e; b;}3n; {c&+; b; c+;}3n;
+2 2: 4e; f; g; a; b; c+;
+bar
+
+// bar 158
+1 1: 2a&+; 4g+; {8g bm; g&; gn ebm;}3n; {a& bm; g; a; b; a; b ebm;}3n;
+1 2: 4c+; [with -]2b; 4r; 2;
+2 1: {8d&+; d&; d+;}3n; {e&+; d+ =a; e+;}3n; 2f&+; 4e+; d+;
+2 2: 4d+; e+; 1d+ =b;
+medium curve (a.x, a.y-2) to (b.x, b.y-2) bulge -2;
+DYN(2.5[-4], "f")
+> between 1&2: 2.5 til 2.85;
+// > above 2 dist 6!: 2.5[-5] til 2.9;
+phrase above 1: 2.5 til 1m+1;
+bar
+
+// bar 159
+staff 2 vscheme = 3f
+music
+1 1: 4c+; {8an; a&; an;}3n; {b; a; b;}3n; {c+; a; c+;}3n; \
+	{d&+; c+; d+;}3n; {e&+; a; e+;}3n;
+1 2: 4s; a; b; c+; d+; e+;
+2 1: 4c+; [with -]2.g&+; [with -]2f+;
+2 2: 1e&anc+; 4r; [with -]g&~;
+2 3: [dist -6; ho 0]2r; [dist -6]4; 2.f-;
+phrase above 1: 1.5 til 3m+1;
+phrase above 2: 1.5 til 2m+2;
+phrase below 2: 3.5 til 2m+1.5;
+DYN(1.5, "f")
+bar
+
+// bar 160
+staff 2 vscheme = 2f
+music
+1 1: {8f+; e&+; f+;}3n; {g+; a; g+;}3n; {a+; e+; a+;}3n; {b+; a+; b+;}3n; \
+	{c6; e+; c6;}3n; {d&6; c6; d6;}3n;
+1 2: 4f+; g+; a+; b+; c6; d6;
+2 1: [with -]...2e&+; d&+; c+;
+2 2: 4g; [with -]...2f; e&; 4d&;
+bar
+
+// bar 161
+1 1: {8e&6; e&+; e&6;}3n; {f6; e6; f6;}3n; [with -]2g&6; 4f6; e6;
+1 2: 4e6; f6; 1s;
+2 1: [with -]2b; {8a bm; e&; c; f-; e; a ebm;}6n; {b bm; a; b; c+; f =a; c+ ebm;}6n;
+2 2: 4d; [with -]2c; 4r; 2;
+> between 1&2: 3 til 3.5;
+phrase above 2: 2 til 1m+1;
+bar
+
+// bar 162
+1: 4d6; 2a&+; g+; 4f+~;
+2 1: 4a&d+; {[=m]8bn; f; b;}3n; {c+; b; c+;}3n; {d+; f; d+;}3n; \
+	{e&+; d+; e+;}3n; {f+; [=c]b; f+<f+> =e;}3n;
+2 2: 4f =b; g-f; c+; d+; e+; f+;
+roll 2 1 to 2 2: 1.5;
+phrase above 1: 1.5 til 1m+2.5;
+medium curve (a.x+3, a.y-1) to (b.x-1, b.y-1) bulge -2;
+DYN(1.5, "f")
+bar
+
+// bar 163
+staff 1 vscheme = 3f
+music
+1 1: 4f+; 2e&+; {8d+ bm; c#+; d+ ebm;}3n; {e+ bm; d+; e+; f+; bn; f+ ebm;}6n;
+1 2: {8f# =f; fn; f#;}3n; {g; f; g;}3n; 4s; d+; e+; f+;
+1 3: 2s; [with -; down; =n]a&; s;
+2 1: [=d]1bf+; 4g+<> =p; f+ =a;
+2 2: 2r; 8; g- bm; f; bn ebm; 2bd+;
+phrase above 1: 2.5 til 1m+1;
+phrase below 2: 2.25 til 2.75;
+medium curve (c.x, c.y+3) to (d.x, d.y+3) bulge -2;
+medium curve (m.x+2, m.y+12) to (n.x-3, n.y-9) bulge 4, -2;
+line (e.x+3, e.y+3) to (f.x-3, f.y-4);
+line (n.x, n.y-5) to (p.x-2, p.y+2);
+bar
+
+// bar 164
+score beamstyle = 2,2,2
+staff 1 vscheme = 2f
+music
+1 1: [=b]4enc#+g+; {8c+; g; c+;}3n; {d+; c+; d+; e+; g; e+;}6n; \
+	{f+; e+; f+; g+; c+; g+;}6n;
+1 2: 4s; c+; d+; e+; f+; g+;
+2 1: 4g-eb&; [with -]...2b+; a+; 4g+~;
+2 2: 4s; gc#+e+ tie; 1g<g>c+<c+>e+;
+phrase above 1: 1.5 til 2m+1;
+phrase above 2: 1.5 til 1m+1.5;
+line (a.x+3, a.y+2) to (b.x-3, b.y-8);
+roll 2 1 to 2 2: 1.5;
+bar
+
+// bar 165
+staff 2 vscheme = 3f
+music
+1 1: {8g#+; c#+; g+;}3n; {a+; g+; a+;}3n; [with -]2b+; 4a+; gn+;
+1 2: 4g+; a+; 2s; {8s bm with staff below; 2; 8g =b ebm;}6n;
+2 1: 4g+; [with -]2f+; {8e+ bm; d#+; e+ ebm;}3n; {f+ bm with staff above; e+; f+; g+; c+; s ebm;}6n;
+2 2: 4gc+; gnc#+ tie; {8 =a; [=m]g; c+~;}3n; [=n]2gc+; 4s;
+// fake note, mup does not support 4 voices :(
+2 3: {[with >; ho 1.5]1.a-; 2s;}2n,1; 4f+; g+;
+medium curve (m.x+2, m.y+1) to (n.x-2, n.y+1) bulge -1;
+bar
+
+// bar 166
+staff 2 vscheme = 2f
+music
+1 1: 4f#+; 2c6; bn+; 4a+~;
+1 2: 4a =c; s; 1;
+2 1: 4bn-f#ad#+; {<<staff clef=treble>>[=m]8d#; dn; d#;}3n; \
+	{e; d; e; f#; bn-; f;}6n; {g; f; g; a; b-; a =e;}6n;
+2 2: 4s; d; e; f; g; a;
+medium curve (a.x, a.y+2) to (b.x, b.y+3) to (c.x-2, c.y+1)
+DYN(1.5[-1], "ff")
+phrase above 1: 1.5 til 2m+1.5;
+bar
+
+// bar 167
+1 1: 4a+; 2g+; f#+; 4e+~;
+1 2: {8bn =f; a; b;}3n; [=n; with -]2c+; 4d#; e; f#;
+2 1: 4r; {<<staff clef=bass>>8d#; dn; d#;}3n; {e; d; e; f#; bn-; f;}6n; \
+	{g; f; g; a; b-; a;}6n;
+2 2: 4s; d; e; f; g; a;
+medium curve (m.x, m.y+5) to (n.x, n.y-9) bulge 1, -4;
+line (e.x+2, e.y+2) to (f.x-3, f.y-3);
+phrase above 2: 1.5 til 1m+1.5;
+phrase below 1: 2.5 til 1m+2.5;
+ital between 1&2: 1.5[-5] "poco a poco dim.";
+bar
+
+// bar 168
+1 1: 4e+; 2d#+; c+; 4bn~;
+1 2: 4g; a; bn; c+; [up;ho -1]with d#- =a below; []with e- =c below;
+2 1: {8bn; a; b;}3n; 4c+; d#-; e-; f#-; g-;
+2 2: 4b; s; {8d-; bn1; d-; e-; d-; e-;}6n; {f#-; b1; f-; g-; f-; g-;}6n;
+phrase above 1: 2.5 til 3m+1;
+phrase below 2: 2 til 2m+2.5;
+bar
+
+// bar 169
+1 1: 4b; 2a; g; 4f#~;
+1 2: 4f#- =d; g-; a-; bn-; [with -]2c~ =b;
+2 1: 4a-; bn-; c; d#; e; f#;
+2 2: {8a-; bn1; a-;}3n; {b-; a-; b-;}3n; {c; b-; c;}3n; {d; b-; d;}3n; \
+	{e; d; e;}3n; {f; e; f;}3n;
+medium curve (a.x+3, a.y+5) to (b.x-3, b.y-4) bulge 2, -2;
+line (c.x+3, c.n+4) to (d.x-3, d.s-2);
+bar
+
+newscore	// otherwise bezier curve will cross to another page
+		// mup will fail in this case
+
+// bar 170
+1 1: 4f; 2e; 4d#~; 2~;
+1 2: 1.c~;
+2 1: 4g; a; bn; [with -]2c+; 4b;
+2 2: {8g; f#; g;}3n; {a; bn-; a;}3n; {b; a; b;}3n; 2.s;
+phrase above 2: 2.5 til 1m+3.5;
+DYN(2.5, "p")
+bar
+
+// bar 171
+staff 2 unset vscheme
+music
+1 1: 1.d;
+1 2: 2c~; 4; bn-; 2a-;
+2: 2a; 2.g; 4f# =a;
+phrase below 1: 2 til 3;
+rom above 1: 1 "rit.";
+bar
+
+// bar 172
+staff 1 clef = bass
+music
+1 1: [with -]1.e+~;
+1 2: {4eg =b; 8g; e; g; e;}6; {4r; 8c+; e; c+; e;}6n; {4r; 8g; c; g; c;}6n;
+2: 4.c-; 8d&-; 4.c-; 8g-; 2c-~;
+TEMPO(1, "Tempo I")
+DYN(1, "pp")
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1 til 1m+1;
+line (a.x+3, a.y+1) to (b.x-3, b.y-6);
+bar
+
+// bar 173
+1 1: 1.e+;
+1 2: {4r; 8g; e; g; e;}6n; {4r; 8c+; e; c+; e;}6n; {4r; 8g; c; g; c;}6n;
+2: 4.c-; 8d&-; 4.c-; 8g-; 2c-~;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 1m+1;
+bar
+
+// bar 174
+1 1: [with -]...2e+; 1f+~;
+1 2: {4r; 8a&; e; a; e;}6n; {4r; 8a; f; a; f;}6n; {4r; 8an; f; a; f;}6n;
+2: 4.c-; 8d&-<>; 4.c-; [with -]8d&~; 4.c-d; [with -]8c~;
+phrase above 1: 1 til 1m+1;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 2.75 til 3; 3.75 til 1m+1;
+DYN(2.5, "mf")
+bar
+
+// bar 175
+staff 1 vscheme = 3f
+music
+1 1: 1.f+;
+1 2: {4r; 8f; a; b; f;}6n; {4r; 8f; b; c+; f;}6n; {4r; 8f; c+; d&+; f;}6n;
+1 3: {2s; [up]...4b;}2n,2; {2s; 4c+;}2n,2; {2s; 4d+;}2n,2;
+2: 4.c-c; [with -]8b-~; 4.c-b-; [with -]8a-~; 4.c-a-; [with -]8a&-~up;
+ital between 1&2: 1 "dim.";
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+bar
+
+// bar 176
+staff 1 vscheme = 2f
+music
+1 1: [with -]1.f+;
+1 2: {4r; 8a&; f; a; f;}6n; {4r; 8d&+; f; d+; f;}6n; {4r; 8a; d&; a; d;}6n;
+2: 4.d&-a-; 8dn-; 4.d&-; 8a&-; 2d-;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 1m+1;
+DYN(1, "pp")
+bar
+
+// bar 177
+1 1: [with -]1.e+;
+1 2: {4r; 8g#; e; g; e;}6n; {4r; 8c#+; e; c+; e;}6n; {4r; 8g; c#; g; c;}6n;
+2: 4.d-; 8dn-; 4.c#-; 8g#-; 2c-~;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 1m+1;
+bar
+
+// bar 178
+staff 1 vscheme = 3f
+music
+1 1: [with -]...2e#+; 1f+~;
+1 2: {4r; 8a; e#; a; e;}6n; {4r; 8a; f#; a; f;}6n; {4r; 8a#; f; a; f;}6n;
+1 3: 2s; {2s; 4a;}2n,2; {2s; 4a;}2n,2;
+2: 4.c-; 8d-<>; 4.c#-; [with -]8d~; 4.c-d; [with -]8c#~;
+phrase above 1: 1 til 2m+1;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 2.75 til 3; 3.75 til 1m+1;
+DYN(2.5, "mf")
+bar
+
+// bar 179
+1 1: 1.f+~;
+1 2: {4r; 8f#; a#; bn; f;}6n; {4r; 8f; b; c#+; f;}6n; {4r; 8f; c+; d+; f;}6n;
+1 3: {2s; 4b;}2n,2; {2s; 4c+;}2n,2; {2s; 4d+;}2n,2;
+2: 4.c#-c; [with -]8bn-~; 4.c-b-; [with -]8a#-~; 4.c-a-; 8an-~;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+ital between 1&2: 1[-1] "dim.";
+bar
+
+// bar 180
+staff 1 vscheme = 2f
+music
+1 1: 1.f+;
+1 2: {4r; 8a; f#; a; f;}6n; {4r; 8d+; f; d+; f;}6n; {4r; 8a; d; a; d;}6n;
+2: 4.d-a-; 8e&-; 4.d-; 8a-; 2d-~;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 1m+1;
+DYN(1, "p")
+TEMPO(1, "Poco pi\\(uacute\) mosso")
+bar
+
+// bar 181
+1 1: [with -]1.f#+;
+1 2: {4r; 8c+; f#; c+; f;}6n; {4r; 8d+; f; d+; f;}6n; {4r; 8a; f; a; f;}6n;
+2: 4.d-; 8e&-; 4.d-; 8c; 2d-~;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 1m+1;
+ital between 1&2: 1 "cresc.";
+bar
+
+// bar 182
+staff 1 vscheme = 3f
+music
+1 1: [with -]1.a+~;
+1 2: {4r; 8a; f#; bn; f;}6n; {4r; 8a; f; c+; f;}6n; {4r; 8a; f; c#+; f;}6n;
+1 3: {2s; 4b;}2n, 2; {2s; 4c+;}2n,2; {2s; 4c+;}2n,2;
+2: 4.d-; [with -]8e&~; 4.d-e; [with -]8d~; 4.d-d; [with -]8c#~;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+DYN(1, "mf")
+bar
+
+// bar 183
+1 1: 1a+~; {4; [with -]8d+;}3,2;
+1 2: {4r; 8a; f#; d+; f;}6n; {4r; 8a; f; e&+; f;}6n; {4r; 8b&; f; d+; fn;}6n;
+1 3: {2s; 4d+;}2n,2; {2s; 4e+;}2n,2; 2s;
+2: 4.d-c; [with -]8cn~; 4.d-c; [with -]8bn-~; 4.d-b-; 8b&-~;
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+ital between 1&2: 1 "dim.";
+bar
+
+// bar 184
+staff 1 vscheme = 2f
+music
+1 1: [with -]1.d+;
+1 2: {8r; f; b-; b; f;}5; {r; b; f; d+; b;}5n; {r; f; d; b; f;}5n;
+2: 4.d-b-; 8e&-; 4.d-; 8b-; 2d-~;
+phrase below 1: 1.2 til 1.8; 2.2 til 2.8; 3.2 til 3.8;
+phrase below 2: 1.75 til 1m+1;
+DYN(1, "p")
+bar
+
+// bar 185
+1 1: [with -]1f+; [with -]2b~;
+1 2: {8r; b; f; d+; b;}5n; {r; <<staff clef=treble>>d; b-; f; b-;}5n; \
+	{r; b-; f-; d; b-;}5n;
+2: 4.d-; 8b-~; 4.d-b-; 8f; [=a] 2d-b-~;
+phrase below 1: 1.2 til 1.8; 2.2 til 2.8; 3.2 til 1m+1.8;
+phrase above 2: 2.75 til 1m+1;
+phrase below 2: 1.75 til 2;
+ital between 1&2: 1 "cresc.";
+bar
+
+// bar 186
+staff 1 vscheme = 3f
+staff 2 vscheme = 2f
+music
+1 1: 2b; [with -]1d+~;
+1 2: {8f;; d; b; f;}5n; {[dist -8]4r; 8d; b-; f; b-;}6; \
+	{[dist -8]4r; 8d; b-; f#; b-;}6;
+1 3: 2s; {2s; 4f;}2n,2; {2s; 4f;}2n,2;
+2 1: 1.b-;	// FIXME: dotted or not?
+2 2: [=b] 4.d-; [with -]8b; 4.b-; [with -]8a; 4.d-; [with -]8a&;
+phrase below 1: 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+DYN(1, "mf")
+medium curve (a.x+2, a.y-9) to (b.x-3, b.y-9) bulge -2;
+// BUG: cross-score curve
+bar
+
+// bar 187
+1 1: 1d+~; {4; [with -]8an;}3,2;
+1 2: {[dist -8]4r; 8d; b-; g; b-;}6n; {[dist -8]4r; 8d; b-; a&; b-;}6n; \
+	{[dist -8]4r; 8d; b-; a; b-;}6n;
+1 3: {2s; 4g;}2n,2; {2s; 4a;}2n,2; 2s;
+2 1: 1.b-;
+2 2: 4.b-; 8g; 4.d-; 8g&; 4.b-; 8f;
+ital between 1&2: 1 "dim.";
+phrase below 1: 1.33 til 1.83; 2.33 til 2.83; 3.33 til 3.83;
+phrase below 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+bar
+
+// bar 188
+staff 1 vscheme = 2f
+music
+1 1: [with -]1.f-a-da~;
+1 2: {8r; a-; f-; a-; f-;}5; {[dist -8]r; a-; f-; d; a-;}5; \
+	{[dist -8]r; a-; f-; d; a-;}5n;
+2 1: 4.s; 8e-; 4.d-; 8a-; 2d-~;
+2 2: 4.d-a-; 8s; 1;
+TEMPO(1, "Pi\\(uacute\) mosso")
+roll 1 1: 1;
+phrase below 1: 1.2 til 1.8; 2.2 til 2.8; 3.2 til 1m+1.8;
+phrase below 2: 1.75 til 1m+1;
+DYN(1, "p")
+bar
+
+//bar 189
+staff 2 unset vscheme
+music
+1 1: 2a; [with -]1a;
+1 2: {8f; d; a-; f; d;}5n; {[dist -8]r; d; a-; f; d;}5n; \
+	{[dist -8]r; f; d; a; f;}5n;
+2: 4.d-; 8f; 4.d-a-; 8e-; 2d-a- tie;
+phrase below 1: 2.2 til 2.8; 3.2 til 3.8;
+phrase above 2: 1.75 til 2;
+phrase below 2: 2.75 til 1m+1;
+ital between 1&2: 1 "cresc.";
+bar
+
+//bar 190
+1 1: [with -]1d+; [with -]2f+~;
+1 2: {[dist -6]8r; d; a-; f; d;}5n; {a; f; d; a; f;}5n; \
+	{r; a; f; d+; a;}5n;
+2: 4.d-a-; 8f; 4.d-a-; 8a~; 4.a-a; 8d+~;
+phrase below 1: 1.2 til 2.8; 3.2 til 3.8;
+phrase above 2: 1.75 til 2;
+phrase below 2: 2.75 til 3; 3.75 til 1m+1;
+bar
+
+// bar 191
+1 1: 1f+~; {4; 8s; [with -]g; s;}3,2;
+1 2: {[dist -8]8r; f; d; a; f;}5n; {[dist -8]r; d; a-; f; d;}5n; \
+	{[dist -8]r; d; f-; g; d;}5n;
+2: 4.fd+; 8c#+~; 4.a-c+; 8cn+~; 4.dc+; 8bn;
+phrase below 1: 1.2 til 1.8; 2.2 til 2.8; 3.2 til 3.8;
+phrase below 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+ital between 1&2: 1 "dim.";
+bar
+
+// bar 192
+1 1: 1.f-bn-g;
+1 2: {8r; g-; f-; b-; g-;}5n; {[dist -8]r; b-; f-; f; g-;}5n; \
+	{[dist -8]r; b-; f-; g =a; b-;}5n;
+2: 4.d-g-; 8e&-; 4.d-; 8bn-; 2d-g- tie;
+phrase below 1: 1.2 til 1.8; 2.2 til 2.8; 3.2 til 1m+1.8;
+phrase below 2: 1.75 til 1m+1;
+DYN(1, "p")
+bar
+
+// bar 193
+1 1: 2g =b; [with -]...g; d+~;
+1 2: {8g-; bn-; f-; b-; g-;}5n; {r; b-; f-; f; b-;}5n; \
+	{r; b-; g-; g; f;}5n;
+2: 4.d-g-; 8d; 4.d-g-; 8g; 2d-bn- tie;
+phrase below 1: 2.2 til 2.8; 3.2 til 1m+1.8;
+phrase above 2: 1.75 til 2; 2.75 til 1m+1;
+medium curve (a.x, a.y+2) to (b.x, b.y+2) bulge 1;
+bar
+
+// bar 194
+1 1: 1d+; [with -]2g+~;
+1 2: {8bn-; g; f; bn; d;}5n; {[dist -4]r; g; f; b; g;}5n; \
+	{[dist -4]r; b; g; d+; b;}5n;
+2: 4.d-b-; [with -]8bn~; 4.dfb; [with -]8d+~; 4.fbd+; [with -]8g+~;
+phrase below 1: 2.2 til 2.8; 3.2 til 3.8;
+phrase below 2: 1.75 til 2; 2.75 til 3;
+DYN(3, "f")
+bar
+
+// bar 195
+1 1: 1g+~; {4; 8s; [with -]g =c; s;}3,2;
+1 2: {[dist -4]8r; bn; g; d+; b;}5n; {[dist -4]r; g; d; b; g;}5n; \
+	{[dist -4]r; f; bn-; e =b; g-;}5n;
+2: 4.bnd+g+; [with -]8f#+~; 4.dbf+; [with -]8fn+~; 4.gbf+ =a; 8r;
+phrase below 1: 1.2 til 1.8; 2.2 til 2.8; 3.2 til 3.8;
+phrase below 2: 1.75 til 2; 2.75 til 3;
+line (a.x+2, a.y+2) to (b.x-2, b.y-4);
+bar
+
+define PHRASE1
+phrase below 1: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+@
+
+define PHRASE3
+phrase above 1: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+@
+
+define PHRASE2
+phrase above 2: 2.167 til 2.5;
+phrase below 2: 1.167 til 1.5; 3.167 til 3.5;
+@
+
+// bar 196
+1 1: 4.g-d&e&g =d; 8a&-df&; 4.g-de; [with -]8b~; 4.; [with -]8an~;
+1 2: 2s; 4.; 8a-df; 4.g-de; 8a&-df;
+2: {8r; b-; e&-;}3; 4b-; {8r; b; e&;}3; 4b; {8r; b-; e-;}3; 4b-;
+DYN(1[-1], "pp")
+medium curve (c.x+2, c.y+1) to (d.x-2, d.y+1) bulge 1;
+PHRASE1
+PHRASE2
+bar
+
+// bar 197
+1 1: 4.a; [with -]8a&~; 4.; [with -]8g~; 4.; [with -]8g&~;
+1 2: 4.g-d&e&; 8a&-df&; 4.g-de; 8a-df; 4.g-de; 8a-df;
+2: {8r; b-; e&-;}3n; 4b-; {8r; b; e&;}3n; 4b; {8r; b-; e-;}3n; 4b-;
+PHRASE1
+PHRASE2
+bar
+
+// bar 198
+1 1: 4.g; [with -]8f~; 4.; [with -]8f&~; 4.; [with -]8e&;
+1 2: 4.gn-d&e&; 8a&-d; 4.g-d; 8a-d; 4.g-d; 8;
+2: {8r; b-; e&-;}3n; 4b-; {8r; b; e&;}3n; 4b; {8r; b-; e-;}3n; 4b-;
+PHRASE1
+PHRASE2
+bar
+
+// bar 199
+1 1: [with -]4.d#; [with -]8f#~; 4.; [with -]8bn~; 4.; [with -]8d#+~;
+1 2: 4.f#-bn-; 8g#-b-d; 4.f-b-d; 8b-dg#; 4.b-df; 8dgb;
+2: {8r; bn-; d#-;}3n; 4b-; {8r; f#; b-;}3n; 4f; {8r; b-; d-;}3n; 4b-;
+PHRASE1
+PHRASE2
+bar
+
+// bar 200
+1 1: 4.d+; [with -]8c#+~; 4.; [with -]8bn~; 4.; [with -]8a#;
+1 2: 4.bn-d#f#; 8c#dg#; 4.b-df; 8cdg; 4.b-df; 8cdg;
+2: {8r; bn-; d#-;}3n; 4b-; {8r; f#; b-;}3n; 4f; {8r; b-; d-;}3n; 4b-;
+PHRASE1
+PHRASE2
+bar
+
+// bar 201
+1 1: 4.a; [with -]8an~; 4.; [with -]8g#~; 4.; [with -]8gn;
+1 2: 4.bn-d#f#; 8c#dg#; 4.b-df; 8g#-b-d; 4.f#-b-d; 8gn-c&e&;
+2: {8r; bn-; d#-;}3n; 4b-; {8r; f#; b-;}3n; 4f; {8r; c&; e&-;}3n; 4c;
+PHRASE1
+PHRASE2
+bar
+
+// bar 202
+1 1: [with -]4.g; [with -]8~; 4.; [with -]8b~; 4.; [with -]8e&+;
+1 2: 4.g-b&-e&; 8g-cne; 4.g-b-e; 8ceg; 4.b-eg; 8egc+;
+2: {8r; b-; e&-;}3n; 4b-; {8r; g; b-;}3n; 4g; {8r; b-; e-;}3n; 4b-;
+PHRASE1
+PHRASE2
+bar
+
+// bar 203
+1 1: 4.s; [with -]8gbe&+g+; 4.egb; [with -]8fbd+f+; 4.dgb; [with -]8egc+e+;
+1 2: 4.b-e&g; 8s; 1;
+2: {8r; b-; e&-;}3n; 4b-; {8r; g; b-;}3n; 4g; {8r; b-; e-;}3n; 4b-;
+phrase above 1: 1.75 til 2; 2.75 til 3;
+phrase below 1: 3.75 til 1m+1;
+PHRASE2
+bar
+
+// bar 204
+staff 1 unset vscheme
+music
+1: 4.ce&g; [with -]8dgbd+; 4.b-eg; [with -]8d&gbd&+; 4.b-eg; [with -]8cegc+;
+2: {8r; b-; e&-;}3n; 4b-; {8r; g; b-;}3n; 4g; {8r; b-; e-;}3n; 4b-;
+PHRASE1
+PHRASE2
+bar
+
+// bar 205
+1: [with -]...4.g-ce&g; 8ea&c+; 4.ceg; 8eac+e&+; 4.ceg; 8gc+e+g+;
+2: {8r; c; e&-;}3n; 4c; {8r; gc+; c;}3n; 4gc+; {8r; c; e-;}3n; 4c;
+PHRASE1
+PHRASE2
+bar
+
+// bar 206
+1: [with -]...4.e&c+; 8c+e+g+c6; 4.gc+e+; 8bc+e+b+; 4.f#c+e+; 8anc+e+a+;
+2: {8r; c; e&-;}3n; 4c; {8r; gc+; c;}3n; 4gc+; {8r; c; e-;}3n; 4c;
+PHRASE1
+PHRASE2
+bar
+
+// bar 207
+1: [with -]...4.fnc+e+; 8a&c+e+a&+; 4.f&c+e+; 8gc+e+g+; 4.ec+e+; 8ac+e+a+;
+2: {8r; c; e&-;}3n; 4c; {8r; gc+; c;}3n; 4gc+; {8r; c; e-;}3n; 4c;
+PHRASE3
+PHRASE2
+bar
+
+// bar 208
+1: [with -]...4.ce&a&; 8e&+a&+e&6; 4.eb; 8d+a+d6; 4.ac+; 8d&+a+d&6;
+2: {8r; ce&; e&-;}3n; [up]4ce&; {8r; eb; c;}3n; 4eb; {8r; ce; e-;}3n; [up]4ce;
+PHRASE3
+PHRASE2
+DYN(1, "f")
+bar
+
+// bar 209
+1: [with -]...4.a&d&+; 8c+a&+c6; 4.ac+dn+; 8be&+b+; 4.ac+e+; 8anc+an+;
+2: {8r; a&d&+; e&;}3n; 4ad+; {8r; ce; e&-;}3n; [up]4ce; \
+	{8r; c+e&+; e;}3n; 4c+e+;
+PHRASE3
+phrase below 2: 2.167 til 2.5;
+phrase above 2: 1.167 til 1.5; 3.167 til 3.5;
+ital between 1&2: 1.16 "cresc.";
+bar
+
+// bar 210
+1: [with -]...4.ac+en+; 8f+a+f6; 4.ac+f+; 8en+a+en6; 4.ac+g&+; 8e&+c6e&6;
+2: {8r; cf; e&-;}3n; 4cf; {8r; c+f+; an;}3n; 4c+f+; {8r; cg&; e-;}3n; 4cg;
+PHRASE3
+phrase above 2: 1.167 til 1.5; 2.167 til 2.5; 3.167 til 3.5;
+bar
+
+// bar 211
+1: [with -]...4.c+e&+gn+; 8d&+f+d&6; 4.a&f+a&+; 8c+f+c6; 4.anf+an+; [-]8c&+f+c&6;
+2: {8r; e&+g+; a;}3n; 4e+g+; {8r; ca&; e&-;}3n; 4ca; \
+	{8r; f+a+; an;}3n; 4f+a+;
+PHRASE3
+phrase above 2: 1.167 til 1.5; 2.167 til 2.5; 3.167 til 3.5;
+bar
+
+newscore
+
+define PHRASE4(DIR1,DIR2,DIR3)
+phrase DIR1 1: 1.167 til 1.833;
+phrase DIR2 1: 2.167 til 2.833;
+phrase DIR3 1: 3.167 til 3.833;
+@
+
+define PHRASE5(DIR1,DIR2,DIR3)
+phrase DIR1 1: 1.5 til 1.833;
+phrase DIR2 1: 2.167 til 2.833;
+phrase DIR3 1: 3.167 til 3.833;
+@
+
+// bar 212
+staff 2 vscheme = 2f
+music
+1: 4be&+g&+b+; {8g&6b6; b+; g6b6;}3; {r; b+; g+; e&6g6; g+; e6g6;}6; \
+	{r; g+; e+; b+e6; e+; b+e6;}6n;
+2 1: {8r; e&g&b<>; b-;}3n; {4r; 8f1f-;}3,4; 4.e&1e&-; 8b-egb; 2s;
+2 2: 1s; 2e1e- tie;
+PHRASE5(above,above,above)
+TEMPO(0,"Allegro ( \\(smup2n\) = 100 \)")
+DYN(1[-1], "ff")
+ital between 1&2: 1.75 "marcato";
+bar
+
+// bar 213
+1: {8r; g&+; d&+; b+d&6; d+; b+d6;}6n; {r; e&+; b; g+b+; b; g+b+;}6n; \
+	{r; b; g&; e+g+; g; e+g+;}6n;
+2 1: [with >]1.g&be&+g&+;
+2 2: 4.e1e-; 8f-f; 4.e&-e&; 8b-egb; 4.e-e; [with -]8bn-f#bn;
+PHRASE4(above,above,above)
+phrase below 2: 3.75 til 1m+1;
+bar
+
+// bar 214
+1: {8r; f#; bn-; fbn; b-; fb;}6n; {r; b; f; bf#+; f; bf+;}6n; \
+	{r; f+; b; f+bn+; b; f+b+;}6n;
+2 1: 4.s; [with -]8a#-f#a#; 4.d-; [with -]8bn-fan; 2d-~;
+2 2: 4.d#-; 8s; 1;
+phrase below 1: 1.167 til 1.833;
+phrase above 1: 2.167 til 2.833; 3.167 til 1m+1;
+phrase above 2: 1.75 til 2; 2.75 til 1m+1;
+bar
+
+// bar 215
+1: 4bn; {8bf#+; f#; bf+;}3n; {r; f; bn-; fb; b-; fb;}6n; \
+	{r; f+; b; f+bn+; b; g+b+;}6n;
+2: 4.d-; [with -]8a#-f#a#; 4.d#-; [with -]8bn-fan; 4.d-; [with -]8b-eng;
+PHRASE5(above,below,above)
+phrase above 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+bar
+
+// bar 216
+1: 4r; {8g6bn6; bn+; g6b6;}3n; {r; b+; g+; e6g6; g+; e6g6;}6n; \
+	{r; g+; e+; b+e6; e+; b+e6;}6n;
+2 1: 4.en-; 8f#1f#-; 4.e1e-; 8bn-egbn; 2s;
+2 2: 1s; 2e1e- tie;
+PHRASE5(above,above,above)
+bar
+
+// bar 217
+1: {8r; g+; d+; bn+d6; d+; b+d6;}6n; {r; e+; bn; g+b+; b; g+b+;}6n; \
+	{r; b; g; e+g+; g; e+g+;}6n;
+2 1: [with >]1.gbne+g+;
+2 2: 4.e1e-; 8f#-f#; 4.e-e; 8bn-egb; 4.e-e; [with -]8cgc+;
+PHRASE4(above,above,above)
+phrase below 2: 3.75 til 1m+1;
+bar
+
+// bar 218
+1: {8r; g; c; gc+; c; gc+;}6n; {r; c+; g; c+g+; g; c+g+;}6n; \
+	{r; g+; c+; g+c6; c+; g+c6;}6n;
+2 1: 4.s; [with -]8bn-gbn; 4.e-; [with -]8cgb&; 2e-~;
+2 2: 4.e-; 8s; 1;
+PHRASE4(above,above,above)
+phrase above 2: 1.75 til 2; 2.75 til 1m+1;
+bar
+
+// bar 219
+staff 2 unset vscheme
+music
+1: 4c+; {8c+g+; g; c+g+;}3n; {r; g; c; gc+; c; gc+;}6n; {r; g+; c+; g+c6; c+; a&+c6;}6n;
+2: 4.e-; [with -]8bn-gbn; 4.e-; [with -]8cgb&; 4.e-; [with -]8cfa&;
+PHRASE5(above,below,above)
+phrase above 2: 1.75 til 2; 2.75 til 3; 3.75 til 1m+1;
+bar
+
+// bar 220
+1: 4r; {8a&+c6; c+; a+c6;}3n; {r; f+; a&; f+a+; a; f+a+;}6n; {r; f+; c+; f+c6; c+; f+c6;}6n;
+2: 4f-; c-g-; f-a&-; c-b-; f1g-; c-a-;
+PHRASE5(above,above,above)
+phrase below 2: 1.5 til 3.5;
+octave above 1: 1.4 "8" til 2.9;
+bar
+
+// bar 221
+1: {8r; f6; a&+; f6a&6; a+; f6a6;}6n; {r; a+; f+; a+f6; f+; a+f6;}6n; \
+	{r; f+; a&; f+a+; a; f+a+;}6n;
+2: 4f-b-; c-bn-; f-c; a&-d&; f-b-; c-c;
+PHRASE4(above,above,above)
+phrase below 2: 1 til 3.5;
+bar
+
+// bar 222
+1: {8r; a&+; c+; a+c6; c+; a+c6;}6n; {r; c+; a&; c+a+; a; c+a+;}6n; \
+	{r; f; c; fc+; c; fc+;}6n;
+2: 4f-e; cg; c-e; f-f; cg; fb;
+PHRASE4(above,above,below)
+phrase below 2: 1 til 2.5;
+phrase above 2: 3 til 1m+1.5;
+bar
+
+// bar 223
+staff 2 vscheme = 2f
+music
+1: {8r; c+; f; c+f+; f; c+f+;}6n; {r; f; a&-; fa&; a-; fa;}6n; \
+	{r; <<staff clef=bass>>a&; f; a; e&; a;}6n;
+2 1: 4a&-g; ca&; fbn; cc+; en+<>; f+ =a;
+2 2: 1s; 2c+;
+PHRASE4(above,below,above)
+phrase above 2: 2 til 2.5;
+ital between 1&2: 1 "dim.";
+> between 1&2: 3 til 3.9;
+bar
+
+// bar 224
+staff 1 clef = treble
+music
+1: 4a&-d&fa& =b; {8r; fab; d;}3n; {r; fac+; d;}3n; {r; fad&+; d;}3n; \
+	{r; f; d;}3n; {r; e&g&; d;}3n;
+2 1: 4r; b-d&fb; cfa&c+; dfad&+; cfac+; b-e&g&b;
+2 2: 1.d&1d&-;
+phrase below 1: 1.67 til 1.83; 2.17 til 2.33; 2.67 til 2.83; 3.17 til 3.33; 3.67 til 3.83;
+DYN(1, "p")
+ital between 1&2: 1.5 "cresc.";
+line (a.x+2, a.y+2) to (b.x-5, b.y);
+bar
+
+define PHRASE6(DIR1,DIR2,DIR3,DIR4,DIR5,DIR6)
+phrase DIR1 1: 1.17 til 1.33;
+phrase DIR2 1: 1.67 til 1.83;
+phrase DIR3 1: 2.17 til 2.33;
+phrase DIR4 1: 2.67 til 2.83;
+phrase DIR5 1: 3.17 til 3.33;
+phrase DIR6 1: 3.67 til 3.83;
+@
+
+//bar 225
+1: {8r; fa&; d;}3n; {r; fac+; d;}3n; {r; fad&+; d;}3n; \
+	{r; af+; f;}3n; {r; fb; b-;}3n; {r; fac+; c;}3n;
+2 1: 2a&-d&fa&; 4b-dfb; cfac+; dfad&+; cfac+;
+2 2: 4r; d&1d&-; 1s;
+PHRASE6(below,below,below,above,below,below)
+bar
+
+// bar 226
+1: {8r; fa&d&+; d&;}3n; {r; ad+f+; f;}3n; {r; d+e&+g&+; g&;}3n; \
+	{r; d+f+a&+; a;}3n; {r; ae+; e&;}3n; {r; aen+; en;}3n;
+2 1: 4b-d&fb; 2a&-dfa&; 4b-dfb; cfac+; dfad&+;
+2 2: 2r; 4d&1d&-; 2.s;
+PHRASE6(below,above,above,above,below,below)
+bar
+
+// bar 227
+1: {8r; a&d&+f+; f;}3n; {r; d+f+a&+; a;}3n; {r; f+a+c6; c+;}3n; \
+	{r; f+a+d&6; d+;}3n; {r; e&+g&+; d+;}3n; {r; en+gn+; d+;}3n;
+2 1: 4cfa&c+; b-d&fb; 2a&-dfa; <<staff clef=treble>>4d&e&g&d&+; cengnc+;
+2 2: 2r; 4; d&1d&-; 2s;
+PHRASE6(above,above,above,above,above,above)
+DYN(3[-1], "ff")
+bar
+
+//bar 228
+score
+	time = 4/2
+	beamstyle = 4,4,4,4,4,4,4,4
+music
+1: {8r; f+a&+; d&+;}3n; {r; f+a+c6; d+;}3n; {r; f+a+d&6; d+;}3n; \
+	{r; f+a+e&6; e&+;}3n; {r; a+d6f6; f+;}3n; {r; a+d6g&6; g&+;}3n; \
+	{r; g6a&6; a+;}3n; {r; c6g6b&&6; b&&+;}3n;
+2 1: 4b-d&fb; a&-dfa&; <<staff clef=bass>>d&fa&d&+; cfac+; b-dfb; a&-dfa; \
+	[with >]2b&&c+g&+b&&+;
+2 2: 1.s; [dist -8]4r; d&-;
+phrase above 1: 1.17 til 1.33; 1.67 til 1.83; 2.17 til 2.33; 2.67 til 2.83; \
+	3.17 til 3.33; 3.67 til 3.83; 4.17 til 4.33; 4.67 til 4.83;
+bar
+
+// bar 229
+1: {8r; d&+f+; a&;}3n; {r; d+f+a&+; a;}3n; {r; d+f+b+; b;}3n; \
+	{r; f+a+c6; c+;}3n; {r; f+a+d&6; d&+;}3n; {r; a+d6e&6; e&+;}3n; \
+	{r; b&&+e6f6; f+;}3n; {r; b+e6g&6; g&+;}3n;
+2 1: [with >]...1.a&d&+f+a&+; 2g&b&&e&+g&+;
+2 2: 4r; d&1d&-; d&fad+; cfac+; b-dfb; a&-dfa; 4r; d-;
+phrase above 1: 1.17 til 1.33; 1.67 til 1.83; 2.17 til 2.33; 2.67 til 2.83; \
+	3.17 til 3.33; 3.67 til 3.83; 4.17 til 4.33; 4.67 til 4.83;
+bar
+
+// bar 230
+score
+	time = 3/2
+	beamstyle = 4,4,4,4,4,4
+music
+1: {8r; d&+f+; a&;}3n; {r; d+e&+g&+; a;}3n; {r; d+f+a&+; a;}3n; \
+	{r; d+f+b+; b;}3n; {r; e+g+c6; c+;}3n; {r; e+g+d&6; d+;}3n;
+2 1: [with >]...1fa&d&+f+; 2g&b&&e&+;
+2 2: 4r; d&1d&-; cfac+; b-d&fb; r; d-;
+PHRASE6(above,above,above,above,above,above)
+bar
+
+// bar 231
+1: {8r; a&d&+; f;}3n; {r; ad+e&+; e&;}3n; {r; ad+f+; f;}3n; \
+	{r; ad+g&+; g&;}3n; {r; c+g+a&+; a&;}3n; {r; c+g+b&&+; b&&;}3n;
+2 1: [with >]...1fa&d&+; 2e&g&c+;
+2 2: 4r; d&1d&-; b-d&fb; a&-d&fa&; r; d-;
+PHRASE6(below,below,above,above,above,above)
+bar
+
+define PHRASE7(DIR1,DIR2,DIR3,DIR4)
+phrase DIR1 1: 1.17 til 1.33;
+phrase DIR2 1: 1.67 til 1.83;
+phrase DIR3 1: 2.17 til 2.33;
+phrase DIR4 1: 2.67 til 2.83;
+@
+
+// bar 232
+score
+	time = cut
+	beamstyle = 4,4,4,4
+music
+1: {8r; fbd&+; d&;}3n; {r; fbe&+; e&;}3n; {r; a&en+; en;}3n; {r; af+; f;}3n;
+2 1: [with >]...2b-d&b; a&-da&;
+2 2: 4r; d&-; r; a&1;
+PHRASE7(below,below,below,above)
+bar
+
+// bar 233
+1: {8r; d&a&; a&-;}3n; {r; db; b-;}3n; {r; fac+; c;}3n; {r; fad&+; d&;}3n;
+2 1: [with >]...2g&-a&-g&; f-a-f;
+2 2: 4r; d&-; r; a&1;
+PHRASE7(below,below,below,below)
+bar
+
+// bar 234
+1: {8r; a&-f; f-;}3n; {r; a-g&; g&-;}3n; {r; d&fgn; gn-;}3n; {r; dfa&; a-;}3n;
+2 1: [with >]...2a&-e&; a-d&;
+2 2: 4r; d&-; r; a&1;
+PHRASE7(below,below,below,below)
+bar
+
+// bar 235
+staff 1 clef = bass
+music
+1: {8r; a&e+; e;}3n; {r; af+; f;}3n; {r; fc+; c;}3n; {r; fd&+; d&;}3n;
+2 1: [with >]...2c; b-;
+2 2: 4r; d&-; r; a&1;
+PHRASE7(above,above,above,above)
+bar
+
+// bar 236
+score
+	time = 3/2
+	beamstyle = 4,4,4,4,4,4
+music
+1: {8r; fan; d&;}3n; {r; fb; d;}3n; {r; fa&; d;}3n; {r; fan; d;}3n; \
+	{r; fg; d;}3n; {r; fa&; d;}3n;
+2 1: [with >]4an-<>; b-; [with >]a&-<>; an-; [with >]g-<>; a&-;
+2 2: 2d&-; a&1; d-;
+PHRASE6(above,above,above,above,above,above)
+bar
+
+// bar 237
+staff 1 vscheme = 2f
+music
+1 1: 1s; {8s; [len 0]8gn =a; [len 0]8g& =b; s;}4n,4; 4s;
+1 2: {8r; fa& bm; d& ebm;}3n; {r; fan bm; d ebm;}3n; {r; fg bm; d ebm;}3n; {r; fa& bm; d ebm;}3n; \
+	{r; s; [down; len 4.5; hs "blank"]b- =c bm; s; [len 5.5]c =d ebm;}5n,4; {r; g&a bm; c ebm;}3n;
+2 1: [with >]4a&-<>; an-; [with >]g-<>; a&-; [with >]g-<>; a-;
+2 2: 2a&1; d&-; a1;
+phrase above 1: 1.17 til 1.33; 1.67 til 1.83; 2.17 til 2.33; \
+	2.67 til 2.83; 3.67 til 3.83;
+rom above 1: 1 "rit." til 4;
+line (a.x-1.2,a.y) to (c.x-1.3,c.y);
+line (b.x-1.3,b.y-0.2) to (c.x-1.3,c.y);
+medium curve (b.x, b.y+2) to (d.x, d.y+2) bulge 1;
+bar
+
+// bar 238
+score
+	time = cut
+	beamstyle = 4,4,4,4
+staff 2 unset beamstyle
+music
+1 1: [with >]...2d&+; d+~;
+1 2: 4r; 16; f+; a&; f; d+; f+; a; f; a; f+; a; f;
+2 1: 2d&1d&-; [with >]d&~;
+2 2: [dist 4]4r; 16; f; a&-; d-; d; f; a-; d-; a-; f; a-; d-;
+mussym below 2: 1 "acc_gt";
+phrase below 1,2: 1.625 til 1m+1.375;
+TEMPO (1, "Moderato (\\(smup2n\) = 66\)")
+bar
+
+// bar 239
+1 1: 4d+; [with -]...d&+; d+;;
+1 2: 16a&; f+; a; f; d+; f+; a; f; d+; f+; a; f; d+; f+; a; f;
+2 1: 4d;  [with -]...d&; d;;
+2 2: 16a&-; f; a-; d&-; d; f; a-; d-; d; f; a-; d-; d; f; a-; d-;
+phrase below 1,2: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+bar
+
+// bar 240
+1 1: [with -]...4d&+; c+; 2d+~;
+1 2: 16d+; f+; a&; f; c+; f+; a; f; d+; f+; a; f; a; f+; a; f;
+2 1: [with -]...4d&; c; 2d~;
+2 2: 16d; f; a&-; d&-; c; f; a-; d-; d; f; a-; d-; a-; f; a-; d-;
+phrase below 1,2: 1 til 1.375; 1.5 til 1.875; 2 til 1m+1.375;
+ital between 1&2: 2 "poco a poco dim.";
+bar
+
+// bar 241
+1 1: 4d+; [with -]...2d&+; 4e&+;
+1 2: 16a&; f+; a; f; d+; f+; an; f; a; f+; a; f; e+; f+; a; f;
+2 1: 4d; [with -]...2d&; 4e&;	// FIXME: first note is d&2 or a&1 ???
+2 2: 16a&-; f; a-; d&-; d; f; an-; d-; a-; f; a-; d-; e; f; a-; d-;
+phrase below 1,2: 1.5 til 2.375; 2.5 til 2.875;
+rom above 1: 1.5[-3] "rit." til 1m+1.75;
+bar
+
+// bar 242
+1 1: [with -]...2d&+; d+~;
+1 2: 16d+; f+; a&; f; 4r; 16; f+; a; f; a; f+; a; f;
+2 1: [with -]...2d&; d~;
+2 2: 16d; f; a&-; d&-; 4d&1; 16r; f; a-; d-; a-; f; a-; d-;
+phrase below 1: 1 til 1.875; 2.125 til 1m+1.375;
+phrase below 2: 1 til 2; 2.125 til 1m+1.375;
+rom above 1: 2 "a tempo";
+bar
+
+// bar 243
+1 1: 4d+; [with -]...d&+; d+;;
+1 2: 16a&; f+; a; f; d+; f+; a; f; d+; f+; a; f; d+; f+; a; f;
+2 1: 4d;  [with -]...d&; d;;
+2 2: 16a&-; f; a-; d&-; d; f; a-; d-; d; f; a-; d-; d; f; a-; d-;
+phrase below 1,2: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+bar
+
+// bar 244
+1 1: [with -]...4d&+; c+; 2d+~;
+1 2: 16d+; f+; a&; f; c+; f+; a; f; d+; f+; a; f; a; f+; a; f;
+2 1: [with -]...4d&; c; 2d~;
+2 2: 16d; f; a&-; d&-; c; f; a-; d-; d; f; a-; d-; a-; f; a-; d-;
+phrase below 1,2: 1 til 1.375; 1.5 til 1.875; 2 til 1m+1.375;
+rom above 1: 1.5[-3] "rit." til 2m+1.75;
+bar
+
+// bar 245
+1 1: 4d+; [with -]...c#+; dn+; e+;
+1 2: 16a&; f+; a; f; c+; f+; an; f; d+; f+; a; f; e+; f+; a; f;
+2 1: 4d; [with -]...c#; dn; e;
+2 2: 16a&-; f; a-; d&-; c; f; an-; c#-; d; f; a-; c-; e; f; a-; c-;
+phrase below 1,2: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+bar
+
+// bar 246
+1 1: [with -]...2d+;~;
+1 2: 16d+; f+; a; f; 4r; 16r; f+; a; f; a; f+; a; f;
+2 1: [with -]...2d;~;
+2 2: 16d; f; a-; d-; 4d1; 16r; f; a-; d-; a-; f; a-; d-;
+DYN(1, "p")		// FIXME: is it useless to add another piano immediately after 1st one?
+phrase below 1: 1 til 1.875; 2.125 til 1m+1.375;
+phrase below 2: 1 til 2; 2.125 til 1m+1.375;
+rom above 1: 2 "a tempo";
+bar
+
+// bar 247
+1 1: 4d+; [with -]...d+;;;
+1 2: 16a; f+; a; f; d+; f+; a; f; d+; f+; a; f; d+; f+; a; f;
+2 1: 4d; [with -]...d;;;
+2 2: 16a-; f; a-; d-; d; f; a-; d-; d; f; a-; d-; d; f; a-; d-;
+phrase below 1,2: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+bar
+
+// bar 248
+1 1: [with -]...4d+; c#+; [ho 0; with -]4..d+; <<staff clef=treble>>[with -]16g-a-c#g;
+1 2: 16d+; f+; a; f; c+; f+; a; f; d+; f+; a; f; 4r;
+2 1: [with -]...4d; c#; [ho 0; with -]4..d; [with -]16a1a-;
+// FIXME: 2 1: last note in original score has no legato mark?
+2 2: 16d; f; a-; d-; c; f; a-; d-; d; f; d; a-; 4d-;
+phrase below 1: 1 til 1.375; 1.5 til 1.875; 2 til 2.375;
+phrase below 2: 1 til 1.375; 1.5 til 1.875; 2 til 2.5;
+DYN (2.875[-2], "mf")
+bar
+
+// bar 249
+1 1: [with -]...2f-df; <<staff clef=bass>>d+~;
+1 2: 2s; [dist 0]16r; f+; a; f; a; f+; a; f;
+2 1: [with -]...2d-a-; d~;
+2 2: 2s; [dist -8]16r; f; a-; d-; a-; f; a-; d-;
+phrase below 1,2: 2.125 til 1m+1.375;
+DYN(2, "p")
+bar
+
+// bar 250
+1 1: 4d+; [with -]...d+;;;
+1 2: 16a; f+; a; f; d+; f+; a; f; d+; f+; a; f; d+; f+; a; f;
+2 1: 4d; [with -]...d;;;
+2 2: 16a-; f; a-; d-; d; f; a-; d-; d; f; a-; d-; d; f; a-; d-;
+phrase below 1,2: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+bar
+
+// bar 251
+1 1: [with -]...4d+; c#+; [ho 0; with -]4..d+; <<staff clef=treble>>[with -]16g-a-c#g;
+1 2: 16d+; f+; a; f; c+; f+; a; f; d+; f+; a; f; 4r;
+2 1: [with -]...4d; c#; [ho 0; with -]4..d; [with -]16a1a-;
+// FIXME: 2 1: last note in original score has no legato mark?
+2 2: 16d; f; a-; d-; c; f; a-; d-; d; f; d; a-; 4d-;
+phrase below 1: 1 til 1.375; 1.5 til 1.875; 2 til 2.375;
+phrase below 2: 1 til 1.375; 1.5 til 1.875; 2 til 2.5;
+DYN (2.875[-2], "mf")
+bar
+
+// bar 252
+staff 1 unset vscheme
+music
+1: [with -]...4..f-df; 16g-a-c#a; 2f-df tie;
+2: [with -]...4..d-a-; 16a1a-; 2d-a- tie;
+bar
+
+// bar 253
+1: 4f-df; r; 2;
+2 1: 4d-a-; [with -]...d+;;;
+2 2: 4s; 16d+; f+; a; f; d+; f+; a; f; d+; f+; a; f;
+phrase below 2: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+bar
+
+// bar 254
+1: mr;
+2 1: [with -]...4d+; c#+; 2d+~;
+2 2: 16d+; f+; a; f; c+; f+; a; f; d+; f+; a; f; a; f+; a; f;
+phrase below 2: 1 til 1.375; 1.5 til 1.875; 2 til 1m+1.375;
+bar
+
+// bar 255
+1: mr;
+2 1: 4d+; <<staff clef=treble>>[with -]...2f; 4a;
+2 2: 16a; f+; a; d+; f; a; a-; d; f; a; d; f; a; d; f; a;
+phrase below 2: 1.5 til 1m+1;
+rom above 1: 1.5 "rit.";
+bar
+
+// bar 256
+staff 1 vscheme = 2f
+music
+1 1: 4r; [with -]...d+; 2c+;
+1 2: 4s; fa; 2;
+2 1: [with -]4d+; <<staff clef=bass>>[with -]...fad+; 2efac+;
+2 2: 4d+; 2.s;
+phrase above 2: 1.5 til 2;
+DYN(1[-1], "pp")
+DYN(1.5[-2], "mf")
+rom above 1: 1 "a tempo";
+bar
+
+// bar 257
+1 1: [with -]4d+; 2.f+~;
+1 2: 1fbd+ tie;
+2 1: 1d =afbd+ tie;
+2 2: [dist -8]4r; 2.d- =b;
+phrase above 1: 1 til 1m+1;
+medium curve (a.x, a.y-2) to (b.x-3, b.y) bulge -1;
+bar
+
+// bar 258
+1 1: 8f+; r; [with -]...4a; 2g;
+1 2: 8fbd+; s; 4df; 2de;
+2: 8dfbd+; r; [with -]...4cdfa; 2b-deg;
+phrase above 2: 1.5 til 2;
+ital between 1&2: 1.5[-2] "dim.";
+bar
+
+// bar 259
+1 1: [with -]4a; 2.d+~;
+1 2: 1dfa tie;
+2 1: 1a- =adfa tie;
+2 2: [dist -10]4r; 2.d- =b;
+phrase above 1: 1 til 1m+1;
+medium curve (a.x, a.y-2) to (b.x-3, b.y) bulge -1;
+bar
+
+// bar 260
+1 1: 8d+; r; [with -]...4a-df; 2b-de;
+1 2: 8dfa; 2..s;
+2: 8a-dfa; r; [with -]...4a-df; 2g-de;
+phrase below 2: 1.5 til 2;
+ital between 1&2: 1.5[-2] "cresc.";
+bar
+
+// bar 261
+music
+1: 1g-b-e& tie;
+2 1: 4r; [with -;up; len 8]...2b-; 4;
+2 2: 1e&- ~down e& ~up;
+bar
+
+// bar 262
+1: 2.g-b-e tie; 8; [with -]a&-db;
+2 1: [with -; up; ho 1; len 8]4.b- =a; [up; len 9]8a-; [up; len 8]2b- =b;
+2 2: 2.e- ~down e ~up; 8; [with -]b1<e->b-~up;
+phrase above 1: 2.75 til 1m+1;
+medium curve (a.x, a.y-2) to (b.x, b.y-2) bulge -2;
+bar
+
+// bar 263
+1 1: 2.g-e&g; 4s;
+1 2: 2r; 4; 16r; e; g; a =p;
+2 1: 4r; c&+; b; a;
+2 2: 2.e&-b-; 4r;
+phrase below 1: 2.625 til 2.875;
+phrase above 2: 1.5 til 1m+1.5;
+< below 2 dist -6!: 1.9 til 2.6;
+TEMPO(1.5, "Pi\\(uacute\) mosso")
+bar
+
+// bar 264
+staff 2 clef = treble
+music
+1: 16r; e&+ =a bm; g+; g#+ ebm; a+ =b bm; gn+; en+; a ebm; g# bm with staff below; gn; 8s ebm; 4;
+// Adding 3rd voice and note displacement will go insane
+2 1: [with -]4b =q; {2.ena; 4s;}2n,4; 8 bm with staff above; \
+	<<staff clef=bass>>16e+; c#+ ebm; b bm; a; e; a- ebm;
+2 2: 4r; d; 2c#;
+phrase below 2: 1.5 til 2;
+ital below 1: 1 "leggiero";
+> above 2 dist 0!: 1.05 til 1.45;
+DYN(1.5, "p")
+line (p.x+2, p.y-2) to (q.x, q.y+10);
+bar
+
+// bar 265
+1: 2r; <<staff clef=bass>>fad+ tie;
+2 1: 4d- =c; [with -]...a-;;;
+2 2: 4s; r; 2d-~;
+TEMPO(1, "Tempo I")
+DYN(2[-2], "mf")
+medium curve (a.x, a.y+2) to (b.x, b.y+4) to (c.x, c.y+12);
+ital above 2: 1[-1] "m.d."; 1.5[-1] "m.s.";
+bar
+
+// bar 266
+1: 2.fad+ tie; 8; gac#+a+<f+>;
+2 1: [with -]4.a-; 8g#-; [with -]2a- =a;
+2 2: 2.d-~; 8; a1;
+phrase above 2: 1.75 til 2;
+phrase below 2: 2.75 til 1m+1;
+ital between 1&2: 1 "dim.";
+bar
+
+// bar 267
+1 1: {2.fd+f+; 4s;}2n,2; 2s;
+1 2: 2r; 16; <<staff clef=treble>>c#; d; e; f; d; f; g# =c;
+2 1: 4r; b; a; g#;
+2 2: 2.d-a- =b; 4r;
+medium curve (a.x+2, a.y+2) to (b.x-2, b.y+2) bulge 2;
+DYN(1, "p")
+TEMPO (1.5, "Pi\\(uacute\) mosso")
+phrase above 2: 1.5 til 1m+2.5;
+< above 2 dist 4!: 2.05 til 2.4;
+bar
+
+// bar 268
+staff 2 clef = treble
+music
+1: 16r; c#+; d+; e+; f+; d+; f+; f#+; g+; fn+; d+; a& =e; r; f; d; g-~;
+2 1: [with -]4a =d; 2d~a&<g>; 4dg =f;	// missing slur from a& to g?
+2 2: 4r; c<>; 2bn-;
+phrase above 1: 1.125 til 1m+1;
+> above 2 dist 1!: 1.6 til 2.2;
+line (c.x+2, c.y-1) to (d.x, d.y+9);
+line (e.x, e.y-2) to (f.x, f.y+9);
+bar
+
+// bar 269
+staff 2 clef = bass
+music
+1: 4g-ce&; 16r; c+; e&+; en+; f+; e&+; c+; g&; r; en; e&; f-~;
+2 1: 4c; <<staff clef=treble>>[with -]2c~g&<f>; 4cf;
+2 2: 4s; b&-; 2a-;
+phrase above 1: 1.625 til 1m+1;
+> above 2 dist 1!: 1.6 til 2.4;
+bar
+
+// bar 270
+staff 2 clef = bass
+music
+1: 4f-b-d; 16r; b- =c; e&; en; f; e; e&; a-~; a-; <<staff clef=bass>>en =b; e&; d~ =d;
+2: 4b-; 2g&<>; 4f =a;
+line (a.x, a.y+3) to (b.x, b.y-2);
+ital between 1&2: 1[-1] "dim.";
+// phrase above 1: 1.625 til 1m+1; //phrase is distorted
+bar
+
+// bar 271
+1 1: 4d =e; r; [with -]2d+;
+1 2: 2s; [dist -2]16r; d; b; d~;;; b; d+;
+2 1: 4r; [with -]...g&-; f-; en-;
+2 2: 1b1;
+DYN(1[-1], "pp")
+DYN(1.5[-1], "mf")
+rom above 1: 1.5 "rit.";
+phrase below 1: 2.125 til 2.875;
+phrase above 2: 1.5 til 1m+2.5;
+medium curve (c.e, c.y+11) to (d.x, d.y+13) to (e.x, e.y+10);
+bar
+
+// bar 272
+staff 1 clef = treble
+music
+1 1: [with -]...2g; g#;
+1 2: 16r; b-; d; g-~;; b-; d; b-~;; bn-; d; g#-~;; b-; d; g#;
+2: [with -]4f; 2e; 4e-;
+phrase below 1: 1.125 til 2; 2.125 til 2.875;
+ital between 1&2: 1[-1] "dim.";
+bar
+
+// bar 273
+staff 2 beamstyle = 4,4,2
+music
+1: 4a-da; r; [with -]2fd+f+ tie;
+2: 4a-f; {[up]8a1f; a; d+;}3; {a+; d+; a+; d+; a; a;}6n;
+TEMPO(1, "Tempo I")
+DYN(1[-1], "pp")
+DYN(2, "p")
+roll 2: 1.5;
+phrase above 2: 1.5 til 1m+1.33;
+bar
+
+// bar 274
+staff 2 unset beamstyle
+music
+1: 4fd+f+; [with -]...;;;
+2: {8a-f; a; d+; a+; a; d+; a+; a; d+; a+; a; d+;}12n;
+phrase above 2: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83;
+bar
+
+// bar 275
+staff 2 beamstyle = 4,4,2
+music
+1 1: [with -]...4fd+f+; ed+e+; 2fd+f+ tie;
+1 2: 2s; 4a =a; s;
+2 1: {8a+; a; d+; g+; a; d+ =b;}6n; 4s; [with -]b;
+2 2: 2s; {8r; a-; d; b; d; f;}6n;
+phrase above 2: 1 til 1.33; 1.5 til 1.83;
+phrase below 2: 2.13 til 2.83;
+< between 1&2: 2.5 til 1m+1;
+line (a.x-2, a.y-2) to (b.x, b.y+2);
+bar
+
+// bar 276
+1 1: 4fd+f+; [with -]...2f =b d+f+; 4gc#+g+;
+1 2: 4s; 8s bm with staff below; 16f; a =c ebm; 2s;
+2 1: 16a bm; c#+; d+; e+ =a ebm; g# bm with staff above; d+; 8s ebm; \
+	{<<staff clef=treble>>8b =d bm; f; d ebm; a bm; c#; a- ebm;}6n;
+2 2: [with -]...4a; g# =e; b; a; // missing legato for first note?
+> between 1&2: 2.5 til 2.95;
+phrase above 2: 1 til 1.375; 2 til 2.33; 2.5 til 2.83;
+line (c.x, c.y-2) to (d.x, d.y+3);
+line (a.x+2, a.y+2) to (b.x, b.y-2);
+medium curve (e.e, e.n+15) to (c.x, c.n+1) bulge 3;
+bar
+
+
+// bar 277
+staff 2 beamstyle = 4,4,2
+music
+1: [with -]...2fd+f+;;
+2: {8a; d; a-;}3n; <<staff clef=bass>>4a-df; {8r; d+; a+; d+; a;;}6n;
+phrase below 2: 1 til 1.5;
+phrase above 2: 2.13 til 1m+1.33;
+DYN(1, "p")
+bar
+
+// bar 278
+staff 1 clef = bass
+music
+1 1: 4r; <<staff clef=treble>>[up]...fd+f+;;;
+1 2: [up]4a1; s; a =b; s;
+2 1: {8a-f; a; d+; a+; a; d+ =a;}6n; 4s; [with -]b;
+2 2: 2s; {8r; a-; d; b; d; f;}6n;
+mussym above 1: 1.5 "leg"; 2 "leg"; 2.5 "leg";
+phrase above 2: 1.5 til 1.83;
+phrase below 2: 2.13 til 2.83;
+< between 1&2: 2.5 til 1m+1;
+line (a.x, a.y+2) to (b.w-1, b.y-2);
+bar
+
+// bar 279
+1 1: [with -]...4fd+f+; e =b d+e+; 2fd+f+;
+1 2: 4s; 8 bm with staff below; 16e; g# =c ebm; 2s;
+2 1: 16a bm; c#+; d+; d#+ =a ebm; g# bm with staff above; dn+; 8s ebm; \
+	{<<staff clef=treble>>8a =d bm; d; b- ebm; g# bm; d; bn- ebm;}6n;
+2 2: [with -]...4a; g =e; a; g;
+phrase above 2: 1 til 1.375; 2 til 2.33; 2.5 til 2.83;
+line (a.e+1, a.y+2) to (b.x, b.y-2);
+line (c.x, c.y-3) to (d.x, d.y+2);
+medium curve (e.e, e.y+17) to (c.x, c.y+2) bulge 3;
+> between 1&2: 2 til 2.9;
+rom above 1: 2 "rit.";
+bar
+
+// bar 280
+staff 2
+	clef = bass
+	beamstyle = 2,4,4
+music
+1: 2.ec#+e+; 4dbnd+;
+2: {8r; a-e; a; c#+a+; e; a; c+; e; a; bna+; e; b;}12n;
+phrase above 2: 1.17 til 2.33; 2.5 til 2.83;
+ital between 1&2: 2.25 "dim.";
+DYN(1, "p")
+rom above 1: 1[-2] "a tempo"; 2.5[-1] "rit." til 1m+3;
+roll 2: 1.5;
+bar
+
+// bar 281
+score
+	time = 2/4
+	beamstyle = 4,4
+staff 2 unset beamstyle
+music
+1: 2ec#+e+;
+2: {8c#+a+; a; c+; e; a-; d-~;}6n;
+DYN(1[-1], "pp")
+phrase above 2: 1 til 2.67;
+bar
+
+// bar 282
+score
+	time = cut
+	beamstyle = 2,2
+staff 2 unset beamstyle
+music
+1: 4r; [with -]2fd+f+; []4 tie;
+2: {8d-a-; d; f; a; f; a; a+; f; a; d+; a; d+;}12n;
+phrase above 2: 1 til 2.83;
+rom above 1: 1 "a tempo";
+bar
+
+// bar 283
+staff 2 beamstyle = 4,4,2
+music
+1 1: 4fd+f+; [with -]...;;;
+1 2: 2s; 4a =b; s;
+2 1: {8a+; a; d+; a+; a; d+ =a;}6n; 4s; [with -]b;
+2 2: 2s; {8r; d-; a-; b; d; f;}6n;
+phrase above 2: 1 til 1.33; 1.5 til 1.83;
+phrase below 2: 2.17 til 2.83;
+< between 1&2: 2.5 til 1m+1;
+line (a.x, a.y+2) to (b.w-1, b.y-2);
+bar
+
+// bar 284
+staff 2 beamstyle = 4,4,4,4
+music
+1 1: [with -]...4fd+f+; e =b d+e+; 2fd+f+;
+1 2: 4s; 8s bm with staff below; 16e; a =c ebm; 2s;
+2 1: 16a bm; c#+; d+; d#+ =a ebm; g# =e bm with staff above; dn+; 8s ebm; \
+	{<<staff clef=treble>>8b =d bm; f; d ebm; a bm; d; a-~ ebm;}6n;
+2 2: [with -]...4a; g; b; a;
+> between 1&2: 2 til 2.9;
+line (a.e+1, a.y+2) to (b.x, b.y-2);
+line (c.x, c.y-2) to (d.x, d.y+2);
+medium curve (e.e, e.y+15) to (c.w, c.y+2) bulge 3;
+phrase above 2: 1 til 1.375; 2 til 2.33; 2.5 til 2.83;
+bar
+
+// bar 285
+staff 1 vscheme = 3f;
+staff 2 vscheme = 3f;
+music
+1 1: [with -]...4fd+f+; 2gd+g+; 4c+d+a+;
+1 2: 2s; {8b bm with staff below; 4s ebm;}3n; 4s;
+1 3: 2s; 4b =b; s;
+2 1: {8a- bm; d- =e; a- ebm;}3n; [with -; ho 5]4b- =a; {[=p]8s bm with staff above; d; c# =q ebm;}3n; {a =c bm; d; cn ebm;}3n;
+2 2: 4s; {[ho 5]8b-; [ho 2.5]c; d =g;}3n; 4s; [with -]a;
+2 3: 4s; [up; ho -1]2.d- =f;
+mussym above 1: 2 "leg";
+line (a.e+1, a.y+6) to (b.w-1, b.y-2);
+line (b.e+1, b.y-2) to (c.e, c.y+7);
+phrase above 2: 2.5 til 2.83;
+medium curve (p.x, p.y) to (q.x, q.y-2) bulge -4;
+medium curve (e.x, e.y-2) to (f.x, f.y-2) bulge -2;
+medium curve (e.e, e.y+13) to (g.x, g.y+4) bulge 4;
+// medium curve (e.w, e.y-3) to (g.w, g.y-9) bulge -4;
+bar
+
+// bar 286
+staff 1 vscheme = 2f
+staff 2
+	vscheme = 2f
+	beamstyle = 2,2
+	clef = bass
+music
+1 1: 2gbd+g+; [with -]gd+g+ tie;
+1 2: 2s; {8b bm with staff below; s; 2 ebm;}6n;
+2: {8r; g-d bm; b; d+; b; d+ ebm;}6n; \
+	{[=a]8s bm with staff above; d+; b; d+; b; d =b ebm;}6n;
+rom above 1: 1 "accelerando";
+ital between 1&2: 1 "poco a poco\ncresc.";
+phrase above 2: 1 til 1.83;
+medium curve (a.x-1, a.y+10) to (b.w-1, b.y-1) bulge -4;
+bar
+
+// bar 287
+1 1: [up]...4gd+g+;;;;
+1 2: 2s; 4b =b; s;
+2 1: {8b; g-; d; b; d; d+ =a;}6n; 4s; [with -]c+;
+2 2: 2s; {8r; g-; d; c+; d; g;}6n;
+phrase above 2: 1 til 1.83;
+phrase below 2: 2.17 til 2.83;
+line (a.x, a.y+2) to (b.w-1, b.y-5);
+mussym above 1: 1.5 "leg"; 2 "leg"; 2.5 "leg";
+bar
+
+// bar 288
+1 1: [with -]...4gd+g+; f#d+f#+; 2gd+g+;
+1 2: 4s; 8.s bm with staff below; 16a =b ebm; 2s;
+2 1: [with -]4b; 16a =a bm with staff above; c+; d+; s ebm; \
+	{<<staff clef=treble>>8c+ =c bm; e&; d ebm; b bm; d; g- ebm;}6n;
+2 2: {8b; g-; d;}3n; [with -]...4a; c+; b;
+medium curve (a.e, a.y+10) to (b.w-1, b.y+1) bulge 2;
+line (b.x, b.y-2) to (c.x, c.y+2);
+phrase above 2: 2 til 2.33; 2.5 til 2.83;
+bar
+
+// bar 289
+staff 2
+	vscheme = 3f
+	clef = bass
+music
+1 1: [with -]4gbd+g+; {[with >]2ac+e+a+; 4s;}2n,4; [with -]c+ =b; d+e+b+;
+1 2: 2s; {8c+ bm with staff below; 4s ebm;}3n; 4s;
+2 1: {8r; g-d bm; b ebm;}3n; <<staff clef=treble>>[with -; ho 5]4c =a; \
+	{[=c]8s bm with staff above; e; d# =d ebm;}3n; {b bm; e; dn ebm;}3n;
+2 2: 4s; {[ho 5]8c; [ho 2.5]d; e;}3n; 2s;
+2 3: 4s; [up; ho -1]2.e-;
+phrase above 2: 1.17 til 1.33; 2.5 til 2.83;
+line (a.x, a.y+11) to (b.w-1, b.y-2);
+medium curve (c.x, c.y) to (d.x, d.y-2) bulge -4;
+phrase below 2: 1.5 til 1.83;
+bar
+
+// bar 290
+staff 2
+	clef = bass
+	beamstyle = 4,4,4,4
+music
+1 1: 2ac#+a+; 4b&f+b&+; e&+f+cn6;
+1 2: 4e+; 2.f+;
+2 1: {8a-e; a; bn;}3n; {[with -]4d&+; [hs "blank"; len 0; ho 0]8e+;}3n; \
+	{<<staff clef=treble>>8d&+; f; en; cn+; f; e&;}6n;
+2 2: 4s; {4d+; 8e&+;}3n; [with -]4d+; []c+;
+2 3: 4s; [down; ho 1]2.f;
+phrase below 1: 1 til 1.5;
+phrase above 2: 1 til 1.33; 1.83 til 2.33; 2.5 til 2.83;
+mussym above 1: 1.5 "leg";
+bar
+
+// bar 291
+staff 2
+	clef = bass
+	vscheme = 2f
+	unset beamstyle
+music
+1: 4bf+b+; [with -]2; []4;
+2 1: {8r; b-f =a; d+; f+ =b; d+; f+; <<staff clef=treble>>d+; f; d; f; d; f- =c;}12n;
+2 2: 2s; 4d+; s;
+// phrase above 2: 1.17 til 2.83;  // looks bad
+medium curve (a.x, a.y+6) to (b.x, b.y+2) to (c.x, c.y+15);
+bar
+
+// bar 292
+staff 2 beamstyle = 4,4,2
+music
+1: [with -]...4bf+b+; af+a+; 2bf+b+;
+2 1: {8d+; f; d; c+; f; d; d+; f; d; f; d; f-;}12n;
+2 2: 4d+; c+; d+; s;
+phrase above 2: 1 til 1.33; 1.5 til 1.83; 2 til 2.83;
+bar
+
+// bar 293
+staff 2
+	vscheme = 3f
+	clef = bass
+	beamstyle = 4,4,4,4
+music
+1 1: [with -]4bd+f+b+; {[with >]2c+e&+g+c6; 4s;}2n,4; [with -]...e+; f+g+d6;
+1 2: 2s; {8e+ =b bm with staff below; 4s ebm;}3n; 4s;
+2 1: {8r; b-f bm; d+ ebm;}3n; <<staff clef=treble>>[with -; ho 4]4e& =a; \
+	{[=c]8s bm with staff above; g; f# =d ebm; d+ bm; g; fn ebm;}6n;
+2 2: 4s; {[ho 4]8e; [ho 2]f; g;}3n; 4s; d+;
+2 3: 4s; [ho -2]2.g-;
+phrase above 2: 1.17 til 1.33; 2.5 til 2.83;
+phrase below 2: 1.5 til 1.83;
+line (a.x, a.y+10) to (b.w-1, b.y-2);
+medium curve (c.x, c.y+2) to (d.x, d.y-2) bulge -4;
+bar
+
+// bar 294
+staff 2 clef = bass
+music
+1 1: [with -]4c+e&+g+c6; {[with >]2d+f+a+d6; 4s;}3n,4; [with -]...4f+; g+a+en6;
+1 2: 2s; {8f+ =b bm with staff below; 4s ebm;}3n; 4s;
+2 1: {8cg bm; c+; e&+ ebm;}3n; <<staff clef=treble>>[with -;ho 4]4f =a; \
+	{[=e]8s bm with staff above; a; g# =f ebm; en+ =c bm; a; gn ebm;}6n;
+2 2: 4s; {[ho 4]8f; [ho 2]g; a;}3n; 4s; e+;
+2 3: 4s; [ho -2]2.a-;
+phrase above 2: 1 til 1.33; 2.5 til 2.83;
+phrase below 2: 1.5 til 1.83;
+line (a.x, a.y+10) to (b.w-1, b.y-1);
+line (b.e+1, b.y-1) to (c.x, c.n+4);
+medium curve (e.x, e.y+2) to (f.x, f.y-2) bulge -4;
+bar
+
+// bar 295
+staff 2
+	beamstyle = 2,4,4
+	vscheme = 2f
+	clef = bass
+music
+// FIXME: first note with legato mark or not?
+1: [with -]4d+g+b+d6; [with >]2e+b+d6e6; [with -]4f+b+d6f6;
+2 1: 2s; 4g+; a+;
+2 2: {8r; b-; g; d+; b; d+; g+; d+; b; a+; d+; b;}12n;
+DYN(1, "f")
+bar
+
+// bar 296
+1: [with -]4e+b+d6e6; [with >]2f+b+d6f6; [with -]4g+b+d6g6;
+2 1: 2s; 4a+; b+;
+2 2: {8r; g-; d; b; d+; g+; a+; d+; b; b+; d+; e;}12n;
+ital between 1&2: 1[-2] "cresc.";
+bar
+
+// bar 297
+score
+	time = 3/2
+	beamstyle = 2,2,2
+staff 2 beamstyle = 4,4,4,4,4,4
+music
+1 1: 4e+a+c#6e6a6; [with -]...2e+e6;; 4;
+1 2: 4s; d6; c6; b+; a+; g#+;
+2 1: 16a1; a-; e; c#+; {<<staff clef=treble>>8b; e; d; a; e; c#;}6n; \
+	<<staff clef=bass>>4d+; c#+; b;
+2 2: 4s; b; a; {8d+; g; e;}3n; {c+; e; a-;}3n; {b; e; d;}3n;
+mussym below 1: 1.5 "acc_gt";
+phrase below 1: 1.5 til 2; 2.5 til 3; 3.5 til 1m+1;
+phrase above 2: 1.5 til 1.83; 2 til 2.33;
+phrase below 2: 1 til 1.33; 2.5 til 2.83; 3 til 3.33; 3.5 til 3.83;
+DYN(1[-1], "ff")
+TEMPO (1, "Allegro Molto")
+roll 1: 1;
+bar
+
+// bar 298
+1 1: [with -]4e+e6; f+g#+d6f6; gn+d6e6g6; a+d6f6a6; c#+a+c#6; d+a+bn+d6;
+1 2: 4a+; s; 1;
+2: 4c#ea; bn-dfg#; b&-degn; a-df; g-a-ce; f-a-d;
+bar 
+
+// bar 299
+staff 2 beamstyle = 4,2,2,4
+music
+1 1: 4e+a+c#6e6; [with -]...2e+e6; e6; 4e+e6;
+1 2: 4s; b+; a+; d+b+; c#+a+; g#+;
+2 1: 4a1e-c#; d+; c#+; e+; s; b+;
+2 2: 4s; {8d+; g; e; c+; e; a-;}6n; {e+; a; e+; a; e+; a;}6n; {b+; e+; d+;}3n;
+phrase below 1: 1.5 til 2; 2.5 til 3; 3.5 til 1m+1;
+phrase below 2: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 3.83;
+bar
+
+// bar 300
+staff 2 unset vscheme
+music
+1 1: [with -]4e+e6; fg#d+f+; gnd+e+g+; ad+f+a+; c#ac#+; dabnd+;
+1 2: 4gn+; s; 1;
+2: 4c#+e+a+; bnd+f+g#+; b&d+e+gn+; ad+f+; gae+; fad+;
+rom above 1: 1.5[-2] "accelerando";
+octave above 1: 1.25 "8" til 4m+1.8;
+bar
+
+// bar 301
+music
+1: 4eac#+e+; facn+f+; gbe+g+; ae+a+; dfa&d+; egc+e+;
+2: 4egac#+; e&facn+; dengb; c#ega; cndfa&; b-ceg;
+bar
+
+// bar 302
+1: 4fc+f+; gc+e+g+; ac+e&+a+; bd+f+b+; e&bc+e+; fbd+f+;
+2: 4a-cf; g-ce; g&-a-ce&; f-a&-b-d; e&-gn-b-c; d-f-b-;
+bar
+
+// bar 303
+staff 2 unset beamstyle
+music
+1 1: {4gbe&+g+; aa+; bb+;}3; {c+e+g+c6; f#f#+; gg+;}3; {[len 0;ho -1]a+ =b; a&+ =c; s; s;}4n,2;
+1 2: 1s; {[ho 3]4ad+ =a; [ho 2]bd+a&+b+; e&be+;}3;
+2: 8g1; e&-; b1; b-; e-; e; b-; g; f1; f-; b-; a&;
+phrase below 2: 1 til 2.75; 3 til 3.75;
+DYN(1[-1], "ff")
+line (a.w, a.y) to (b.w, b.y);
+line (a.w, a.y) to (c.w+0.1, c.y);
+bar
+
+// bar 304
+1: {4fbe+f+; f#be+f#+; gbe+g+;}3n; {bg+b+; c+g+b+c6; c#+g+b+c#6;}3n; \
+	{d+a+d6; g#d+g#+; ad+a+;}3n;
+2: 8e&1; e&-; b-; g; en1; en-; d; b; f1; f-; d; a;
+phrase below 2: 1 til 1.75; 2 til 2.75; 3 til 3.75;
+bar
+
+// bar 305
+1: {4bd+b+; e&bd+e&+; enbd+en+;}3n; {fbd+f+; c#ec#+; dfd+;}3n; \
+	{a-cfa; b-dfb; fg#;}3n;
+2: 8f#1; f#-; d; b; {4g1g-; g#1g#-; a1a-; e-e; d-d; dfb;}6n;
+ital between 1&2: 2[-2] "marcato";
+phrase below 2: 1 til 1.75;
+bar
+
+// bar 306
+score
+	time = 9/4n
+music
+// Mup doesn't allow grace note before barline; I hate this mess!
+1 1: 4ea; e&f#; dg; d&en; cfn; <<staff clef=bass>>e&f#; \
+	dg;; {4g#; [grace]16gn =a; []g#; s;}3n,4;
+1 2: 1s;; 4d;
+2: 4c#ea; cne&a&; bn-dg; b&-d&g&; a-cf; c; bn-; e-b-; f-b&-;
+rom above 1: 1 "rit.";
+mussym above 1: 9 "tr";
+bar
+
+// bar 307
+score
+	time = cut
+	beamstyle = 4,4,4,4
+staff 1 vscheme = 2f
+staff 2
+	vscheme = 2f
+	unset beamstyle
+music
+1 1: [dist -6]8r; <<staff clef=treble>>[down]...16d6 =c; a6; b6 =d; a6; d6; a6; e6; d6; a+; d6; b+; a+; d+; a+;
+1 2: 1da =b;
+2 1: [with >]1a1f-a-;
+2 2: [dist 4]8r; [down]...16d+; a+; b+; a+; d+; a+; e+; d+; a; d+; b; a; d; a;
+curve (a.e, a.y+5) to (b.x, b.y+2) bulge 2;
+DYN(1[-1], "ff")
+rom above 1 dist 6: 0 "a tempo";
+// phrase above 1: 1.25 til 2m+1;
+mussym above 1 dist 3: 1 "acc_gt";
+phrase below 2: 1.125 til 2m+1;
+bar
+
+// bar 308
+staff 1 unset vscheme
+music
+1: 16e+; d+; a; d+; b; a; d; a; e; d; a-; d =e; 4s;
+2 1: 16e; d; a-; d; b-; a-; d-; a-; 8r; 16a-; d; b; a; d; a;
+2 2: 2.s; 16b-; a-; d-; a-;
+bar
+
+// bar 309
+// 1: {4 with a2 below; 8 with d3 below;}3; 2.s;
+2 1: {4a- =f; 8d;}3; {8g#; a; r;}3; {r; d; a;}3n; {c#+; d+; r;}3n;
+2 2: {4a1; 8d-;}3; {4a-; 8c#e;}3; {4df; 8d-a-;}3n; {4f; 8eg#;}3n;
+// FIXME: medium curve is too thick!
+curve (c.x, c.y+4) to (d.x, d.y+3) to (e.e, e.y+8) to (f.x, f.y+13);
+bar
+
+// bar 310
+1: 4s; {8 with g# below; with a below; e;}3n; {f; d+; g#;}3n; {a; a+; gn+;}3n;
+2 1: {[dist 8]8r; a; d+;}3n; 4s; {8d+; da; e+;}3n; {f+; ad+; b+;}3n;
+2 2: {4fa; 8a-f;}3n; {4a; 8c#+;}3n; 2s;
+phrase above 1: 2.83 til 2m+2.83;
+phrase above 2: 2.83 til 2m+2.5;
+bar
+
+// bar 311
+staff 1
+	vscheme = 3f
+	beamstyle = 2,2
+music
+1 1: {8f#+; a+; a; fn+; a+; a;}6n; {e+; a+; a; e&+; a+~;~;}6n;
+1 2: 4f+;; e+;[len 6]~;
+1 3: 2.s; {[dist -6;ho 0]8r; []; [down]b<>;}3n;
+2: 4a+; g#+; gn+; f#+~;
+ital below 1: 2.83[-2] "m. s.";
+bar
+
+// bar 312
+1 1: {8a+;; a; d+; a+; a;}6n; {c#+; a+~;; a; a+; a;}6n;
+1 2: 4e+; d+; c#+; a;
+1 3: [down;ho 1]2a; {[dist -6;ho 0.5]8r;[]; [down]...b;}3n; [pad 3; ho -1.5]4cn+;
+2: 4f+; fn+; e+; e&+;
+mussym below 1: 1 "acc_gt"; 2.33 "acc_gt"; 2.5[-1] "acc_gt";
+ital below 1: 2.33 "m. s.";
+bar
+
+// bar 313
+staff 1 unset vscheme
+staff 2 vscheme = 2f
+music
+1: 2a+ alt 2; bn; 2a+ alt 2; b&;
+2 1: 2fgd+f+; 2fg#d+f+;
+2 2: 4r; a-; r; a-;
+DYN(1[-1], "ff")
+ital between 1&2: 1.5 "marcato";
+mussym above 1: 1.25 "tr"; 2.25 "tr";
+bar
+
+// bar 314
+1: 2a+ alt 2; a; 2a+ alt 2; g#;
+2 1: 2fad+f+; 2fb&d+f+;
+2 2: 4r; a-; r; a-;
+mussym above 1: 1.25 "tr"; 2.25 "tr";
+bar
+
+// bar 315
+1: 2a+ alt 2; gn; 2a+ alt 2; g+;
+2 1: 1fbnd+f+;
+2 2: 4r; 2.a-;
+mussym above 1: 1.25 "tr"; 2.25 "tr";
+bar
+
+// bar 316
+1: 2a6 alt 2; g+; 2a+ alt 2; g+;
+2 1: 1fc+e&+f+;
+2 2: 4r; 2.a1;
+bar
+
+// bar 317
+1: 2a+ alt 2; g; 2a alt 2; g;
+2 1: 1fbnd+f+;
+2 2: 4r; 2.a-;
+bar
+
+// bar 318
+1: 2a alt 2; g-; 2a- alt 2; g-;
+2 1: 1fb&c#+f+;
+2 2: 4r; 2.a1;
+rom above 1: 1 "rit.";
+bar
+
+// bar 319
+staff 1 vscheme = 2f
+music
+1 1: 2r; {8r; f#-; a-; d; f;}5;
+1 2: [with >]1df#a;
+2 1: [with >]1a-df#a;
+2 2: 2r; [grace;up]16d1; []d-; [up]2a-~down;
+phrase below 1: 2.2 til 1m+1.8;
+DYN(1[-1], "ff")
+mussym above 2: 2 "leg";
+bar
+
+// bar 320
+staff 1 unset vscheme
+staff 2 vscheme = 3f
+music
+1: {8a-; f#-; a-; d; f#;}5n; {r; a-; d; f; a;}5n;
+2 1: [with -]2d =a; [grace;slash 1]8a- =b; [with -]2f#~ =c;
+2 2: 1a-~;
+2 3: 2s; 2d =d;
+phrase below 1: 2.2 til 1m+1.8;
+medium curve (a.e+1, a.y-1) to (d.w-1, d.y-5) bulge -2;
+medium curve (b.x, b.y+6) to (c.x, c.y+4) bulge 2;
+medium curve (b.e+0.5, b.y) to (d.w-0.5, d.y-1) bulge -1;
+bar
+
+// bar 321
+music
+1: {8d; f#-; d; f#; a;}5n; {8r; d; f; a; d+;}5n;
+2 1: 2f~; [with -]fa tie;
+2 2: 1a-~d~ =e;
+phrase above 1: 2.2 til 1m+1.8;
+medium curve (d.e+1, d.y) to (e.w-1, e.y) bulge -2;
+bar
+
+// bar 322
+1: {8a; f#; a; d+; f#+;}5n; {r; d+; a; d+; f+; a+;}6;
+2 1: [hs "blank"; len 0; ho 0]4fa; 8s; 8f#; [with -]4.ae+; []8d+;
+2 2: 1a-dfa;
+2 3: [dist 10; ho 0]4.r; 8s; 2;
+phrase above 1: 2.17 til 2.83;
+bar
+
+// bar 323
+score
+	time = 3/2
+	beamstyle = 2,2,2
+staff 1
+	vscheme = 2f
+	beamstyle = 4,2,2,4
+staff 2 unset beamstyle
+music
+1 1: 4s; [with -]a6; s; [with -]a6; s; [with -]a6;
+1 2: {8r; a+; d6;}3n; {a6; e&6; d6;; e6; d6;}6n; {a6; b+; a+;; b+; a+;}6n; \
+	{a6; e6; d6;}3n;
+2 1: {1.f#a; 4s;}2n,2; {4r;; <<staff clef=treble>>a-;}below 3; {f#; a; d+;}below 3;
+2 2: 8d-; a-; f; d+; 1s;
+2 3: [up; ho 0]2d+ =a; [down; with -; ho 0]1a+ =b;
+phrase below 1: 1.17 til 2.33; 2.5 til 3.33; 3.5 til 1m+1.33;
+phrase below 2: 1 til 1.75;
+phrase above 2: 2.67 til 1m+1;
+rom above 1: 0 "a tempo";
+DYN(1[-1],"mf")
+ital above 2: 0[+2] "m. d.";
+line (a.e+1, a.y) to (b.w-1, b.y);
+bar
+
+// bar 324
+staff 1 beamstyle = 4,4,2,2
+staff 2 vscheme = 2f
+music
+1 1: 4s; [with .]...b+; c6; d6; f#+; g+;
+1 2: {8d6; e&6; d6; b+; e&+; d+;}6n; {c6; e+; d+; d6; e+; d+;}6n; \
+	{f+; b; a; g+; b; a;}6n;
+2: 4a+; 8d+f#+b+<>; a; d+f+c6<>; a; d+f+d6<>; a; d+f+<>; a; d+e+g+<>; a;
+phrase below 1: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83; 3 til 3.33; 3.5 til 3.83;
+octave above 1: 1.5[-2] "8" til 1m+1.4;
+DYN(1.5[-2], "pp")
+bar
+
+// bar 325
+staff 1 beamstyle = 4,2,2,4
+music
+1 1: [with .]4a+; [with -]d6; s; [with -]d6; s; [with -]d6;
+1 2: {8a+; b; a;}3n; {d6; b+; a+;; b+; a+;}6n; {d6; e&+; d+;; e+; d+;}6n; \
+	{d6; g+; f#+;}3n;
+2 1: 8d+f#+a+<>; a; 4g+; f+; 2; 4a~;
+2 2: 4s; 2d+; 4b; a; {8a; e&; d;}3n;
+phrase below 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1.33;
+phrase above 2: 1.5 til 2;
+phrase below 2: 2.5 til 3; 3.5 til 1m+1;
+mussym above 2: 1.5 "leg";
+mussym below 2: 2.5 "leg";
+bar
+
+// bar 326
+staff 1 beamstyle = 4,4,4,4,2
+music
+1 1: 4s; [with .]...e6; f#6; g6; b+; c6;
+1 2: {8f#+; b+; a+; e6; b+; a+;}6n; {f6; b+; a+; g6; b+; a+;}6n; \
+	{d+; e+; d+; e+; f+; g+;}6n;
+2 1: 4a; 8d+g+<>; a; d+a+<>; a; d+b+<>; a; <<staff clef=bass>>2e+g+;
+2 2: 4d; 2.s; [with -]4.b; [][len 6]8a;
+phrase below 1: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83;
+phrase above 1: 3 til 1m+1;
+DYN4(,3[-2], "mf")
+rom above 1: 3 "rit.";
+bar
+
+// bar 327
+staff 1 beamstyle = 4,2,2,4
+staff 2 vscheme = 3f
+music
+1 1: [with .]4d6; [with -]a+; s; [with -]a+; s; [with -]a+;
+1 2: 4a+; {8a+; e&+; d+;; e+; d+;}6n; {a+; b; a;; b; a;}6n; \
+	{a+; e+; d+;}3n;
+2 1: [down; len 6]2a =a; []1d+ =b;
+2 2: [dist -8]4r; 8d-a-; f#; {4r; a- =c; f;}3; {d+ =d; f; d+;}3;
+2 3: [ho 0]1.d+f#+;
+mussym below 2 dist -1.5!: 1 "leg";
+phrase below 1: 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1.33;
+phrase below 2: 1.5 til 1.75;
+line (a.e+1, a.y+1) to (b.w-1, b.y);
+rom above 1: 2.5 "a tempo";
+bar
+
+// bar 328
+staff 1 beamstyle = 4,4,2,2
+staff 2 vscheme = 2f
+music
+1 1: 4s; [with .]...b+; c6; d6; f#+; g+;
+1 2: {8d+; e&+; d+; b+; e+; d+;}6n; {c6; e+; d+; d6; e+; d+;}6n; \
+	{f+; b; a; g+; b; a;}6n;
+2: 4a+ =e; <<staff clef=treble>>8d<>f#b; a-; d<>fc+; a-; d<>fd+; a-; d<>f; a-; d<>eg; a-;
+// BUG: cross-score curve
+// medium curve (c.x, c.y+2) to (d.x, d.y+3) to (e.w, e.y+1);
+phrase below 1: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83; 3 til 3.33; 3.5 til 3.83;
+DYN(1.5[-1], "pp")
+bar
+
+// bar 329
+staff 1 beamstyle = 4,2,2,4
+music
+1 1: [with .]4a+; [with -]d+; s; [with -]d+; s; [with -]d+;
+1 2: {8a+; b; a;}3n; {d+; b; a;; b; a;}6n; {d+; e&; d;; e; d;}6n; {d+; g; f#;}3n;
+2 1: 4df#a; g; f; 2; <<staff clef=bass>>8da; e&+;
+2 2: 4s; 2d; 4b-; a-; s;
+phrase below 1: 1 til 1.33; 1.5 til 2.33; 2.5 til 3.33; 3.5 til 1m+1.33;
+phrase above 2: 1.5 til 2; 3.5 til 1m+1;
+phrase below 2: 2.5 til 3;
+mussym above 2: 1.5 "leg";
+mussym below 2: 2.5 "leg";
+bar
+
+// bar 330
+staff 1 beamstyle = 4,4,2,2
+music
+1 1: 4s; [with .]...e+; f#+; g+; b; c+;
+1 2: {8f#; b; a; e+; b; a;}6n; {f+; b; a; g+; b; a;}6n; \
+	{b; e; d; c+; e; d;}6n;
+2 1: 4d+; <<staff clef=treble>>8d<>g; a-; d<>a; a-; d<>b; a-; \
+	<<staff clef=bass>>2d+~;
+2 2: 1s; [with -]4.g; []8f#;
+phrase below 1: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83; 3 til 3.33; 3.5 til 3.83;
+phrase above 2: 3 til 1m+1.5;
+rom above 1: 3 "rit.";
+DYN4(,3[-2], "mf")
+bar
+
+// bar 331
+staff 1 unset beamstyle
+staff 2 unset beamstyle
+music
+1: 8d+; d; a; f#; b; g; c+; a; f; d; g; e;
+2 1: 4d+; d-a-; 8r; b; a; f; d; b-; e; c#;
+2 2: [with -]2f#; 1s;
+rom above 1: 1 "a tempo";
+DYN(1.5, "p")
+phrase above 1: 1 til 1m+3.75;
+phrase above 2: 2.25 til 1m+3.75;
+bar
+
+// bar 332
+1: 8a; f#; d; b-; e; c#; f; d; <<staff clef=bass>>b; g; c#+; a;
+2: 8f#; d; b-; g-; c#; a-; d; b-; g-; e-; a-; f#-;
+bar
+
+// bar 333
+1 1: 1.d+~;
+1 2: 8d+; f#; a; f; b; g; cn+; a; g; e; a; f;
+2 1: 8d; d-; cn; d-; d; d-; e&; d-; b-; d-; c; d-;
+2 2: 4d; c; d; e; b-; c;
+phrase below 1: 1 til 2m+1;
+phrase above 2: 1 til 2m+1;
+bar
+
+// bar 334
+1 1: 1.d+~;
+1 2: 8b; g; f#; d; g; e; a; f; e; c#; f; d;
+2: 8d; d-; a-; d-; b-; d-; c; d-; g-; d-; a-; d-;
+bar
+
+// bar 335
+staff 2 beamstyle = 2,2,4,4
+music
+1 1: 1d+~; 8; [dist 10]r; 4;
+1 2: 4g; d; e&; f; g =p; a;
+2 1: 8b-; e&-~down;; =a; [len 6]c =b; e-; d; e-; e&; e-; {f# =c; b-; e- =d;}3;
+2 2: {1.b-; 4s;}2n,2; 4c; d; e; f;
+phrase below 1: 1.5 til 2.5;
+phrase above 2: 1 til 1.25; // 1.75 til 3.83;
+medium curve (a.e, a.n+7) to (b.e, b.n+6) to (c.e, c.n+9) to (d.e, d.n+13);
+rom above 1: 1 "rit.";
+ital between 1&2: 1 "un poco cresc.";
+bar
+
+// bar 336
+staff 2
+	beamstyle = 2,4,2,4
+	vscheme = 3f
+music
+1: 4b; ac+; bd+; c+e+ =q; <<staff clef=treble>>d&fn; dnf#;
+2 1: {8g; b-; e&-; b-; e-; b-;}6n; {e-; b-; e-;}3n; \
+     {8g; b-; e-; b-; e-; b-;}6n; {e-; b-; e-;}3n;
+2 2: 4g; 2s; 4g; 2s;
+2 3: [down]...2.g;;
+phrase above 2: 1 til 2.33; 2.5 til 3.83;
+bar
+
+// bar 337
+score
+	time = cut
+	beamstyle = 2,2
+music
+1 1: 4g; [with -]a; []2b~ =r;
+1 2: 2.e&; 4d~;
+2 1: {8g; b-; e&-~;; b-; e-~;}6n; {e-; b-; e-; en-; b-; d;}6n;
+2 2: 1g;
+phrase above 2: 1 til 1m+1;
+DYN(2[-1], "mf")
+ital between 1&2: 2.5 "dim.";
+bar
+
+// bar 338
+1 1: 2b =s; [with -]a-;
+1 2: 2.d =a; 4c# =b;
+2: 2g~; a-eg;
+medium curve (a.x,a.s-3) to (b.w, b.s-3) bulge -2
+medium curve (p.e+1, p.n+1) to (q.x, q.n+2) to (r.x, r.n+9) to (s.x, s.n+4);
+dblbar
+
+// bar 339
+score
+	key = 2#
+	beamstyle = 4,4,4,4
+staff 1 unset beamstyle
+staff 2 unset beamstyle
+music
+1 1: 2s; 16f; a; d; a-; 8r; 16d; a;
+1 2: 2f-d; [with -]f =a;
+2 1: 4d-a-; {8d1; d-; a-;}3; 16f; a; f; a-; d-; a-; f; a;
+2 2: 2s; [with -]f;
+DYN(1, "p")
+DYN(2[-1], "mf")
+phrase above 1: 2 til 2.375; 2.75 til 1m+1.375;
+phrase above 2: 2 til 1m+1.33;
+TEMPO (1, "Moderato")
+bar
+
+// bar 340
+1 1: 16d; a; d; a-; f; a; d; a-; f; a; d; a-; f; a; d; a-;
+1 2: 4f =b; [with -]...;;;
+2 1: {8f; a; a-;}3n; {8f; a; a-;}3n; {8f; a; a-;}3n; {8f; a; a-;}3n;
+2 2: [hs "blank"; len 0]4f; [with -]...f;;;
+phrase above 1: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+phrase above 2: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83;
+// BUG: slur overlaps with other notes, manual curve b0rks
+medium curve (a.x, a.s-0.5) to (b.w-1, b.s-0.5) bulge -6;
+bar
+
+// bar 341
+1 1: 16f; a; d; a-; e; a; d; a-; f; a; d; a-; 8r; 16d; a;
+1 2: [with -]...4f; e; 2f =a;
+2 1: {8f; a; a-;}3n; {e; a; a-;}3n; 16f; a; f; a-; d-; a-; f; a;
+2 2: [with -]...4f; e; 2f;
+phrase above 1: 1 til 1.375; 1.5 til 1.875; 2 til 2.375; 2.75 til 1m+1.375;
+phrase above 2: 1 til 1.33; 1.5 til 1.83; 2 til 1m+1.33;
+bar
+
+// bar 342
+1 1: 16d; a; d; a-; f; a; c; a-; c; a; c; a-; g; b&; c; b&-;
+1 2: 4f =b; [with -]2; []4g;
+2 1: {8f; a; a-;}3n; {f; a; a-; f; a; a-;}6n; {g; b&; a-;}3n;
+2 2: 4f; [with -]2; []4g;
+phrase above 1: 1.5 til 2.375; 2.5 til 2.875;
+phrase above 2: 1.5 til 2.33; 2.5 til 2.83;
+ital between 1&2: 2.5 "dim.";
+// BUG: slur overlaps with other notes, manual curve b0rks
+medium curve (a.x, a.s-2) to (b.w-1, b.s-2) bulge -5;
+bar
+
+// bar 343
+staff 2 beamstyle = 4,4,2
+music
+1 1: 16f; a; d; a-; 4r; 16d; f; a-; f-; 8r; 16a-; f;
+// BUG: slur overlaps with other notes, manual curve b0rks
+1 2: [with -]2f; []d~;
+2 1: {8f; a; a-; 4d-; 8a-;}6n; {d; f; a-; d-; a-; f;}6n;
+2 2: [with -]2f; []d;
+phrase above 1: 1 til 1.375; 2 til 2.375; 2.75 til 1m+1.375;
+phrase above 2: 1 til 1.83; 2 til 1m+1.33;
+DYN(1, "p")
+DYN(2[-1], "mf")
+bar
+
+// bar 344
+staff 2 beamstyle = 4,4,4,4
+music
+1 1: 16a-; f; a-; f-; d; f; a-; f-; d; f; a-; f-; d; f; a-; f-;
+1 2: 4d; [with -]...;;;
+2 1: {8d; f; a-; d; f; a-;}6n; {d; f; a-; d; f; a-;}6n;
+2 2: 4s; [with -]...d;;;
+phrase above 1: 1.5 til 1.875; 2 til 2.375; 2.5 til 2.875;
+phrase above 2: 1.5 til 1.83; 2 til 2.33; 2.5 til 2.83;
+bar
+
+// bar 345
+staff 2 beamstyle = 4,4,2
+music
+1 1: 16d; f; a-; f-; c; f; a-; f-; d; f; a-; f-; 8r; 16a-; f;
+// BUG: slur overlaps with other notes, manual curve b0rks
+1 2: [with -]...4d; cn; 2d~;
+2 1: {8d; f; a-; e&; f; a-;}6n; {d; f; a-; d-; a-; f;}6n;
+2 2: [with -]...4d; e; 2d;
+phrase above 1: 1 til 1.375; 1.5 til 1.875; 2 til 2.375; 2.75 til 1m+1.375;
+phrase above 2: 1 til 1.33; 1.5 til 1.83; 2 til 1m+1.33;
+bar
+
+// bar 346
+staff 2 beamstyle = 4,2,4
+music
+1 1: 16a-; f; a-; f-; d; f; a-; f-; a-; f; a-; f-; e&; g; cn; g-;
+1 2: 4d; [with -]2; []4e;
+2 1: {8d; f; a-; d; f; a-;}6n; {d; f; a-; e&; g; a-;}6n;
+2 2: 4s; [with -]2d; []4e;
+phrase above 1: 1.5 til 2.375; 2.5 til 2.875;
+phrase above 2: 1.5 til 2.33; 2.5 til 2.83;
+ital between 1&2: 2.5 "dim.";
+bar
+
+// bar 347
+staff 2 beamstyle = 2,4,4
+music
+1 1: 16d; f; a-; f-; {8r; <<staff clef=bass>>f; d+;}3; 16a; f+; d+; f; \
+	b&; f+; c#+; f;
+1 2: [with -]...2d; 4a; b;
+2 1: {8d; f; a-; d-; a-; d;}6n; {a-; d; d-; b&-; c#; d-;}6n;
+2 2: [with -]...2d; 4a-; b-;
+phrase above 1: 1 til 1.375; 1.75 til 1.875; 2 til 2.375; 2.5 til 2.875;
+phrase above 2: 1 til 1.83; 2 til 2.33; 2.5 til 2.83;
+DYN(2, "p")
+bar
+
+// bar 348
+1 1: 16a; f+; d+; f; {8r; d; a;}3; 16f; d+; a; d; g; d+; g; e;
+1 2: [with -]...2a; 4f; g;
+2 1: {8a-; d; a-; d-; a-; d;}6n; {a-; d; d-; b&-; d; d-;}6n;
+2 2: [with -]...2a-; 4; b-;
+phrase above 1: 1 til 1.375; 1.75 til 1.875; 2 til 2.375; 2.5 til 2.875;
+phrase above 2: 1 til 1.83; 2 til 2.33; 2.5 til 2.83;
+bar
+
+// bar 349
+staff 2 beamstyle = 4,4,2
+music
+1 1: 16f; d+; a; d; 4r; 2;
+1 2: [with -]4f; 2.s;
+2 1: {8a-; d; d-; f-; d-; f-;}6n; {g-; f-; g-; a-; d-; a-;}6n;
+2 2: [with -]4a-; f-; g-; a-;
+phrase above 1: 1 til 1.375;
+phrase above 2: 1 til 1.33; 1.5 til 2m+1.33;
+bar
+
+// bar 350
+staff 1 unset vscheme 
+staff 2 beamstyle = 2,2
+music
+1: 2r; 4; gc+<d+>;
+2 1: {8b&-; a-; b-; cn; d-; c;}6n; {d; d-; d; e; b-; d-;}6n;
+2 2: 4b-; c; d; e;
+ital between 1&2: 1 "un poco cresc."; 2.5 "dim.";
+bar
+
+// bar 351
+staff 2 beamstyle = 4,4,2
+music
+1: 4ad+; r; 2;
+2 1: {8f; a-; d-; f-; d-; f-;}6n; {g-; f-; g-; a-; d-; a-;}6n;
+2 2: 4f; f-; g-; a-;
+phrase above 2: 1.5 til 1m+2.83;
+DYN(1, "p")
+bar
+
+// bar 352
+staff 1 unset vscheme 
+staff 2 beamstyle = 2,2
+music
+1: 2r; 4; gc+<d+>;
+2 1: {8b&-; a-; b-; cn; d-; c;}6n; {d; d-; d; e; b-; d-;}6n;
+2 2: 4b-; c; d; e;
+ital between 1&2: 2.5 "dim.";
+bar
+
+// bar 353
+1: 2.ad+<a>; 4e =b a;
+2 1: 2.f =a; 4s;
+2 2: {8f; a-; d-; a-; d-; a-;}6n; {d-; a-; d-~;; a-; d-;}6n;
+phrase below 2: 1 til 2.83;
+DYN(1[-1], "pp")
+line (a.e+1, a.y+3) to (b.w-1, b.y); 
+bar
+
+// bar 354
+1: 2.ad+<a>; 4e =b a;
+2 1: 2.f =a; {8s; [hs "blank"; len 0; ho 0]4a-<a->;}3n;
+2 2: {8f; a-; d-; a-; d-; a-;}6n; {d-; a-; d-~;; a-; d-<d->;}6n;
+phrase below 2: 1 til 2.83;
+line (a.e+1, a.y+3) to (b.w-1, b.y); 
+bar
+
+// bar 355
+1: 4.ad+; [with -]8egc+; []2fad+ tie; // FIXME: last note missing legato?
+2 1: 4.d-a-f; [with -]8a1a-; []2d-a- tie;
+2 2: [hs "blank"; len 0; ho 0]4d-; 2.s;
+DYN(1.75, "p")
+bar
+
+// bar 356
+staff 1 vscheme = 2f
+music
+1 1: 2fad+; s;
+1 2: 2s; <<staff clef=treble>>[with -]g-a-cea;
+2 1: 2d-a-; s;
+2 2: 2s; [with -]2a1a-;
+ital between 1&2: 2 "dim.";
+phrase below 1,2: 2 til 1m+1;
+bar
+
+// bar 357
+1 1: [dist 4]4r; []8; a+<>; 2d+;
+1 2: [with -]1f-df;
+2 1: 4r; 8; a<>; 2d;
+2 2: [with -]1d1d-;
+mussym above 1,2: 2 "ferm";
+DYN(1.75, "pp")
+endbar
