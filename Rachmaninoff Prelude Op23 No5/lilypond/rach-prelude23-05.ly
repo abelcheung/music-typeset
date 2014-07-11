@@ -79,9 +79,20 @@
 }
 
 %------- Util functions and shorthand
-moveDyn =
-#(define-music-function (parser location offset) (number?)
-   #{ \once \override DynamicText.X-offset = #offset #} )
+
+% Fool layout engravers by moving dynamics to temporary location, so
+% layout engine thinks staffs are better packed. Afterwards, move dynamics
+% to truly appropriate location afterwards
+moveDynamics =
+#(define-music-function
+  (parser location tempX realXY)
+  (number? number-pair?)
+  (let ((dest (cons (- (car realXY) tempX) (cdr realXY))))
+  #{
+    \once \override DynamicText.X-offset = #tempX
+    \once \override DynamicText.extra-offset = #dest
+    \once \override DynamicText.whiteout = ##t
+  #} ))
 
 voiceOffBeatBeaming = {
   \set Voice.baseMoment = #(ly:make-moment 1 8)
@@ -1099,16 +1110,11 @@ DynPatternA = { % bar 17-24, 64-71
   s1-\tweak X-offset #-2
     -\tweak whiteout ##t \f |
   s1*4 |
-  % let engravers think staffs are well packed, then move dynamics manually
-  s1-\tweak X-offset #2.5
-    -\tweak avoid-slur #'ignore
-    -\tweak extra-offset #'(-2.5 . 2.5)
-    -\tweak whiteout ##t \f |
+  \moveDynamics #2.5 #'(0 . 2.5)
+  s1-\tweak avoid-slur #'ignore \f |
   
-  s8-\tweak X-offset #4
-    -\tweak avoid-slur #'ignore
-    -\tweak extra-offset #'(-4 . -4.25)
-    -\tweak whiteout ##t \ff
+  \moveDynamics #4 #'(0 . -4.25)
+  s8-\tweak avoid-slur #'ignore \ff
   s2..\p\< |
   s1\! |
 
@@ -1122,11 +1128,10 @@ Dynamics = {
   s4. s8\< s2\! |
   s8 s2..\cresc |
   s1 |
-  \once \override DynamicText.avoid-slur = #'ignore
-  s4.. -\tweak X-offset #2
-       -\tweak extra-offset #'(-2 . 2.5) \f
-  % move away from beat position so LH/RH staff can stay closer
-  s16\dim s2 |
+  \moveDynamics #2 #'(0 . 2.5)
+  s4..-\tweak avoid-slur #'ignore \f
+  s16\dim % move away from beat position so staves can stay closer
+  s2 |
   s4. s8\< s2\! |
   s4. s4.\p\< s8\! s8\> |
   s8 s4.\! s2\dim |
@@ -1135,10 +1140,11 @@ Dynamics = {
   \barNumberCheck 10
   \time 4/4 s1-\tweak X-offset #-2 \p |
   s4. s8\< s2\! |
-  s4. s2\cresc s8 |
+  s4 s16 s16\cresc s2 s8 |
   s1 |
-  s2 s8 s4-\tweak X-offset #-1
-          -\tweak extra-offset #'(1 . 2.5) \f
+  s2 s8
+  \moveDynamics #-1 #'(0 . 2.5)
+  s4\f
   s8 -\tweak whiteout ##t -\markup{\larger\italic "marcato"} |
   s1 |
   \time 2/4 s2 |
@@ -1147,7 +1153,8 @@ Dynamics = {
   \time 4/4 \DynPatternA
   
   \barNumberCheck 25
-  s1-\tweak X-offset 1 \ff |
+  \moveDynamics #-4 #'(0 . -3)
+  s1\ff |
   s1*5 |
   
   \barNumberCheck 31
@@ -1160,12 +1167,11 @@ Dynamics = {
   s1 -\tweak X-offset #0.5 \pp
   s1*3 |
   s8 s2..\cresc |
-  s2\mf s8\< s8\! s4*2/3\> s4*1/3\! |
+  s2-\tweak X-offset #0.5 \mf s8\< s8\! s4*2/3\> s4*1/3\! |
   
   \barNumberCheck 41
-  s1 -\tweak X-offset #1
-     -\tweak extra-offset #'(-1 . -1)
-      \p |
+  \moveDynamics #1 #'(0 . -1)
+  s1\p |
   s1*4 |
   s8 s2..\cresc |
   s2\mf s8 s4\> s8\! |
@@ -1177,9 +1183,8 @@ Dynamics = {
   s2\dim
   
   \barNumberCheck 50
-  s1 -\tweak X-offset #6
-     -\tweak extra-offset #'(-7.5 . -3.5)
-     -\tweak whiteout ##t \ppp |
+  \moveDynamics #6 #'(-1.5 . -3.5)
+  s1\ppp |
   s1 |
   % FIXME need spanner
   \tempo \markup{\huge "poco a poco accelerando al Tempo I"} 4 = 84
@@ -1192,8 +1197,7 @@ Dynamics = {
   
   \barNumberCheck 58
   \tempo \markup{\huge "Tempo I"} 4 = 108
-  s1 -\tweak X-offset #2
-     -\tweak extra-offset #'(-2 . -4) \f |
+  \moveDynamics #-2 #'(0 . -4) s1\f |
   s2 s2\cresc |
   s1*2 |
   s1\ff |
@@ -1203,9 +1207,8 @@ Dynamics = {
   \DynPatternA
   
   \barNumberCheck 72
-  s2-\tweak X-offset #3
-    -\tweak extra-offset #'(-3 . -6.5)
-    -\tweak whiteout ##t \ff
+  \moveDynamics #3 #'(0 . -6.5)
+  s2\ff
   s8 s4\< s8\! |
   s2 s8 s4\< s8\! |
   s1*2 |
@@ -1219,6 +1222,7 @@ Dynamics = {
   s1 |
   s4.\p s8\< s2\! |
   s1\dim |
+  % pp and leggiero not aligned
   s8\pp s8-\markup{\larger \italic "leggiero"} s2. |
   s1*2 \bar "|."
   
