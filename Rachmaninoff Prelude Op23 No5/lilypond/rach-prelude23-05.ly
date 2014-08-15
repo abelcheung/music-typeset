@@ -18,7 +18,7 @@
 % Due to https://code.google.com/p/lilypond/issues/detail?id=3304
 % some tuplets rendered from older lilypond (including 2.18.2) are
 % completely broken (overlapping notes etc)
-\version "2.19.1"
+\version "2.19.10"
 
 \include "easy-octaves.ily"
 
@@ -38,12 +38,12 @@
   top-margin = 8\mm                              %-minimum top-margin: 8mm
   top-markup-spacing.basic-distance = #6         %-dist. from bottom of top margin to the first markup/title
   markup-system-spacing.basic-distance = #5      %-dist. from header/title to first system
-  top-system-spacing.basic-distance = #12        %-dist. from top margin to system in pages with no titles
-  last-bottom-spacing.basic-distance = #12       %-pads music from copyright block
+  top-system-spacing.basic-distance = #10        %-dist. from top margin to system in pages with no titles
+  last-bottom-spacing.basic-distance = #10       %-pads music from copyright block
   
-  ragged-last = ##t
-  ragged-bottom = ##t
-  ragged-last-bottom = ##t
+  ragged-last = ##f
+  ragged-bottom = ##f
+  ragged-last-bottom = ##f
   
   % debug-slur-scoring = ##t
 }
@@ -105,6 +105,18 @@ unsetVoiceOffBeatBeaming = {
   \unset Voice.beatStructure
   \unset Voice.beamExceptions
 }
+
+% default tenuto hides inside slur, pushing slurs outwards and prevent
+% staves to be compacted. And padding is too small, so it can stick
+% very close to slurs. Some may confuse with ledger line as well.
+tenutoAlt =
+#(let ((m (make-articulation "tenuto")))
+   (ly:music-set-property! m 'tweaks
+     (acons 'avoid-slur 'outside
+       (acons 'slur-padding 0.4
+         (ly:music-property m 'tweaks))))
+   m)
+
 
 hshift = { \once \override NoteColumn.force-hshift = #1.6 }
 
@@ -359,7 +371,10 @@ RH = \relative c' {
       bes8-_ d-_ s bes-_ s |
       g4.-> bes8-_ d-_ s bes-_ s |
       g4.-> d'16 ( f g4.-> ) bes,16 ( d |
-      f4.-> ) bes,16 ( d ees4.-> ) g,16 ( a |
+      f4.-> ) bes,16 ( d ees4.-> )
+      \temporary \override Beam.positions = #'(-6.5 . -6)
+      g,16 ( a |
+      \revert Beam.positions
       
       \barNumberCheck 29
       % EDITION NOTE: both Gutheil and Muzyka editions seems to miss a few
@@ -387,32 +402,27 @@ RH = \relative c' {
   \barNumberCheck 35
   <<
     \relative c'' {
-      r8 \clef treble \addArticulation "tenuto" {
-        <a d fis a> \( q <bes d fis bes> <c d fis c'>4 Bes8
-      } A |
-      G A Bes4-- \) Fis-- ( A ) |
+      r8 \clef treble <a d fis a>\tenutoAlt \(
+      q-- <bes d fis bes>-- <c d fis c'>4-- Bes8-- A |
+      G A Bes4\tenutoAlt \) Fis\tenutoAlt ( A ) |
   
-      r8 \addArticulation "tenuto" {
-        <a d fis a> \( q <bes d fis bes> C4 Bes8
-      } A |
-      G A Bes4-- \) Fis-- ( A ) |
-      r8 \addArticulation "tenuto" {
-        Bes ( <d g bes> C D4 C8
-      } Bes ) |
-      C8-- ( D Es4~ q8 ) E ( Fis G ) |
+      r8 <a d fis a>\tenutoAlt \( q--
+      <bes d fis bes>-- C4-- Bes8-- A |
+      G A Bes4\tenutoAlt \) Fis\tenutoAlt ( A ) |
+      r8 Bes\tenutoAlt ( <d g bes>--
+      C-- D4-- C8-- Bes ) |
+      C8\tenutoAlt ( D Es4~ q8 ) E ( Fis G ) |
       
       \barNumberCheck 41
       Fis, ( G <d' a'~>2 <cis a'>4 ) |
-      r8 \addArticulation "tenuto" {
-        <fis a>8 ( q8 <bes, d fis bes> <c d fis c'>4 Bes8
-      } A |
-      G8-- A Bes4-- ) <fis c' d fis>8-- ( G <a c d a'>4 ) |
+      r8 <fis a>8\tenutoAlt ( q8-- <bes, d fis bes>--
+      <c d fis c'>4-- Bes8-- A |
+      G8-- A Bes4\tenutoAlt ) <fis c' d fis>8\tenutoAlt ( G <a c d a'>4 ) |
       
       \barNumberCheck 44
-      r8 \addArticulation "tenuto" {
-        <fis' a>8 ( q8 <bes, d fis bes> <c ees g c>4 Bes8
-      } A |
-      G8-- A Bes4-- ) <fis c' d fis>8-- ( G <a c d a'>4 ) |
+      r8 <fis' a>8\tenutoAlt ( q8-- <bes, d fis bes>--
+      <c ees g c>4-- Bes8-- A |
+      G8-- A Bes4\tenutoAlt ) <fis c' d fis>8\tenutoAlt ( G <a c d a'>4 ) |
       r8 Bes ( <d g bes> C <d aes' bes d>4 ) C8 ( Bes ) |
       
       \barNumberCheck 47
@@ -434,34 +444,37 @@ RH = \relative c' {
       s8
       
       % FIXME: should shorten stem or not?
-      a16 _( c d4-- ) s <d fis> |
+      a16 _( c d4\tenutoAlt ) s <d fis> |
       <c ees>4
       % guarantee tenuto on LH won't be mistaken to belong to RH note
       \hshift q s2 |
       
       \barNumberCheck 44
-      s8 a16 _( c d4-- ) s \hshift <c ees> |
+      s8 a16 _( c d4\tenutoAlt ) s \hshift <c ees> |
       <cis e>4 \hshift q s4. a16 ( c |
-      <d, bes' d>2-- ) r8 d'-- ees-- f-- |
+      <d, bes' d>2\tenutoAlt ) r8 d'-- ees-- f-- |
       s4 <g bes> <bes d>2 |
       
       \barNumberCheck 48
       % FIXME tie needs whiteout
       s2 dis,2--~ |
       % FIXME Where is this tie going after line break !!!!?????
-      dis4 <d e>-- ( <cis f>-- <cis fis>-- )
+      dis4 <d e>\tenutoAlt ( <cis f>-- <cis fis>\tenutoAlt )
       
     } \\
     \relative c' {
-      \voiceFour
+      \voiceTwo \temporary \stemUp
       s1 |
-      s2. r8 a16 ( c~ |
-      <d c fis,>2-- ) s2
-      s2. r8 a16 ( c |
-      <bes d>2-- ) s2 |
+      s2. r8
+      a16_( c~ |
+      <d c fis,>2\tenutoAlt ) s2
+      s2. r8
+      a16_( c |
+      <bes d>2\tenutoAlt ) s2 |
       s1*4 |
       \barNumberCheck 44
       <fis c'>1--
+      \stemNeutral
     }
   >> |
   
@@ -483,14 +496,19 @@ RH = \relative c' {
     }
     \\
     \relative c {
-      d=8
-      \repeat unfold 2 { s s \addArticulation "staccato" { fis bes s g s | d } }
-      s s d'-. ees,4.-- d'8-. |
-      e,4.-- \addArticulation "staccato" { d'8 f, d' fis, d' } |
-      g,4.-- \addArticulation "staccato" {
+      \once \stemUp d=8
+      \repeat unfold 2 { s s \addArticulation "staccato" {
+	  \once \stemUp fis bes s g s | \once \stemUp d
+      } }
+      s s d'-. \once \stemUp ees,4.-- d'8-. |
+      \once \stemUp e,4.-- \addArticulation "staccato" {
+	d'8 \once \override Beam.positions = #'(-7 . -7)
+	f, d' fis, d'
+      } |
+      \once \stemUp g,4.-- \addArticulation "staccato" {
         bes8 d s bes s |
-        g s s bes d s bes s |
-        g s s g'
+        \once \stemUp g s s bes d s bes s |
+        \once \stemUp g s s g'
       }
       aes,4.-- g'8-. |
       a,4.--
@@ -765,7 +783,7 @@ LH = \relative c {
       f8\rest q16 q q8 r
       \repeat unfold 2 { r <d bes' d>16 q q8 r }
       r <g a c>16 q q8 r |
-      r <fis a d>16 q q8 r r <c fis a c>4-> r8 |
+      \absolute{a8\rest} <fis a d>16 q q8 r r <c fis a c>4-> r8 |
       
       \barNumberCheck 30
       r <b ees g b>4-> r8 r <bes d g bes>4-> r8 |
@@ -778,16 +796,15 @@ LH = \relative c {
       G4.-> d''16 ( f G,4.-> ) bes16 ( d |
       F,4.-> ) bes16 ( d Es,4.-> ) g16 ( a |
       % EDITION NOTE: see right hand part
-      D,4.-> ) c'   8-. D,,4.-> b''8-. |
+      D,4.-> ) c'   8-. \once \stemUp D,,4.-> b''8-. |
       
       \barNumberCheck 30
-      D,,4.->  bes''8-. D,,4.-> a''8-. |
-      D,,4.-> \addArticulation "staccato" {
-        a''8 \temporary \stemUp D,, gis' D, g'
-        \revert Stem.direction
+      \once \stemUp D,,4.->  bes''8-. \once \stemUp D,,4.-> a''8-. |
+      \once \stemUp D,,4.-> \addArticulation "staccato" {
+        a''8 \temporary \stemUp D,, gis' D, g' \stemNeutral
       } |
-      D,4.-> g'8-. D,4.-> fis'8-. |
-      D,4.-> a''8-.
+      \once \stemUp D,4.-> g'8-. \once \stemUp D,4.-> fis'8-. |
+      \once \stemUp D,4.-> a''8-.
     }
   >>
   \repeat unfold 2 { d'=,4.-- a'8-. } d,4.-- D,16-. q-. |
@@ -814,7 +831,9 @@ LH = \relative c {
     ees ( bes' g' bes ees f g ees bes g bes, ees, )
     d ( bes' g' a bes g' ) cis,,, ( a' g' a g' a ) |
     \barNumberCheck 41
-    d,,, ( a' d g a d ) fis, ( a d fis e fis
+    d,,, ( a' d g a d )
+    \once \override Slur.positions = #'(2 . 0)
+    fis, ( a d fis e fis
     e d e d a d )
   }
 
@@ -923,7 +942,7 @@ LH = \relative c {
       \tuplet 6/4 { a16 ( g e ) bes' ( g e ) } |
       \LHpatB
       \tuplet 6/4 4 {
-        d, ( a' fis' ) d' ( c fis, ) e' ( c fis, ) fis' ( c fis, ) |
+        d,^( a' fis' ) d' ( c fis, ) e' ( c fis, ) fis' ( c fis, ) |
         d, ( a' d g c ees ) fis ( ees c g d a )
         d, ( a' d d a' d ) a ( fis d ) bes' ( fis d )
       } |
@@ -931,10 +950,10 @@ LH = \relative c {
       \barNumberCheck 44
       \LHpatB
       \tuplet 6/4 4 {
-        d, ( a' g' ) d' ( c g ) ees' ( c g ) f' ( c g ) |
+        d,^( a' g' ) d' ( c g ) ees' ( c g ) f' ( c g ) |
         d, ( a' g' a bes cis ) fis ( cis bes g a,
         d,^~ % FIXME should be downward, but lilypond almost make it invisible
-        d ) a' ( d d a' d c a d, d d, d' ) |
+        d ) a'^( d d a' d c a d, d d, d' ) |
         \temporary \stemUp
         g, ( d' g bes \clef treble d g
         bes g d \clef bass bes g d )
@@ -954,14 +973,14 @@ LH = \relative c {
   \tuplet 6/4 4 {
     a,,=,, ( a' fis' g bes ees )
     % FIXME With upward slurs, some slurs are overlapping with tenutos.
-    % With downward slurs, some start at bad positions.
-    <d e>-- ( bes g a, g' ) g (
+    % With downward slurs, some start at bad positions. Choosing lesser evil.
+    <d e>\tenutoAlt ( bes g a, g' ) g (
     <cis f>-- bes g a, g' ) g (
-    <cis fis>-- a ) a ( g a, ) a (
+    <cis fis>\tenutoAlt a ) a ( g a, ) a (
   } |
   
   \barNumberCheck 50
-  \once \stemDown D,,8 )
+  \once \stemUp D,,8 )
   <<
     \relative c {
       \voiceOffBeatBeaming
@@ -978,18 +997,26 @@ LH = \relative c {
     }
     \\
     \relative c,, {
-      \repeat unfold 2 { \addArticulation "staccato" { s8 s Fis Bes s G s | D } }
-      s s d''8-. Es,,4.-- d''8-. |
-      E,,4.-- \addArticulation "staccato" { d''8 \oneVoice F,, d'' Fis,, d'' } |
-      \voiceTwo G,,4.-- \addArticulation "staccato" {
+      \repeat unfold 2 { \addArticulation "staccato" {
+	  s8 s \once \stemUp Fis Bes s G s | \once \stemUp D
+      } }
+      s s d''8-. \once \stemUp Es,,4.-- d''8-. |
+      \once \stemUp E,,4.-- \addArticulation "staccato" {
+	d''8 \once \override Beam.positions = #'(2 . 2)
+	\oneVoice F,, d'' Fis,, d''
+      } |
+      \voiceTwo \once \stemUp G,,4.--
+      \addArticulation "staccato" {
         Bes8 D s Bes s |
         % SPECIAL NOTE: Muzyka edition has single note G, but Gutheil shows octave.
         % from surrounding pattern this should be octave.
-        G s s Bes D s Bes s |
-        G s s G'
+        \once \stemUp G s s Bes D s Bes s |
+        \once \stemUp G s s G'
       }
       As,4.-- G'8-. |
-      A,4.-- \addArticulation "staccato" { g''8 \oneVoice Bes,, g'' B,, g'' } |
+      A,4.-- \addArticulation "staccato" { g''8 \oneVoice
+	\once \override Beam.positions = #'(3.5 . 3.5)
+	Bes,, g'' B,, g'' } |
       \voiceTwo \repeat unfold 2 { C,, s s Es G s Es s } |
       Cis4.-> Bes'8-. D,4.-> Bes'8-.
     }
@@ -1145,7 +1172,9 @@ Dynamics = {
   s2 s8
   \moveDynamics #-1 #'(0 . 2.5)
   s4\f
-  s8 -\tweak whiteout ##t -\markup{\larger\italic "marcato"} |
+  s8 -\tweak whiteout ##t
+     -\tweak X-offset -0.5
+     -\markup\larger\italic "marcato" |
   s1 |
   \time 2/4 s2 |
   
@@ -1163,7 +1192,7 @@ Dynamics = {
   \tempo 4 = 100 s4..\p
   \tempo 4 = 90  s16\dim s4.
   \tempo 4 = 60  s8 |
-  \tempo \markup{\huge "un poco meno mosso"} 4 = 80
+  \tempo \markup\larger "un poco meno mosso" 4 = 80
   s1 -\tweak X-offset #0.5 \pp
   s1*3 |
   s8 s2..\cresc |
@@ -1176,18 +1205,22 @@ Dynamics = {
   s8 s2..\cresc |
   s2\mf s8 s4\> s8\! |
   s4\p s4*2/3\< s4*1/3\! s2 |
-  s8*1/3 s8*4/3\> s8*1/3\! s4
+  s8*4/3\> s8*2/3\! s4
   % Normally rit. should be in italics and not act as metronome mark.
   % But for the purpose of following Muzyka edition...
-  \tempo \markup{\huge "rit."} 4 = 80
-  s2\dim
+  \tempo \markup\larger "rit." 4 = 80
+  %\once \override DynamicTextSpanner.bound-details.left.stencil-offset = #'(-8 . -0.5)
+  %\once \override DynamicTextSpanner.whiteout = ##t
+  s2-\tweak bound-details.left.stencil-offset #'(-7.5 . -2.5)
+    -\tweak extra-offset #'(8.5 . 1)
+    -\tweak whiteout ##t \dim
   
   \barNumberCheck 50
-  \moveDynamics #6 #'(-1.5 . -3.5)
+  \moveDynamics -6 #'(-1.5 . -4)
   s1\ppp |
   s1 |
   % FIXME need spanner
-  \tempo \markup{\huge "poco a poco accelerando al Tempo I"} 4 = 84
+  \tempo \markup\larger "poco a poco accelerando al Tempo I" 4 = 84
   s8 s2..\cresc |
   \tempo 4 = 88  s1 |
   \tempo 4 = 92  s1 |
@@ -1196,9 +1229,13 @@ Dynamics = {
   \tempo 4 = 104 s1 |
   
   \barNumberCheck 58
-  \tempo \markup{\huge "Tempo I"} 4 = 108
+  % FIXME Useless???
+  \once \override Score.MetronomeMark.break-align-symbols = #'(clef left-edge)
+  \tempo \markup\larger "Tempo I" 4 = 108
   \moveDynamics #-2 #'(0 . -4) s1\f |
-  s2 s2\cresc |
+  s2
+  \once \override DynamicTextSpanner.bound-details.left.stencil-offset = #'(-2 . -0.5)
+  s2\cresc |
   s1*2 |
   s1\ff |
   s1 |
@@ -1251,6 +1288,21 @@ Dynamics = {
       \override TupletNumber.avoid-slur = #'ignore
       % FIXME check if line break occurs at bar 49
       \override Accidental.hide-tied-accidental-after-break = ##t
+      \override Script.stencil =  % default accent too large
+      #(lambda (grob)
+         (let ((script (ly:grob-property grob 'script-stencil)))
+           (if (equal? script '(feta . ("sforzato" . "sforzato")))
+               (ly:stencil-scale (ly:script-interface::print grob) 0.75 0.75)
+               (ly:script-interface::print grob))))
+
+      \override DynamicText.Y-extent =
+      #(ly:make-unpure-pure-container ly:grob::stencil-height '(-0 . 0))
+      \override Stem.Y-extent = % DIE!!! DIE!!! DIE!!!
+      #(ly:make-unpure-pure-container ly:stem::height '(-0 . 0))
+      \override Slur.Y-extent =
+      #(ly:make-unpure-pure-container ly:slur::height '(-0 . 0))
+      \override PhrasingSlur.Y-extent =
+      #(ly:make-unpure-pure-container ly:slur::height '(-0 . 0))
     }
   }
   \midi {
